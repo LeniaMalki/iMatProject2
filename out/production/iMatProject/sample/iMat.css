@@ -42,13 +42,10 @@
      -fx-background-color: #FF4500;
  }
 
-.text-area .content {
-   -fx-background-color: #C0C0C0;
-}
+ .grey-nuance{
+     -fx-background-color: #E5E5E5;
 
-.text-area  {
-    -fx-background-color: #C0C0C0;
-}
+ }
 
 .button-like {
   -fx-background-color:
