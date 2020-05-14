@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import se.chalmers.cse.dat216.project.*;
 
+
 public class Main extends Application {
 
     @Override
@@ -22,3 +23,4 @@ public class Main extends Application {
         launch(args);
     }
 }
+
