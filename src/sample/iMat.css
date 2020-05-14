@@ -38,21 +38,9 @@
      -fx-font-weight: bold
  }
 
- .background-coolour{
-     -fx-fill: rgba(0,0,0,0.75);
+ .primary-colour{
+     -fx-background-color: #FF4500;
  }
-
-
-#logo{
-    -fx-font-size: 40px;
-    -fx-font-family: "Cooper Black";
-}
-
-#logo-twirl{
-    -fx-font-size: 33px;
-    -fx-font-family: "Comic Sans MS";
-    -fx-text-fill: #FFAC33;
-}
 
 .text-area .content {
    -fx-background-color: #C0C0C0;
