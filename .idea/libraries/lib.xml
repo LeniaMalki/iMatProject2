@@ -1,6 +1,8 @@
 <component name="libraryTable">
   <library name="lib">
-    <CLASSES />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/resources/projectbackend.jar!/" />
+    </CLASSES>
     <JAVADOC />
     <SOURCES />
   </library>
