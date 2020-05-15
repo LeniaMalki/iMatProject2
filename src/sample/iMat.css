@@ -42,13 +42,15 @@
      -fx-background-color: #FF4500;
  }
 
-.text-area .content {
-   -fx-background-color: #C0C0C0;
-}
+ .grey-nuance{
+     -fx-background-color: #E5E5E5;
 
-.text-area  {
-    -fx-background-color: #C0C0C0;
-}
+ }
+
+ .white-color{
+     -fx-background-color: #FFFFFF;
+
+ }
 
 .button-like {
   -fx-background-color:
@@ -58,4 +60,30 @@
        -fx-body-color;
   -fx-background-insets: 0 0 -1 0, 0, 1, 2;
   -fx-background-radius: 3px, 3px, 2px, 1px;
+}
+
+.category{
+    -fx-border-width: 1 0;
+    -fx-border-color: #CCCCCC;
+}
+
+
+.cartpane{
+    -fx-border-width: 1;
+    -fx-border-color: #CCCCCC;
+    
+}
+
+.primary-button{
+    -fx-background-color: FF4500;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-text-fill: #FFFFFF;
+
+}
+
+.info-text{
+    -fx-text-alignment: center;
+    -fx-wrap-text: true;
+
 }
