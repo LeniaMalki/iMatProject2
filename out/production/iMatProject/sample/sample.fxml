@@ -182,7 +182,7 @@
                                     <Label layoutX="681.0" layoutY="427.0" styleClass="text-larger-bold" text="Totalt: ___" />
                                     <ScrollPane layoutY="1.0" prefHeight="522.0" prefWidth="616.0">
                                       <content>
-                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="516.0" prefWidth="614.0" />
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="519.0" prefWidth="615.0" />
                                       </content>
                                     </ScrollPane>
                                  </children>

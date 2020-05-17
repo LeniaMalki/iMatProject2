@@ -1,14 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="sample.PersonalView"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" pickOnBounds="false" prefHeight="680.0" prefWidth="1024.0" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <SplitPane dividerPositions="0.19908814589665655" layoutX="81.0" layoutY="42.0" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" pickOnBounds="false" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" pickOnBounds="false" prefHeight="150.0" prefWidth="1024.0" styleClass="white-color" SplitPane.resizableWithParent="false">
+               <children>
+                  <ImageView fitHeight="100.0" fitWidth="199.0" layoutX="1.0" pickOnBounds="true" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="824.0" AnchorPane.topAnchor="0.0">
+                     <image>
+                        <Image url="@../images/nyimatlogo.png" />
+                     </image>
+                  </ImageView>
+                  <TextField id="ListFoodSearchField" layoutX="259.0" layoutY="46.0" prefHeight="39.0" prefWidth="281.0" promptText="Sök efter varor">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="711.0" layoutY="30.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../images/question.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="811.0" layoutY="30.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../images/menuIcons/MinHistorik.png" />
+                     </image>
+                  </ImageView>
+                  <Button layoutX="540.0" layoutY="46.0" minHeight="-Infinity" mnemonicParsing="false" prefHeight="39.0" prefWidth="39.0">
+                     <graphic>
+                        <ImageView fitHeight="39.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/sok.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Pane layoutX="200.0" layoutY="109.0" prefHeight="42.0" prefWidth="825.0" styleClass="grey-nuance" />
+                  <Pane layoutX="1.0" layoutY="111.0" prefHeight="39.0" prefWidth="0.0" styleClass="primary-colour" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="824.0" AnchorPane.topAnchor="111.0">
+                     <children>
+                        <Label layoutX="51.0" layoutY="10.0" text="Fortsätt handla" textFill="WHITE">
+                           <font>
+                              <Font name="Arial" size="17.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="27.0" fitWidth="25.0" layoutX="16.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/arrow.PNG" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <ImageView fitHeight="63.0" fitWidth="63.0" layoutX="911.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/menuIcons/MinaUppgifter.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <StackPane pickOnBounds="false" prefHeight="150.0" prefWidth="200.0">
+               <children>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="63.0" fitWidth="63.0" layoutX="215.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/menuIcons/MinaUppgifter-Orange.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="309.0" layoutY="43.0" styleClass="title-text" text="Mina uppgifter" />
+                        <Label layoutX="215.0" layoutY="110.0" prefHeight="42.0" prefWidth="200.0" styleClass="subtitle-text" text="Personuppgifter" />
+                        <ImageView fitHeight="42.0" fitWidth="31.0" layoutX="167.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/menuIcons/MinaUppgifter-Orange.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="215.0" layoutY="155.0" styleClass="formtitle" text="Förnamn" />
+                        <TextField id="ListFoodSearchField" layoutX="215.0" layoutY="185.0" prefHeight="20.0" prefWidth="500.0" promptText="Förnamn...">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="215.0" layoutY="237.0" styleClass="formtitle" text="Efternamn" />
+                        <TextField id="ListFoodSearchField" layoutX="215.0" layoutY="267.0" prefHeight="20.0" prefWidth="500.0" promptText="Förnamn...">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="215.0" layoutY="318.0" styleClass="formtitle" text="Telefonnummer" />
+                        <TextField id="ListFoodSearchField" layoutX="215.0" layoutY="348.0" prefHeight="20.0" prefWidth="500.0" promptText="Förnamn...">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                     </children></AnchorPane>
+               </children>
+            </StackPane>
+        </items>
+      </SplitPane>
+   </children>
 </AnchorPane>

@@ -87,3 +87,25 @@
     -fx-wrap-text: true;
 
 }
+
+.title-text{
+    -fx-font-size: 25px;
+    -fx-font-family: "Avenir Book";
+    -fx-font-weight: bolder;
+
+}
+
+.subtitle-text{
+    -fx-font-size: 20px;
+    -fx-font-family: "Avenir Book";
+    -fx-font-weight: bold;
+    -fx-underline: true;
+
+}
+
+.formtitle{
+    -fx-font-size: 20px;
+    -fx-font-family: "Avenir Book";
+    -fx-font-weight: bold;
+
+}
