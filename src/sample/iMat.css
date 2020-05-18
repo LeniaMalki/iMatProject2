@@ -79,20 +79,7 @@
     -fx-border-radius: 10;
     -fx-background-radius: 10;
     -fx-text-fill: #FFFFFF;
-}
-.round-button-orange{
-    -fx-background-color: FF4500;
-    -fx-border-radius: 20;
-    -fx-background-radius: 200;
-    -fx-text-fill: #FFFFFF;
-}
 
-.round-button-white{
-    -fx-background-color:  -fx-background;
-    -fx-border-color: FF4500;
-    -fx-border-radius: 20;
-    -fx-background-radius: 200;
-    -fx-text-fill: #FFFFFF;
 }
 
 .info-text{
@@ -101,6 +88,44 @@
 
 }
 
-.lightbox-shadow{
-    -fx-background-color: rgba(0, 0, 0, 0.75)
+.title-text{
+    -fx-font-size: 25px;
+    -fx-font-family: "Avenir Book";
+    -fx-font-weight: bolder;
+
+}
+
+.subtitle-text{
+    -fx-font-size: 20px;
+    -fx-font-family: "Avenir Book";
+    -fx-font-weight: bold;
+    -fx-underline: true;
+
+}
+
+.formtitle{
+    -fx-font-size: 20px;
+    -fx-font-family: "Avenir Book";
+    -fx-font-weight: bold;
+
+}
+
+.roundedbuttonoff{
+    -fx-background-color: E5E5E5;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-text-fill: #757575;
+    -fx-font-weight: bolder;
+    -fx-border-width: 1;
+    -fx-border-color: #CCCCCC;
+
+}
+
+.roundedbuttonon{
+    -fx-background-color: FF4500;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bolder;
+
 }

@@ -47,6 +47,11 @@
 
  }
 
+ .white-color{
+     -fx-background-color: #FFFFFF;
+
+ }
+
 .button-like {
   -fx-background-color:
        -fx-shadow-highlight-color,
@@ -55,4 +60,52 @@
        -fx-body-color;
   -fx-background-insets: 0 0 -1 0, 0, 1, 2;
   -fx-background-radius: 3px, 3px, 2px, 1px;
+}
+
+.category{
+    -fx-border-width: 1 0;
+    -fx-border-color: #CCCCCC;
+}
+
+
+.cartpane{
+    -fx-border-width: 1;
+    -fx-border-color: #CCCCCC;
+    
+}
+
+.primary-button{
+    -fx-background-color: FF4500;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-text-fill: #FFFFFF;
+
+}
+
+.info-text{
+    -fx-text-alignment: center;
+    -fx-wrap-text: true;
+
+}
+
+.title-text{
+    -fx-font-size: 25px;
+    -fx-font-family: "Avenir Book";
+    -fx-font-weight: bolder;
+
+}
+
+.subtitle-text{
+    -fx-font-size: 20px;
+    -fx-font-family: "Avenir Book";
+    -fx-font-weight: bold;
+    -fx-underline: true;
+
+}
+
+.formtitle{
+    -fx-font-size: 20px;
+    -fx-font-family: "Avenir Book";
+    -fx-font-weight: bold;
+
 }
