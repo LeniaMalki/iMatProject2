@@ -79,11 +79,28 @@
     -fx-border-radius: 10;
     -fx-background-radius: 10;
     -fx-text-fill: #FFFFFF;
+}
+.round-button-orange{
+    -fx-background-color: FF4500;
+    -fx-border-radius: 20;
+    -fx-background-radius: 200;
+    -fx-text-fill: #FFFFFF;
+}
 
+.round-button-white{
+    -fx-background-color:  -fx-background;
+    -fx-border-color: FF4500;
+    -fx-border-radius: 20;
+    -fx-background-radius: 200;
+    -fx-text-fill: #FFFFFF;
 }
 
 .info-text{
     -fx-text-alignment: center;
     -fx-wrap-text: true;
 
+}
+
+.lightbox-shadow{
+    -fx-background-color: rgba(0, 0, 0, 0.75)
 }
