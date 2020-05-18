@@ -109,3 +109,38 @@
     -fx-font-weight: bold;
 
 }
+
+.roundedbuttonoff{
+    -fx-background-color: E5E5E5;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-text-fill: #757575;
+    -fx-font-weight: bolder;
+    -fx-border-width: 1;
+    -fx-border-color: #CCCCCC;
+
+}
+
+.roundedbuttonon{
+    -fx-background-color: FF4500;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bolder;
+
+}
+
+.category:hover{
+    -fx-border-width: 2 0;
+    -fx-border-color: #757575;
+    -fx-background-color: #D0D0D0;
+
+}
+
+.category:pressed{
+    -fx-border-width: 2 0;
+    -fx-border-color: #757575;
+    -fx-background-color: #BBBBBB;
+
+
+}

@@ -102,15 +102,15 @@
                                                          <children>
                                                             <Pane prefHeight="56.0" prefWidth="358.0" styleClass="category">
                                                                <children>
-                                                                  <Label layoutX="14.0" layoutY="18.0" styleClass="text-larger" text="2020-08-03" />
-                                                                  <Label layoutX="154.0" layoutY="20.0" text="38633" />
+                                                                  <Label layoutX="14.0" layoutY="18.0" style="-fx-font-weight: bold;" styleClass="text-larger" text="2020-08-03" />
+                                                                  <Label layoutX="154.0" layoutY="20.0" style="-fx-font-weight: bold;" text="38633" />
                                                                   <Button layoutX="257.0" layoutY="16.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="66.0" styleClass="primary-button" text="Se mer..." />
                                                                </children>
                                                             </Pane>
                                                             <Pane layoutY="55.0" prefHeight="56.0" prefWidth="358.0" styleClass="category">
                                                                <children>
-                                                                  <Label layoutX="14.0" layoutY="18.0" styleClass="text-larger" text="2020-08-04" />
-                                                                  <Label layoutX="154.0" layoutY="20.0" text="38634" />
+                                                                  <Label layoutX="14.0" layoutY="18.0" style="-fx-font-weight: bold;" styleClass="text-larger" text="2020-08-04" />
+                                                                  <Label layoutX="154.0" layoutY="20.0" style="-fx-font-weight: bold;" text="38634" />
                                                                   <Button layoutX="257.0" layoutY="16.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="66.0" styleClass="primary-button" text="Se mer..." />
                                                                </children>
                                                             </Pane>

@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -16,184 +17,227 @@
 
 <AnchorPane maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" pickOnBounds="false" prefHeight="680.0" prefWidth="1024.0" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <SplitPane dividerPositions="0.19908814589665655" layoutX="81.0" layoutY="42.0" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" pickOnBounds="false" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <items>
-          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" pickOnBounds="false" prefHeight="150.0" prefWidth="1024.0" styleClass="white-color" SplitPane.resizableWithParent="false">
+      <StackPane prefHeight="680.0" prefWidth="1024.0">
+         <children>
+            <AnchorPane prefHeight="680.0" prefWidth="1024.0" styleClass="lightbox-shadow">
                <children>
-                  <ImageView fitHeight="100.0" fitWidth="199.0" layoutX="1.0" pickOnBounds="true" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="824.0" AnchorPane.topAnchor="0.0">
-                     <image>
-                        <Image url="@../images/nyimatlogo.png" />
-                     </image>
-                  </ImageView>
-                  <TextField id="ListFoodSearchField" layoutX="259.0" layoutY="46.0" prefHeight="39.0" prefWidth="281.0" promptText="Sök efter varor">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </TextField>
-                  <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="711.0" layoutY="30.0" pickOnBounds="true">
-                     <image>
-                        <Image url="@../images/question.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="811.0" layoutY="30.0" pickOnBounds="true">
-                     <image>
-                        <Image url="@../images/history.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="914.0" layoutY="30.0" pickOnBounds="true">
-                     <image>
-                        <Image url="@../images/profile.png" />
-                     </image>
-                  </ImageView>
-                  <Button layoutX="540.0" layoutY="46.0" minHeight="-Infinity" mnemonicParsing="false" prefHeight="39.0" prefWidth="39.0">
-                     <graphic>
-                        <ImageView fitHeight="39.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/sok.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Pane layoutX="200.0" layoutY="109.0" prefHeight="42.0" prefWidth="825.0" styleClass="grey-nuance">
+                  <AnchorPane layoutX="206.0" layoutY="141.0" prefHeight="398.0" prefWidth="626.0" style="-fx-background-color: -fx-background;">
                      <children>
-                        <Pane layoutX="622.0" prefHeight="42.0" prefWidth="200.0" style="-fx-background-color: white;" styleClass="cartpane">
-                           <children>
-                              <ImageView fitHeight="42.0" fitWidth="49.0" layoutX="12.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="208.0" fitWidth="243.0" layoutX="23.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label layoutX="294.0" layoutY="49.0" styleClass="text-larger2" text="Äpple Granny Smith Eko" />
+                        <Button layoutX="538.0" layoutY="312.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="46.0" styleClass="round-button-orange">
+                           <graphic>
+                              <ImageView fitHeight="29.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" styleClass="round-button-orange">
                                  <image>
-                                    <Image url="@../images/cart.PNG" />
+                                    <Image url="@../images/Vitt_pluss.png" />
                                  </image>
                               </ImageView>
-                              <Label layoutX="77.0" layoutY="12.0" styleClass="text-larger-bold" text="Varukorg" />
-                           </children>
-                        </Pane>
-                     </children></Pane>
-                  <Pane layoutX="1.0" layoutY="111.0" prefHeight="39.0" prefWidth="0.0" styleClass="primary-colour" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="824.0" AnchorPane.topAnchor="111.0">
-                     <children>
-                        <ImageView fitHeight="39.0" fitWidth="38.0" layoutX="6.0" pickOnBounds="true" preserveRatio="true">
+                           </graphic>
+                        </Button>
+                        <Button layoutX="383.0" layoutY="312.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="46.0" styleClass="round-button-white">
+                           <graphic>
+                              <ImageView fitHeight="28.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/Orange_minus.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <TextField alignment="CENTER" layoutX="442.0" layoutY="317.0" prefHeight="39.0" prefWidth="79.0" text="0 st" />
+                        <Label layoutX="294.0" layoutY="113.0" styleClass="text-larger-bold" text="Pris:" />
+                        <TextArea layoutX="294.0" layoutY="153.0" prefHeight="138.0" prefWidth="290.0" wrapText="true" />
+                        <ImageView fitHeight="30.0" fitWidth="36.0" layoutX="582.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/procent.PNG" />
+                              <Image url="@../images/icon_close.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="51.0" layoutY="10.0" text="Erbjudanden" textFill="WHITE">
-                           <font>
-                              <Font name="Arial" size="17.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </Pane>
-               </children>
-            </AnchorPane>
-            <StackPane pickOnBounds="false" prefHeight="150.0" prefWidth="200.0">
-               <children>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
-                     <children>
-                        <SplitPane dividerPositions="0.5" layoutX="149.0" layoutY="107.0" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                          <items>
-                            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="199.0" styleClass="grey-nuance">
-                                 <children>
-                                    <Pane layoutX="1.0" prefHeight="39.0" prefWidth="198.0" styleClass="category">
-                                       <children>
-                                          <Label layoutX="14.0" layoutY="10.0" text="Bröd">
-                                             <font>
-                                                <Font name="Arial" size="17.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </Pane>
-                                    <Pane layoutX="1.0" layoutY="38.0" prefHeight="39.0" prefWidth="198.0" styleClass="category">
-                                       <children>
-                                          <Label layoutX="14.0" layoutY="10.0" text="Bröd">
-                                             <font>
-                                                <Font name="Arial" size="17.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </Pane>
-                                    <Pane layoutX="1.0" layoutY="76.0" prefHeight="39.0" prefWidth="198.0" styleClass="category">
-                                       <children>
-                                          <Label layoutX="14.0" layoutY="10.0" text="Bröd">
-                                             <font>
-                                                <Font name="Arial" size="17.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </Pane>
-                                    <Pane layoutX="1.0" layoutY="114.0" prefHeight="39.0" prefWidth="198.0" styleClass="category">
-                                       <children>
-                                          <Label layoutX="14.0" layoutY="10.0" text="Bröd">
-                                             <font>
-                                                <Font name="Arial" size="17.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </Pane>
-                                    <Pane layoutX="2.0" layoutY="152.0" prefHeight="39.0" prefWidth="198.0" styleClass="category">
-                                       <children>
-                                          <Label layoutX="14.0" layoutY="10.0" text="Bröd">
-                                             <font>
-                                                <Font name="Arial" size="17.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </Pane>
-                                    <Pane layoutX="1.0" layoutY="190.0" prefHeight="39.0" prefWidth="198.0" styleClass="category">
-                                       <children>
-                                          <Label layoutX="14.0" layoutY="10.0" text="Bröd">
-                                             <font>
-                                                <Font name="Arial" size="17.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </Pane>
-                                 </children>
-                              </AnchorPane>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-                                 <children>
-                                    <StackPane layoutX="-17.0" layoutY="10.0" prefHeight="520.0" prefWidth="624.0" AnchorPane.bottomAnchor="-10.0" AnchorPane.leftAnchor="-17.0" AnchorPane.rightAnchor="241.0" AnchorPane.topAnchor="10.0" />
-                                    <ScrollPane layoutY="-2.0" prefHeight="403.0" prefWidth="200.0" AnchorPane.bottomAnchor="119.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-2.0">
-                                       <content>
-                                          <FlowPane prefHeight="401.0" prefWidth="198.0">
-                                             <children>
-                                                <Label prefHeight="400.0" prefWidth="197.0" text="Din varukorg är tom! Använd kategorierna på den vänstra sidan eller  sökfunktionen för att hitta varor.">
-                                                   <styleClass>
-                                                      <String fx:value="info-text" />
-                                                      <String fx:value="text-larger-bold" />
-                                                   </styleClass>
-                                                </Label>
-                                             </children></FlowPane>
-                                       </content>
-                                    </ScrollPane>
-                                    <Button layoutX="617.0" layoutY="471.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="198.0" text="Gå till kassan " AnchorPane.bottomAnchor="2.0" AnchorPane.rightAnchor="0.0">
-                                       <font>
-                                          <Font size="15.0" />
-                                       </font>
-                                       <styleClass>
-                                          <String fx:value="primary-button" />
-                                          <String fx:value="text-larger-bold" />
-                                       </styleClass>
-                                       <graphic>
-                                          <ImageView fitHeight="38.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../images/creditcard.PNG" />
-                                             </image>
-                                          </ImageView>
-                                       </graphic>
-                                    </Button>
-                                    <Label layoutX="681.0" layoutY="427.0" styleClass="text-larger-bold" text="Totalt: ___" />
-                                    <ScrollPane layoutY="1.0" prefHeight="522.0" prefWidth="616.0">
-                                      <content>
-                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="519.0" prefWidth="615.0" />
-                                      </content>
-                                    </ScrollPane>
-                                 </children>
-                              </AnchorPane>
-                          </items>
-                        </SplitPane>
+                        <Label layoutX="334.0" layoutY="113.0" styleClass="text-larger-bold" text="5 kr / st" />
                      </children>
                   </AnchorPane>
                </children>
-            </StackPane>
-        </items>
-      </SplitPane>
+            </AnchorPane>
+            <SplitPane dividerPositions="0.19908814589665655" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" pickOnBounds="false" prefHeight="200.0" prefWidth="160.0">
+              <items>
+                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" pickOnBounds="false" prefHeight="150.0" prefWidth="1024.0" styleClass="white-color" SplitPane.resizableWithParent="false">
+                     <children>
+                        <ImageView fitHeight="100.0" fitWidth="199.0" layoutX="1.0" pickOnBounds="true" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="824.0" AnchorPane.topAnchor="0.0">
+                           <image>
+                              <Image url="@../images/nyimatlogo.png" />
+                           </image>
+                        </ImageView>
+                        <TextField id="ListFoodSearchField" layoutX="259.0" layoutY="46.0" prefHeight="39.0" prefWidth="281.0" promptText="Sök efter varor">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="711.0" layoutY="30.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../images/menuIcons/Hjälp.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="811.0" layoutY="30.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../images/menuIcons/MinHistorik.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="914.0" layoutY="30.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../images/menuIcons/MinaUppgifter.png" />
+                           </image>
+                        </ImageView>
+                        <Button layoutX="540.0" layoutY="46.0" minHeight="-Infinity" mnemonicParsing="false" prefHeight="39.0" prefWidth="39.0">
+                           <graphic>
+                              <ImageView fitHeight="39.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/sok.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Pane layoutX="200.0" layoutY="109.0" prefHeight="42.0" prefWidth="825.0" styleClass="grey-nuance">
+                           <children>
+                              <Pane layoutX="622.0" prefHeight="42.0" prefWidth="200.0" style="-fx-background-color: white;" styleClass="cartpane">
+                                 <children>
+                                    <ImageView fitHeight="42.0" fitWidth="49.0" layoutX="12.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/cart.PNG" />
+                                       </image>
+                                    </ImageView>
+                                    <Label layoutX="77.0" layoutY="12.0" styleClass="text-larger-bold" text="Varukorg" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="1.0" layoutY="111.0" prefHeight="39.0" prefWidth="0.0" styleClass="primary-colour" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="824.0" AnchorPane.topAnchor="111.0">
+                           <children>
+                              <ImageView fitHeight="39.0" fitWidth="38.0" layoutX="6.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/procent.PNG" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="51.0" layoutY="10.0" text="Erbjudanden" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="17.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+                  <StackPane pickOnBounds="false" prefHeight="150.0" prefWidth="200.0">
+                     <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <SplitPane dividerPositions="0.5" layoutX="149.0" layoutY="107.0" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <items>
+                                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="199.0" styleClass="grey-nuance">
+                                       <children>
+                                          <Pane layoutX="1.0" prefHeight="39.0" prefWidth="198.0" styleClass="category">
+                                             <children>
+                                                <Label layoutX="14.0" layoutY="10.0" text="Bröd">
+                                                   <font>
+                                                      <Font name="Arial" size="17.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </Pane>
+                                          <Pane layoutX="1.0" layoutY="38.0" prefHeight="39.0" prefWidth="198.0" styleClass="category">
+                                             <children>
+                                                <Label layoutX="14.0" layoutY="10.0" text="Bröd">
+                                                   <font>
+                                                      <Font name="Arial" size="17.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </Pane>
+                                          <Pane layoutX="1.0" layoutY="76.0" prefHeight="39.0" prefWidth="198.0" styleClass="category">
+                                             <children>
+                                                <Label layoutX="14.0" layoutY="10.0" text="Bröd">
+                                                   <font>
+                                                      <Font name="Arial" size="17.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </Pane>
+                                          <Pane layoutX="1.0" layoutY="114.0" prefHeight="39.0" prefWidth="198.0" styleClass="category">
+                                             <children>
+                                                <Label layoutX="14.0" layoutY="10.0" text="Bröd">
+                                                   <font>
+                                                      <Font name="Arial" size="17.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </Pane>
+                                          <Pane layoutX="2.0" layoutY="152.0" prefHeight="39.0" prefWidth="198.0" styleClass="category">
+                                             <children>
+                                                <Label layoutX="14.0" layoutY="10.0" text="Bröd">
+                                                   <font>
+                                                      <Font name="Arial" size="17.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </Pane>
+                                          <Pane layoutX="1.0" layoutY="190.0" prefHeight="39.0" prefWidth="198.0" styleClass="category">
+                                             <children>
+                                                <Label layoutX="14.0" layoutY="10.0" text="Bröd">
+                                                   <font>
+                                                      <Font name="Arial" size="17.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </AnchorPane>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                       <children>
+                                          <StackPane layoutX="-17.0" layoutY="10.0" prefHeight="520.0" prefWidth="624.0" AnchorPane.bottomAnchor="-10.0" AnchorPane.leftAnchor="-17.0" AnchorPane.rightAnchor="241.0" AnchorPane.topAnchor="10.0" />
+                                          <ScrollPane layoutY="-2.0" prefHeight="403.0" prefWidth="200.0" AnchorPane.bottomAnchor="119.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-2.0">
+                                             <content>
+                                                <FlowPane prefHeight="401.0" prefWidth="198.0">
+                                                   <children>
+                                                      <Label prefHeight="400.0" prefWidth="197.0" text="Din varukorg är tom! Använd kategorierna på den vänstra sidan eller  sökfunktionen för att hitta varor.">
+                                                         <styleClass>
+                                                            <String fx:value="info-text" />
+                                                            <String fx:value="text-larger-bold" />
+                                                         </styleClass>
+                                                      </Label>
+                                                   </children>
+                                                </FlowPane>
+                                             </content>
+                                          </ScrollPane>
+                                          <Button layoutX="617.0" layoutY="471.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="198.0" text="Gå till kassan " AnchorPane.bottomAnchor="2.0" AnchorPane.rightAnchor="0.0">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                             <styleClass>
+                                                <String fx:value="primary-button" />
+                                                <String fx:value="text-larger-bold" />
+                                             </styleClass>
+                                             <graphic>
+                                                <ImageView fitHeight="38.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/creditcard.PNG" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <Label layoutX="681.0" layoutY="427.0" styleClass="text-larger-bold" text="Totalt: ___" />
+                                          <ScrollPane layoutY="1.0" prefHeight="522.0" prefWidth="616.0">
+                                            <content>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="519.0" prefWidth="615.0" />
+                                            </content>
+                                          </ScrollPane>
+                                       </children>
+                                    </AnchorPane>
+                                </items>
+                              </SplitPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </StackPane>
+              </items>
+            </SplitPane>
+         </children>
+      </StackPane>
    </children>
 </AnchorPane>
