@@ -19,43 +19,6 @@
    <children>
       <StackPane prefHeight="680.0" prefWidth="1024.0">
          <children>
-            <AnchorPane prefHeight="680.0" prefWidth="1024.0" styleClass="lightbox-shadow">
-               <children>
-                  <AnchorPane layoutX="206.0" layoutY="141.0" prefHeight="398.0" prefWidth="626.0" style="-fx-background-color: -fx-background;">
-                     <children>
-                        <ImageView fitHeight="208.0" fitWidth="243.0" layoutX="23.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true" />
-                        <Label layoutX="294.0" layoutY="49.0" styleClass="text-larger2" text="Äpple Granny Smith Eko" />
-                        <Button layoutX="538.0" layoutY="312.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="46.0" styleClass="round-button-orange">
-                           <graphic>
-                              <ImageView fitHeight="29.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" styleClass="round-button-orange">
-                                 <image>
-                                    <Image url="@../images/Vitt_pluss.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                        <Button layoutX="383.0" layoutY="312.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="46.0" styleClass="round-button-white">
-                           <graphic>
-                              <ImageView fitHeight="28.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../images/Orange_minus.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                        <TextField alignment="CENTER" layoutX="442.0" layoutY="317.0" prefHeight="39.0" prefWidth="79.0" text="0 st" />
-                        <Label layoutX="294.0" layoutY="113.0" styleClass="text-larger-bold" text="Pris:" />
-                        <TextArea layoutX="294.0" layoutY="153.0" prefHeight="138.0" prefWidth="290.0" wrapText="true" />
-                        <ImageView fitHeight="30.0" fitWidth="36.0" layoutX="582.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/icon_close.png" />
-                           </image>
-                        </ImageView>
-                        <Label layoutX="334.0" layoutY="113.0" styleClass="text-larger-bold" text="5 kr / st" />
-                     </children>
-                  </AnchorPane>
-               </children>
-            </AnchorPane>
             <SplitPane dividerPositions="0.19908814589665655" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" pickOnBounds="false" prefHeight="200.0" prefWidth="160.0">
               <items>
                 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" pickOnBounds="false" prefHeight="150.0" prefWidth="1024.0" styleClass="white-color" SplitPane.resizableWithParent="false">
@@ -237,6 +200,43 @@
                   </StackPane>
               </items>
             </SplitPane>
+            <AnchorPane prefHeight="680.0" prefWidth="1024.0" styleClass="lightbox-shadow">
+               <children>
+                  <AnchorPane layoutX="206.0" layoutY="141.0" prefHeight="398.0" prefWidth="626.0" style="-fx-background-color: -fx-background;">
+                     <children>
+                        <ImageView fitHeight="208.0" fitWidth="243.0" layoutX="23.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label layoutX="294.0" layoutY="49.0" styleClass="text-larger2" text="Äpple Granny Smith Eko" />
+                        <Button layoutX="538.0" layoutY="312.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="46.0" styleClass="round-button-orange">
+                           <graphic>
+                              <ImageView fitHeight="29.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" styleClass="round-button-orange">
+                                 <image>
+                                    <Image url="@../images/Vitt_pluss.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button layoutX="383.0" layoutY="312.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="46.0" styleClass="round-button-white">
+                           <graphic>
+                              <ImageView fitHeight="28.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/Orange_minus.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <TextField alignment="CENTER" layoutX="442.0" layoutY="317.0" prefHeight="39.0" prefWidth="79.0" text="0 st" />
+                        <Label layoutX="294.0" layoutY="113.0" styleClass="text-larger-bold" text="Pris:" />
+                        <TextArea layoutX="294.0" layoutY="153.0" prefHeight="138.0" prefWidth="290.0" wrapText="true" />
+                        <ImageView fitHeight="30.0" fitWidth="36.0" layoutX="582.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icon_close.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="338.0" layoutY="113.0" styleClass="text-larger-bold" text="5 kr / st" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
          </children>
       </StackPane>
    </children>
