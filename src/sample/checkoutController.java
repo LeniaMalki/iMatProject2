@@ -9,10 +9,10 @@ public class checkoutController {
     @FXML private ScrollPane varukorgScrollPane;
     @FXML private Label totaltPrisLabel;
     @FXML private Button vidareKorgButton;
-    @FXML private Button tömButtom;
+    @FXML private Button tomButtom;
 
     //Kontaktuppgifter
-    @FXML private TextField förnamnTextField;
+    @FXML private TextField fornamnTextField;
     @FXML private TextField efternamnTextField;
     @FXML private TextField telefonnummerTextField;
     @FXML private Button vidareKontaktButton;
@@ -29,15 +29,15 @@ public class checkoutController {
 
     //Kontouppgifter
     @FXML private TextField kortnummerTextField;
-    @FXML private TextField utgångsdatumTextField;
-    @FXML private TextField säkerhetskodTextField;
+    @FXML private TextField utgangsdatumTextField;
+    @FXML private TextField sakerhetskodTextField;
     @FXML private Button vidareKontoButton;
     @FXML private Button tillbakaKontoButton;
 
     //Summering av order
     @FXML private Label totalbeloppLabel;
     @FXML private Label leveranstidLabel;
-    @FXML private Button slutförKöpButton;
+    @FXML private Button slutforKopButton;
     @FXML private Button tillbakaSummButton;
 
     //Köp bekräftat
