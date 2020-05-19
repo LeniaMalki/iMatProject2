@@ -62,6 +62,22 @@
   -fx-background-radius: 3px, 3px, 2px, 1px;
 }
 
+.round-button-orange{
+    -fx-background-color: FF4500;
+    -fx-border-radius: 20;
+    -fx-background-radius: 200;
+    -fx-text-fill: #FFFFFF;
+}
+
+.round-button-white{
+    -fx-background-color:  -fx-background;
+    -fx-border-color: FF4500;
+    -fx-border-radius: 20;
+    -fx-background-radius: 200;
+    -fx-text-fill: #FFFFFF;
+}
+
+
 .category{
     -fx-border-width: 1 0;
     -fx-border-color: #CCCCCC;
@@ -130,6 +146,28 @@
 
 }
 
+.lightbox-shadow{
+    -fx-background-color: rgba(0, 0, 0, 0.75)
+}
+
+.fill-orange{
+    -fx-fill: FF4500;
+}
+
+.fill-grey{
+    -fx-fill: E5E5E5;
+}
+
+.wizard-back-button{
+    -fx-background-color: E5E5E5;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-text-fill: #000000;
+    -fx-font-weight: bolder;
+    -fx-border-width: 1;
+    -fx-border-color: #CCCCCC;
+}
+
 .category:hover{
     -fx-border-width: 2 0;
     -fx-border-color: #757575;
@@ -153,3 +191,4 @@
     -fx-effect: dropshadow(gaussian, #999999, 10, 0.1, 3, 6);
 
 }
+//fdfdf
