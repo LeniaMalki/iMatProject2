@@ -1,74 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="768.0" prefWidth="818.0" styleClass="white-color" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="521.0" prefWidth="200.0" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="299.0" layoutY="40.0" styleClass="title-text" text="Mina uppgifter" AnchorPane.leftAnchor="299.0" />
-      <ImageView fitHeight="63.0" fitWidth="63.0" layoutX="213.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/menuIcons/MinaUppgifter-Orange.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="240.0" layoutY="98.0" prefHeight="42.0" prefWidth="200.0" styleClass="subtitle-text" text="Personuppgifter" AnchorPane.leftAnchor="241.0" />
-      <Label layoutX="240.0" layoutY="145.0" styleClass="formtitle" text="Förnamn" AnchorPane.leftAnchor="241.0" />
-      <TextField id="ListFoodSearchField" layoutX="240.0" layoutY="180.0" prefHeight="37.0" prefWidth="400.0" promptText="Förnamn..." AnchorPane.leftAnchor="242.0">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </TextField>
-      <Label layoutX="240.0" layoutY="230.0" styleClass="formtitle" text="Efternamn" AnchorPane.leftAnchor="242.0" />
-      <TextField id="ListFoodSearchField" layoutX="240.0" layoutY="264.0" prefHeight="20.0" prefWidth="400.0" promptText="Efternamn..." AnchorPane.leftAnchor="242.0">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </TextField>
-      <Label layoutX="240.0" layoutY="315.0" styleClass="formtitle" text="Telefonnummer" AnchorPane.leftAnchor="241.0" />
-      <TextField id="ListFoodSearchField" layoutX="240.0" layoutY="350.0" prefHeight="20.0" prefWidth="400.0" promptText="Telefonnummer..." AnchorPane.leftAnchor="242.0">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </TextField>
-      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="175.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/user.PNG" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="175.0" layoutY="478.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/cityIcon.PNG" />
-         </image>
-      </ImageView>
-      <Label layoutX="240.0" layoutY="472.0" prefHeight="42.0" prefWidth="200.0" styleClass="subtitle-text" text="Leveransuppgifter" />
-      <Label layoutX="240.0" layoutY="513.0" styleClass="formtitle" text="Gatuadress" />
-      <TextField id="ListFoodSearchField" layoutX="240.0" layoutY="546.0" prefHeight="20.0" prefWidth="400.0" promptText="Gatuadress...">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </TextField>
-      <Label layoutX="240.0" layoutY="588.0" styleClass="formtitle" text="Postnummer" />
-      <Label layoutX="240.0" layoutY="666.0" styleClass="formtitle" text="Stad" />
-      <Label layoutX="238.0" layoutY="669.0" styleClass="formtitle" />
-      <Label layoutX="240.0" layoutY="399.0" styleClass="formtitle" text="Mailadress" />
-      <TextField id="ListFoodSearchField" layoutX="240.0" layoutY="429.0" prefHeight="20.0" prefWidth="400.0" promptText="Mailadress...">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </TextField>
-      <TextField id="ListFoodSearchField" layoutX="240.0" layoutY="620.0" prefHeight="20.0" prefWidth="400.0" promptText="Postnummer...">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </TextField>
-      <TextField id="ListFoodSearchField" layoutX="240.0" layoutY="699.0" prefHeight="20.0" prefWidth="400.0" promptText="Stad...">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </TextField>
+      <Pane prefHeight="400.0" prefWidth="200.0">
+         <children>
+            <ScrollPane prefHeight="400.0" prefWidth="200.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="200.0">
+                     <children>
+                        <Label alignment="CENTER" layoutX="41.0" layoutY="152.0" prefHeight="96.0" prefWidth="119.0" style="-fx-text-alignment: center;" styleClass="text-larger-bold" text="Din varukorg är tom!" wrapText="true" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+         </children>
+      </Pane>
+      <Pane layoutY="400.0" prefHeight="121.0" prefWidth="200.0">
+         <children>
+            <Label layoutX="66.0" layoutY="29.0" styleClass="text-larger-bold" text="Totalt: ___" />
+            <Button layoutX="1.0" layoutY="70.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="198.0" text="Gå till kassan ">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="primary-button" />
+                  <String fx:value="text-larger-bold" />
+               </styleClass>
+               <graphic>
+                  <ImageView fitHeight="38.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/creditcard.PNG" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>
