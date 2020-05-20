@@ -18,6 +18,34 @@
    <children>
       <StackPane prefHeight="680.0" prefWidth="1024.0" AnchorPane.topAnchor="0.0">
          <children>
+            <AnchorPane prefHeight="680.0" prefWidth="1025.0" styleClass="lightbox-shadow">
+               <children>
+                  <AnchorPane layoutX="200.0" layoutY="143.0" prefHeight="398.0" prefWidth="626.0" styleClass="white-color">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="36.0" layoutX="582.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icon_close.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="242.0" layoutY="26.0" styleClass="title-text" text="Kundsevrice" />
+                        <ImageView fitHeight="85.0" fitWidth="86.0" layoutX="81.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/Phone.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="74.0" fitWidth="86.0" layoutX="81.0" layoutY="258.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/Mail.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="269.0" layoutY="124.0" styleClass="title-text" text="Telefon" AnchorPane.leftAnchor="274.0" />
+                        <Label layoutX="276.0" layoutY="258.0" styleClass="title-text" text="E-post" AnchorPane.leftAnchor="274.0" />
+                        <Label layoutX="274.0" layoutY="161.0" prefHeight="36.0" prefWidth="155.0" styleClass="text-larger-bold" text="+46XXXXXX" AnchorPane.leftAnchor="274.0" />
+                        <Label layoutX="274.0" layoutY="296.0" prefHeight="36.0" prefWidth="155.0" styleClass="text-larger-bold" text="iMat@mail.se" AnchorPane.leftAnchor="274.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
             <AnchorPane prefHeight="683.0" prefWidth="1025.0" styleClass="lightbox-shadow">
                <children>
                   <AnchorPane layoutX="206.0" layoutY="141.0" prefHeight="398.0" prefWidth="626.0" style="-fx-background-color: -fx-background;">
