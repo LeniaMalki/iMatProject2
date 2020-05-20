@@ -93,7 +93,7 @@
                      <graphic>
                         <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../Pictures/arrow.PNG" />
+                              <Image url="@../images/greyarrow.PNG" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -219,7 +219,7 @@
                      <graphic>
                         <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../Pictures/arrow.PNG" />
+                              <Image url="@../images/greyarrow.PNG" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -361,7 +361,7 @@
                      <graphic>
                         <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../Pictures/arrow.PNG" />
+                              <Image url="@../images/greyarrow.PNG" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -420,7 +420,7 @@
                      <graphic>
                         <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../Pictures/arrow.PNG" />
+                              <Image url="@../images/greyarrow.PNG" />
                            </image>
                         </ImageView>
                      </graphic></Button>
