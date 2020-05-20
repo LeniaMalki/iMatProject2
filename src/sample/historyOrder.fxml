@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="56.0" prefWidth="358.0" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="25.0" layoutY="18.0" style="-fx-font-weight: bold;" styleClass="text-larger" text="2020-08-03" />
+      <Label layoutX="165.0" layoutY="20.0" style="-fx-font-weight: bold;" text="38633" />
+      <Button layoutX="268.0" layoutY="16.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="66.0" styleClass="primary-button" text="Se mer..." />
+   </children>
+</AnchorPane>

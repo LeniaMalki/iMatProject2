@@ -194,10 +194,6 @@
      -fx-font-size: 30px;
      -fx-font-family: "Avenir Book";
      -fx-text-fill: #44d342;
-    -fx-stroke: black;
-    -fx-stroke-width: 5;
-    -fx-fill: aquamarine;
-
 }
 
 .transparent-button{
@@ -218,4 +214,20 @@
 
 }
 
+.orange-square-button{
+    -fx-border-color: FF4500;
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: FF4500;
+    -fx-font-family:"Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-text-fill: FFFFFF;
+}
 
+.white-square-button{
+    -fx-background-color:  -fx-background;
+    -fx-border-color: FF4500;
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+    -fx-font-family:"Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-text-fill: FF4500;
+}
