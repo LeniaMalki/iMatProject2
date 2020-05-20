@@ -159,19 +159,15 @@
                               <Image url="@../images/nyimatlogo.png" />
                            </image>
                         </ImageView>
-                        <TextField id="ListFoodSearchField" fx:id="searchBar" layoutX="259.0" layoutY="46.0" prefHeight="39.0" prefWidth="281.0" promptText="Sök efter varor">
+                        <TextField id="ListFoodSearchField" fx:id="searchBar" layoutX="259.0" layoutY="46.0" prefHeight="39.0" prefWidth="409.0" promptText="Sök efter varor...">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </TextField>
-                        <Button fx:id="searchButton" layoutX="540.0" layoutY="46.0" minHeight="-Infinity" mnemonicParsing="false" prefHeight="39.0" prefWidth="39.0">
-                           <graphic>
-                              <ImageView fitHeight="39.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../images/sok.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
+                        <Button fx:id="searchButton" layoutX="613.0" layoutY="45.0" minHeight="-Infinity" mnemonicParsing="false" prefHeight="39.0" prefWidth="55.0" styleClass="orange-square-button" text="Sök">
+                           <font>
+                              <Font name="Arial" size="18.0" />
+                           </font>
                         </Button>
                         <Pane layoutX="200.0" layoutY="110.0" prefHeight="42.0" prefWidth="825.0" styleClass="grey-nuance">
                            <children>
