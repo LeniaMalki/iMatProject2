@@ -27,7 +27,7 @@
                               <Image url="@../images/icon_close.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="242.0" layoutY="26.0" styleClass="title-text" text="Kundsevrice" />
+                        <Label layoutX="240.0" layoutY="26.0" styleClass="title-text" text="Kundservice" />
                         <ImageView fitHeight="85.0" fitWidth="86.0" layoutX="81.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../images/Phone.png" />
