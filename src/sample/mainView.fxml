@@ -18,6 +18,34 @@
    <children>
       <StackPane prefHeight="680.0" prefWidth="1024.0" AnchorPane.topAnchor="0.0">
          <children>
+            <AnchorPane prefHeight="680.0" prefWidth="1025.0" styleClass="lightbox-shadow">
+               <children>
+                  <AnchorPane layoutX="200.0" layoutY="143.0" prefHeight="398.0" prefWidth="626.0" styleClass="white-color">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="36.0" layoutX="582.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icon_close.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="240.0" layoutY="26.0" styleClass="title-text" text="Kundservice" />
+                        <ImageView fitHeight="85.0" fitWidth="86.0" layoutX="81.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/Phone.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="74.0" fitWidth="86.0" layoutX="81.0" layoutY="258.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/Mail.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="269.0" layoutY="124.0" styleClass="title-text" text="Telefon" AnchorPane.leftAnchor="274.0" />
+                        <Label layoutX="276.0" layoutY="258.0" styleClass="title-text" text="E-post" AnchorPane.leftAnchor="274.0" />
+                        <Label layoutX="274.0" layoutY="161.0" prefHeight="36.0" prefWidth="155.0" styleClass="text-larger-bold" text="+46XXXXXX" AnchorPane.leftAnchor="274.0" />
+                        <Label layoutX="274.0" layoutY="296.0" prefHeight="36.0" prefWidth="155.0" styleClass="text-larger-bold" text="iMat@mail.se" AnchorPane.leftAnchor="274.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
             <AnchorPane prefHeight="683.0" prefWidth="1025.0" styleClass="lightbox-shadow">
                <children>
                   <AnchorPane layoutX="206.0" layoutY="141.0" prefHeight="398.0" prefWidth="626.0" style="-fx-background-color: -fx-background;">
@@ -117,39 +145,29 @@
                   </AnchorPane>
                   <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" pickOnBounds="false" prefHeight="150.0" prefWidth="1024.0" styleClass="white-color">
                      <children>
+                        <Button fx:id="helpButton" layoutX="713.0" layoutY="26.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="66.0" styleClass="transparent-button">
+                           <graphic>
+                              <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../images/menuIcons/Hjälp.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
                         <ImageView fx:id="Logo" fitHeight="100.0" fitWidth="199.0" pickOnBounds="true" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="826.0" AnchorPane.topAnchor="0.0">
                            <image>
                               <Image url="@../images/nyimatlogo.png" />
                            </image>
                         </ImageView>
-                        <TextField id="ListFoodSearchField" fx:id="searchBar" layoutX="259.0" layoutY="46.0" prefHeight="39.0" prefWidth="281.0" promptText="Sök efter varor">
+                        <TextField id="ListFoodSearchField" fx:id="searchBar" layoutX="259.0" layoutY="46.0" prefHeight="39.0" prefWidth="409.0" promptText="Sök efter varor...">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </TextField>
-                        <ImageView fx:id="helpImageView" fitHeight="70.0" fitWidth="70.0" layoutX="711.0" layoutY="30.0" pickOnBounds="true">
-                           <image>
-                              <Image url="@../images/menuIcons/Hjälp.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="historyImageView" fitHeight="70.0" fitWidth="70.0" layoutX="811.0" layoutY="30.0" pickOnBounds="true">
-                           <image>
-                              <Image url="@../images/menuIcons/MinHistorik.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="personalImageView" fitHeight="62.0" fitWidth="55.0" layoutX="917.0" layoutY="35.0" pickOnBounds="true">
-                           <image>
-                              <Image url="@../images/menuIcons/MinaUppgifter.png" />
-                           </image>
-                        </ImageView>
-                        <Button fx:id="searchButton" layoutX="540.0" layoutY="46.0" minHeight="-Infinity" mnemonicParsing="false" prefHeight="39.0" prefWidth="39.0">
-                           <graphic>
-                              <ImageView fitHeight="39.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../images/sok.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
+                        <Button fx:id="searchButton" layoutX="613.0" layoutY="45.0" minHeight="-Infinity" mnemonicParsing="false" prefHeight="39.0" prefWidth="55.0" styleClass="orange-square-button" text="Sök">
+                           <font>
+                              <Font name="Arial" size="18.0" />
+                           </font>
                         </Button>
                         <Pane layoutX="200.0" layoutY="110.0" prefHeight="42.0" prefWidth="825.0" styleClass="grey-nuance">
                            <children>
@@ -179,6 +197,24 @@
                               </Label>
                            </children>
                         </Pane>
+                        <Button fx:id="historyButton" layoutX="803.0" layoutY="26.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="0.0" styleClass="transparent-button">
+                           <graphic>
+                              <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../images/menuIcons/MinHistorik.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="personalButton" layoutX="897.0" layoutY="25.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="0.0" styleClass="transparent-button">
+                           <graphic>
+                              <ImageView fitHeight="62.0" fitWidth="55.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../images/menuIcons/MinaUppgifter.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
                      </children>
                   </AnchorPane>
                   <ScrollPane layoutX="200.0" layoutY="150.0" prefHeight="531.0" prefWidth="617.0">

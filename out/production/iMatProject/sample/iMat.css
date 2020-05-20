@@ -168,26 +168,6 @@
     -fx-border-color: #CCCCCC;
 }
 
-.roundedbuttonoff{
-    -fx-background-color: E5E5E5;
-    -fx-border-radius: 30;
-    -fx-background-radius: 30;
-    -fx-text-fill: #757575;
-    -fx-font-weight: bolder;
-    -fx-border-width: 1;
-    -fx-border-color: #CCCCCC;
-
-}
-
-.roundedbuttonon{
-    -fx-background-color: FF4500;
-    -fx-border-radius: 30;
-    -fx-background-radius: 30;
-    -fx-text-fill: #FFFFFF;
-    -fx-font-weight: bolder;
-
-}
-
 .category:hover{
     -fx-border-width: 2 0;
     -fx-border-color: #757575;
@@ -199,6 +179,30 @@
     -fx-border-width: 2 0;
     -fx-border-color: #757575;
     -fx-background-color: #BBBBBB;
+}
 
+.card{
+    -fx-background-color: FFFFFF;
+    -fx-border-width: 1;
+    -fx-border-color: #999999;
+    -fx-text-fill: #000000;
+    -fx-effect: dropshadow(gaussian, #999999, 10, 0.1, 3, 6);
 
 }
+
+.text-even-larger-green{
+     -fx-font-size: 30px;
+     -fx-font-family: "Avenir Book";
+     -fx-text-fill: #44d342;
+}
+
+.transparent-button{
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: transparent;
+    -fx-font-family:"Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-text-fill: FFFFFF;
+}
+
+
