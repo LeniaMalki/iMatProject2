@@ -194,6 +194,10 @@
      -fx-font-size: 30px;
      -fx-font-family: "Avenir Book";
      -fx-text-fill: #44d342;
+    -fx-stroke: black;
+    -fx-stroke-width: 5;
+    -fx-fill: aquamarine;
+
 }
 
 .transparent-button{
@@ -203,6 +207,15 @@
     -fx-background-color: transparent;
     -fx-font-family:"Segoe UI", Helvetica, Arial, sans-serif;
     -fx-text-fill: FFFFFF;
+}
+
+.done-pane {
+
+
+    -fx-border-weight: 1px;
+    -fx-border-color: #757575;
+    -fx-background-color: #E5E5E5;
+
 }
 
 
