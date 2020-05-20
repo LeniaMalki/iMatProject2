@@ -108,7 +108,7 @@
                   <Label layoutX="202.0" layoutY="191.0" styleClass="text-larger-bold" text="Leveranstid:" AnchorPane.leftAnchor="202.0" />
                   <Label fx:id="leveranstidLabel" layoutX="350.0" layoutY="191.0" styleClass="text-larger-bold" text="Måndag 10 Maj" AnchorPane.leftAnchor="350.0" />
                   <Label fx:id="totalbeloppLabel" layoutX="308.0" layoutY="193.0" styleClass="text-larger-bold" text="360 kr" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="150.0" />
-                  <Pane layoutX="268.0" layoutY="15.0" prefHeight="100.0" prefWidth="489.0">
+                  <Pane layoutX="268.0" layoutY="15.0" prefHeight="100.0" prefWidth="489.0" AnchorPane.topAnchor="15.0">
                      <children>
                         <Line endX="567.0" layoutX="-91.0" layoutY="50.0" startX="103.0" stroke="#a19393" />
                         <Circle fill="#f79b31" layoutX="36.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
@@ -149,40 +149,25 @@
                   </Pane>
                </children>
             </AnchorPane>
-            <AnchorPane prefHeight="200.0" prefWidth="1113.0" styleClass="white-color">
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="white-color">
                <children>
-                  <Button fx:id="vidareKontaktButton" layoutX="667.0" layoutY="595.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="188.0" text="Spara &amp; gå vidare" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="40.0">
+                  <Button fx:id="tillbakaTillStartButton" layoutX="786.0" layoutY="617.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="182.0" text="Tillbaka till startsidan" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="40.0">
                      <styleClass>
                         <String fx:value="text-larger-bold" />
                         <String fx:value="roundedbuttonon" />
                      </styleClass>
                   </Button>
-                  <Label layoutX="355.0" layoutY="119.0" styleClass="text-larger2" text="Kontaktuppgifter" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="110.0" />
-                  <Button fx:id="tillbakaKontaktButton" layoutX="216.0" layoutY="452.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="130.0" styleClass="wizard-back-button" text="Tillbaka" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="40.0">
-                     <graphic>
-                        <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../../Pictures/arrow.PNG" />
-                           </image>
-                        </ImageView>
-                     </graphic></Button>
-                  <TextField fx:id="fornamnTextField" layoutX="200.0" layoutY="171.0" prefHeight="25.0" prefWidth="504.0" promptText="Förnamn..." AnchorPane.leftAnchor="200.0" />
-                  <TextField fx:id="efternamnTextField" layoutX="200.0" layoutY="228.0" prefHeight="25.0" prefWidth="504.0" promptText="Efternamn..." AnchorPane.leftAnchor="200.0" />
-                  <TextField fx:id="telefonnummerTextField" layoutX="200.0" layoutY="286.0" prefHeight="25.0" prefWidth="504.0" promptText="Telefonnummer..." AnchorPane.leftAnchor="200.0" />
-                  <Label layoutX="384.0" layoutY="174.0" styleClass="text-larger-bold" text="Förnamn" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="150.0" />
-                  <Label layoutX="200.0" layoutY="207.0" styleClass="text-larger-bold" text="Efternamn" AnchorPane.leftAnchor="200.0" />
-                  <Label layoutX="200.0" layoutY="265.0" styleClass="text-larger-bold" text="Telefonnummer" AnchorPane.leftAnchor="200.0" />
-                  <Pane layoutX="268.0" layoutY="15.0" prefHeight="100.0" prefWidth="489.0">
+                  <Pane layoutX="268.0" layoutY="30.0" prefHeight="100.0" prefWidth="489.0" AnchorPane.topAnchor="15.0">
                      <children>
                         <Line endX="567.0" layoutX="-91.0" layoutY="50.0" startX="103.0" stroke="#a19393" />
                         <Circle fill="#f79b31" layoutX="36.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
                         <Circle fill="DODGERBLUE" layoutX="244.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
-                        <Circle fill="ORANGERED" layoutX="140.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+                        <Circle fill="DODGERBLUE" layoutX="140.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
                         <Circle fill="DODGERBLUE" layoutX="452.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
                         <Circle fill="DODGERBLUE" layoutX="348.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
                         <ImageView fitHeight="42.0" fitWidth="41.0" layoutX="120.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/Wizard/Account_white.png" />
+                              <Image url="@../images/Wizard/Account_grey.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="42.0" fitWidth="41.0" layoutX="224.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
@@ -211,24 +196,26 @@
                         <Polyline fill="#ffffff00" layoutX="391.0" layoutY="63.0" points="0.0, -24.0, 12.0, -12.0, 0.0, 0.0, 0.0, 0.0" stroke="#b5b2b2" strokeType="INSIDE" />
                      </children>
                   </Pane>
+                  <Pane layoutX="251.0" layoutY="122.0" prefHeight="249.0" prefWidth="524.0" styleClass="done-pane">
+                     <children>
+                        <ImageView fitHeight="113.0" fitWidth="122.0" layoutX="201.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/tick.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="78.0" fitWidth="516.0" layoutX="4.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/done_text.PNG" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
                </children>
             </AnchorPane>
-            <AnchorPane prefHeight="200.0" prefWidth="1025.0" styleClass="white-color">
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="white-color">
                <children>
-                  <Label layoutX="200.0" layoutY="130.0" styleClass="text-larger2" text="Kontouppgifter" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="110.0" />
-                  <Button fx:id="vidareKontoButton" layoutX="794.0" layoutY="468.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="188.0" text="Spara &amp; gå vidare     " AnchorPane.bottomAnchor="26.0" AnchorPane.rightAnchor="40.0">
-                     <styleClass>
-                        <String fx:value="text-larger-bold" />
-                        <String fx:value="roundedbuttonon" />
-                     </styleClass>
-                  </Button>
-                  <TextField fx:id="kortnummerTextField" layoutX="200.0" layoutY="171.0" prefHeight="25.0" prefWidth="451.0" promptText="1111 2222 3333 4444" AnchorPane.leftAnchor="200.0" />
-                  <TextField fx:id="utgangsdatumTextField" layoutX="200.0" layoutY="229.0" prefHeight="25.0" prefWidth="451.0" promptText="MM/ÅÅ" AnchorPane.leftAnchor="200.0" />
-                  <TextField fx:id="sakerhetskodTextField" layoutX="198.0" layoutY="285.0" prefHeight="25.0" prefWidth="451.0" promptText="123" AnchorPane.leftAnchor="198.0" />
-                  <Label layoutX="212.0" layoutY="171.0" styleClass="text-larger-bold" text="Kortnummer" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="150.0" />
-                  <Label layoutX="200.0" layoutY="207.0" styleClass="text-larger-bold" text="Utgångsdatum" AnchorPane.leftAnchor="200.0" />
-                  <Label layoutX="198.0" layoutY="264.0" styleClass="text-larger-bold" text="Säkerhetskod" AnchorPane.leftAnchor="198.0" />
-                  <Button fx:id="tillbakaSummButton1" layoutX="38.0" layoutY="465.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="130.0" styleClass="wizard-back-button" text="Tillbaka">
+                  <Label layoutX="223.0" layoutY="95.0" styleClass="text-larger2" text="Leveransuppgifter" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="110.0" />
+                  <Button fx:id="tillbakaLeveransButton" layoutX="127.0" layoutY="464.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="130.0" styleClass="wizard-back-button" text="Tillbaka" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="40.0">
                      <graphic>
                         <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -237,14 +224,32 @@
                         </ImageView>
                      </graphic>
                   </Button>
+                  <Button fx:id="vidareLeveransButton" layoutX="796.0" layoutY="467.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="182.0" text="Spara &amp; gå vidare" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="40.0">
+                     <styleClass>
+                        <String fx:value="text-larger-bold" />
+                        <String fx:value="roundedbuttonon" />
+                     </styleClass>
+                  </Button>
+                  <TextField fx:id="adressTextField" layoutX="200.0" layoutY="170.0" prefHeight="25.0" prefWidth="281.0" AnchorPane.leftAnchor="200.0" />
+                  <TextField fx:id="postnummerTextField" layoutX="200.0" layoutY="226.0" prefHeight="25.0" prefWidth="281.0" AnchorPane.leftAnchor="200.0" />
+                  <TextField fx:id="stadTextField" layoutX="200.0" layoutY="278.0" prefHeight="25.0" prefWidth="281.0" AnchorPane.leftAnchor="200.0" />
+                  <Label layoutX="200.0" layoutY="170.0" styleClass="text-larger-bold" text="Adress" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="150.0" />
+                  <Label layoutX="200.0" layoutY="206.0" styleClass="text-larger-bold" text="Postnummer" AnchorPane.leftAnchor="200.0" />
+                  <Label layoutX="200.0" layoutY="259.0" styleClass="text-larger-bold" text="Stad" AnchorPane.leftAnchor="200.0" />
+                  <Label layoutX="597.0" layoutY="275.0" styleClass="text-larger-bold" text="Tid" AnchorPane.leftAnchor="600.0" />
+                  <RadioButton fx:id="leveransdag1RadioButton" layoutX="594.0" layoutY="186.0" mnemonicParsing="false" text="Måndag 5 juni" AnchorPane.leftAnchor="600.0" />
+                  <RadioButton fx:id="leveransdag2RadioButton" layoutX="594.0" layoutY="213.0" mnemonicParsing="false" text="Onsdag 7 juni" AnchorPane.leftAnchor="600.0" />
+                  <Spinner layoutX="598.0" layoutY="298.0" prefHeight="25.0" prefWidth="130.0" AnchorPane.leftAnchor="600.0" />
+                  <Label layoutX="598.0" layoutY="150.0" styleClass="text-larger-bold" text="Leveransdag" AnchorPane.leftAnchor="600.0" />
+                  <RadioButton fx:id="leveransdag2RadioButton1" layoutX="594.0" layoutY="240.0" mnemonicParsing="false" text="Fredag 9 juni" AnchorPane.leftAnchor="600.0" />
                   <Pane layoutX="268.0" layoutY="30.0" prefHeight="100.0" prefWidth="489.0" AnchorPane.topAnchor="15.0">
                      <children>
                         <Line endX="567.0" layoutX="-91.0" layoutY="50.0" startX="103.0" stroke="#a19393" />
                         <Circle fill="#f79b31" layoutX="36.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
-                        <Circle fill="DODGERBLUE" layoutX="244.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
+                        <Circle fill="ORANGERED" layoutX="244.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
                         <Circle fill="DODGERBLUE" layoutX="140.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
                         <Circle fill="DODGERBLUE" layoutX="452.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
-                        <Circle fill="ORANGERED" layoutX="348.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+                        <Circle fill="DODGERBLUE" layoutX="348.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
                         <ImageView fitHeight="42.0" fitWidth="41.0" layoutX="120.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../images/Wizard/Account_grey.png" />
@@ -252,12 +257,12 @@
                         </ImageView>
                         <ImageView fitHeight="42.0" fitWidth="41.0" layoutX="224.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/Wizard/Shipping_grey.png" />
+                              <Image url="@../images/Wizard/Shipping_white.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="42.0" fitWidth="41.0" layoutX="328.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/Wizard/Payment_white.png" />
+                              <Image url="@../images/Wizard/Payment_grey.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="35.0" fitWidth="31.0" layoutX="437.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
@@ -337,10 +342,22 @@
                   </Pane>
                </children>
             </AnchorPane>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="white-color">
+            <AnchorPane prefHeight="200.0" prefWidth="1025.0" styleClass="white-color">
                <children>
-                  <Label layoutX="223.0" layoutY="95.0" styleClass="text-larger2" text="Leveransuppgifter" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="110.0" />
-                  <Button fx:id="tillbakaLeveransButton" layoutX="127.0" layoutY="464.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="130.0" styleClass="wizard-back-button" text="Tillbaka" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="40.0">
+                  <Label layoutX="200.0" layoutY="130.0" styleClass="text-larger2" text="Kontouppgifter" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="110.0" />
+                  <Button fx:id="vidareKontoButton" layoutX="794.0" layoutY="468.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="188.0" text="Spara &amp; gå vidare     " AnchorPane.bottomAnchor="26.0" AnchorPane.rightAnchor="40.0">
+                     <styleClass>
+                        <String fx:value="text-larger-bold" />
+                        <String fx:value="roundedbuttonon" />
+                     </styleClass>
+                  </Button>
+                  <TextField fx:id="kortnummerTextField" layoutX="200.0" layoutY="171.0" prefHeight="25.0" prefWidth="451.0" promptText="1111 2222 3333 4444" AnchorPane.leftAnchor="200.0" />
+                  <TextField fx:id="utgangsdatumTextField" layoutX="200.0" layoutY="229.0" prefHeight="25.0" prefWidth="451.0" promptText="MM/ÅÅ" AnchorPane.leftAnchor="200.0" />
+                  <TextField fx:id="sakerhetskodTextField" layoutX="198.0" layoutY="285.0" prefHeight="25.0" prefWidth="451.0" promptText="123" AnchorPane.leftAnchor="198.0" />
+                  <Label layoutX="212.0" layoutY="171.0" styleClass="text-larger-bold" text="Kortnummer" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="150.0" />
+                  <Label layoutX="200.0" layoutY="207.0" styleClass="text-larger-bold" text="Utgångsdatum" AnchorPane.leftAnchor="200.0" />
+                  <Label layoutX="198.0" layoutY="264.0" styleClass="text-larger-bold" text="Säkerhetskod" AnchorPane.leftAnchor="198.0" />
+                  <Button fx:id="tillbakaSummButton1" layoutX="38.0" layoutY="465.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="130.0" styleClass="wizard-back-button" text="Tillbaka">
                      <graphic>
                         <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -349,32 +366,14 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="vidareLeveransButton" layoutX="796.0" layoutY="467.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="182.0" text="Spara &amp; gå vidare" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="40.0">
-                     <styleClass>
-                        <String fx:value="text-larger-bold" />
-                        <String fx:value="roundedbuttonon" />
-                     </styleClass>
-                  </Button>
-                  <TextField fx:id="adressTextField" layoutX="200.0" layoutY="170.0" prefHeight="25.0" prefWidth="281.0" AnchorPane.leftAnchor="200.0" />
-                  <TextField fx:id="postnummerTextField" layoutX="200.0" layoutY="226.0" prefHeight="25.0" prefWidth="281.0" AnchorPane.leftAnchor="200.0" />
-                  <TextField fx:id="stadTextField" layoutX="200.0" layoutY="278.0" prefHeight="25.0" prefWidth="281.0" AnchorPane.leftAnchor="200.0" />
-                  <Label layoutX="200.0" layoutY="170.0" styleClass="text-larger-bold" text="Adress" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="150.0" />
-                  <Label layoutX="200.0" layoutY="206.0" styleClass="text-larger-bold" text="Postnummer" AnchorPane.leftAnchor="200.0" />
-                  <Label layoutX="200.0" layoutY="259.0" styleClass="text-larger-bold" text="Stad" AnchorPane.leftAnchor="200.0" />
-                  <Label layoutX="597.0" layoutY="275.0" styleClass="text-larger-bold" text="Tid" AnchorPane.leftAnchor="600.0" />
-                  <RadioButton fx:id="leveransdag1RadioButton" layoutX="594.0" layoutY="186.0" mnemonicParsing="false" text="Måndag 5 juni" AnchorPane.leftAnchor="600.0" />
-                  <RadioButton fx:id="leveransdag2RadioButton" layoutX="594.0" layoutY="213.0" mnemonicParsing="false" text="Onsdag 7 juni" AnchorPane.leftAnchor="600.0" />
-                  <Spinner layoutX="598.0" layoutY="298.0" prefHeight="25.0" prefWidth="130.0" AnchorPane.leftAnchor="600.0" />
-                  <Label layoutX="598.0" layoutY="150.0" styleClass="text-larger-bold" text="Leveransdag" AnchorPane.leftAnchor="600.0" />
-                  <RadioButton fx:id="leveransdag2RadioButton1" layoutX="594.0" layoutY="240.0" mnemonicParsing="false" text="Fredag 9 juni" AnchorPane.leftAnchor="600.0" />
                   <Pane layoutX="268.0" layoutY="30.0" prefHeight="100.0" prefWidth="489.0" AnchorPane.topAnchor="15.0">
                      <children>
                         <Line endX="567.0" layoutX="-91.0" layoutY="50.0" startX="103.0" stroke="#a19393" />
                         <Circle fill="#f79b31" layoutX="36.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
-                        <Circle fill="ORANGERED" layoutX="244.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+                        <Circle fill="DODGERBLUE" layoutX="244.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
                         <Circle fill="DODGERBLUE" layoutX="140.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
                         <Circle fill="DODGERBLUE" layoutX="452.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
-                        <Circle fill="DODGERBLUE" layoutX="348.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
+                        <Circle fill="ORANGERED" layoutX="348.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
                         <ImageView fitHeight="42.0" fitWidth="41.0" layoutX="120.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../images/Wizard/Account_grey.png" />
@@ -382,12 +381,12 @@
                         </ImageView>
                         <ImageView fitHeight="42.0" fitWidth="41.0" layoutX="224.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/Wizard/Shipping_white.png" />
+                              <Image url="@../images/Wizard/Shipping_grey.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="42.0" fitWidth="41.0" layoutX="328.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/Wizard/Payment_grey.png" />
+                              <Image url="@../images/Wizard/Payment_white.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="35.0" fitWidth="31.0" layoutX="437.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
@@ -408,25 +407,40 @@
                   </Pane>
                </children>
             </AnchorPane>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="white-color">
+            <AnchorPane prefHeight="200.0" prefWidth="1113.0" styleClass="white-color">
                <children>
-                  <Button fx:id="tillbakaTillStartButton" layoutX="786.0" layoutY="617.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="182.0" text="Tillbaka till startsidan" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="40.0">
+                  <Button fx:id="vidareKontaktButton" layoutX="667.0" layoutY="595.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="188.0" text="Spara &amp; gå vidare" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="40.0">
                      <styleClass>
                         <String fx:value="text-larger-bold" />
                         <String fx:value="roundedbuttonon" />
                      </styleClass>
                   </Button>
-                  <Pane layoutX="268.0" layoutY="30.0" prefHeight="100.0" prefWidth="489.0" AnchorPane.topAnchor="15.0">
+                  <Label layoutX="355.0" layoutY="119.0" styleClass="text-larger2" text="Kontaktuppgifter" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="110.0" />
+                  <Button fx:id="tillbakaKontaktButton" layoutX="216.0" layoutY="452.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="130.0" styleClass="wizard-back-button" text="Tillbaka" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="40.0">
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../Pictures/arrow.PNG" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <TextField fx:id="fornamnTextField" layoutX="200.0" layoutY="171.0" prefHeight="25.0" prefWidth="504.0" promptText="Förnamn..." AnchorPane.leftAnchor="200.0" />
+                  <TextField fx:id="efternamnTextField" layoutX="200.0" layoutY="228.0" prefHeight="25.0" prefWidth="504.0" promptText="Efternamn..." AnchorPane.leftAnchor="200.0" />
+                  <TextField fx:id="telefonnummerTextField" layoutX="200.0" layoutY="286.0" prefHeight="25.0" prefWidth="504.0" promptText="Telefonnummer..." AnchorPane.leftAnchor="200.0" />
+                  <Label layoutX="384.0" layoutY="174.0" styleClass="text-larger-bold" text="Förnamn" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="150.0" />
+                  <Label layoutX="200.0" layoutY="207.0" styleClass="text-larger-bold" text="Efternamn" AnchorPane.leftAnchor="200.0" />
+                  <Label layoutX="200.0" layoutY="265.0" styleClass="text-larger-bold" text="Telefonnummer" AnchorPane.leftAnchor="200.0" />
+                  <Pane layoutX="268.0" layoutY="15.0" prefHeight="100.0" prefWidth="489.0">
                      <children>
                         <Line endX="567.0" layoutX="-91.0" layoutY="50.0" startX="103.0" stroke="#a19393" />
                         <Circle fill="#f79b31" layoutX="36.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
                         <Circle fill="DODGERBLUE" layoutX="244.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
-                        <Circle fill="DODGERBLUE" layoutX="140.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
+                        <Circle fill="ORANGERED" layoutX="140.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
                         <Circle fill="DODGERBLUE" layoutX="452.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
                         <Circle fill="DODGERBLUE" layoutX="348.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
                         <ImageView fitHeight="42.0" fitWidth="41.0" layoutX="120.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/Wizard/Account_grey.png" />
+                              <Image url="@../images/Wizard/Account_white.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="42.0" fitWidth="41.0" layoutX="224.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
@@ -453,20 +467,6 @@
                         <Polyline fill="#ffffff00" layoutX="184.0" layoutY="63.0" points="0.0, -24.0, 12.0, -12.0, 0.0, 0.0, 0.0, 0.0" stroke="#b5b2b2" strokeType="INSIDE" />
                         <Polyline fill="#ffffff00" layoutX="288.0" layoutY="62.0" points="0.0, -24.0, 12.0, -12.0, 0.0, 0.0, 0.0, 0.0" stroke="#b5b2b2" strokeType="INSIDE" />
                         <Polyline fill="#ffffff00" layoutX="391.0" layoutY="63.0" points="0.0, -24.0, 12.0, -12.0, 0.0, 0.0, 0.0, 0.0" stroke="#b5b2b2" strokeType="INSIDE" />
-                     </children>
-                  </Pane>
-                  <Pane layoutX="251.0" layoutY="122.0" prefHeight="249.0" prefWidth="524.0" styleClass="done-pane">
-                     <children>
-                        <ImageView fitHeight="113.0" fitWidth="122.0" layoutX="201.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/tick.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="78.0" fitWidth="516.0" layoutX="4.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/done_text.PNG" />
-                           </image>
-                        </ImageView>
                      </children>
                   </Pane>
                </children>
