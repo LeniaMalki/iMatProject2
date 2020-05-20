@@ -201,7 +201,7 @@
     -fx-border-width: 0;
     -fx-background-radius: 0;
     -fx-background-color: transparent;
-    -fx-font-family:"Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-family:"Avenir Book", Helvetica, Arial, sans-serif;
     -fx-text-fill: FFFFFF;
 }
 
@@ -219,7 +219,7 @@
     -fx-border-width: 0;
     -fx-background-radius: 0;
     -fx-background-color: FF4500;
-    -fx-font-family:"Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-family:"Avenir Book", Helvetica, Arial, sans-serif;
     -fx-text-fill: FFFFFF;
 }
 
@@ -228,6 +228,6 @@
     -fx-border-color: FF4500;
     -fx-border-width: 0;
     -fx-background-radius: 0;
-    -fx-font-family:"Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-family:"Avenir Book", Helvetica, Arial, sans-serif;
     -fx-text-fill: FF4500;
 }
