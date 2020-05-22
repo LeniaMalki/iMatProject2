@@ -87,7 +87,7 @@
                <children>
                   <AnchorPane layoutX="1.0" layoutY="150.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="531.0" prefWidth="199.0" styleClass="grey-nuance">
                      <children>
-                        <Pane layoutX="1.0" prefHeight="39.0" prefWidth="198.0" styleClass="category">
+                        <Pane fx:id="Category" layoutX="1.0" prefHeight="39.0" prefWidth="198.0" styleClass="category">
                            <children>
                               <Label layoutX="14.0" layoutY="10.0" text="Bröd">
                                  <font>
@@ -183,7 +183,7 @@
                               </Pane>
                            </children>
                         </Pane>
-                        <Pane layoutY="111.0" prefHeight="39.0" prefWidth="0.0" styleClass="primary-colour" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="825.0" AnchorPane.topAnchor="111.0">
+                        <Pane fx:id="dealsCategory" layoutY="111.0" prefHeight="39.0" prefWidth="0.0" styleClass="primary-colour" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="825.0" AnchorPane.topAnchor="111.0">
                            <children>
                               <ImageView fitHeight="39.0" fitWidth="38.0" layoutX="5.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -206,12 +206,15 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button fx:id="personalButton" layoutX="897.0" layoutY="25.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="0.0" styleClass="transparent-button" />
-                        <ImageView fitHeight="62.0" fitWidth="55.0" layoutX="932.0" layoutY="34.0" pickOnBounds="true">
-                           <image>
-                              <Image url="@../images/menuIcons/MinaUppgifter.png" />
-                           </image>
-                        </ImageView>
+                        <Button fx:id="personalButton" layoutX="897.0" layoutY="25.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="0.0" styleClass="transparent-button">
+                           <graphic>
+                              <ImageView fitHeight="62.0" fitWidth="55.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../images/menuIcons/MinaUppgifter.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
                      </children>
                   </AnchorPane>
                   <ScrollPane layoutX="200.0" layoutY="150.0" prefHeight="531.0" prefWidth="617.0">

@@ -134,7 +134,7 @@
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="530.0" prefWidth="815.0">
                            <children>
-                              <ScrollPane layoutX="24.0" layoutY="72.0" prefHeight="415.0" prefWidth="358.0">
+                              <ScrollPane fx:id="scrollOrders" layoutX="24.0" layoutY="72.0" prefHeight="415.0" prefWidth="358.0">
                                  <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="378.0" styleClass="grey-nuance">
                                        <children>
@@ -156,11 +156,11 @@
                                     </AnchorPane>
                                  </content>
                               </ScrollPane>
-                              <ScrollPane layoutX="423.0" layoutY="72.0" prefHeight="415.0" prefWidth="358.0">
+                              <ScrollPane fx:id="scrollOrderDetails" layoutX="423.0" layoutY="72.0" prefHeight="415.0" prefWidth="358.0">
                                  <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="399.0" prefWidth="378.0" styleClass="grey-nuance">
                                        <children>
-                                          <Label layoutX="18.0" layoutY="64.0" prefHeight="150.0" prefWidth="307.0" style="-fx-text-alignment: center;" styleClass="title-text" text="Välj en order i listan till vänster! " wrapText="true" />
+                                          <Label fx:id="emptyLabel" layoutX="18.0" layoutY="64.0" prefHeight="150.0" prefWidth="307.0" style="-fx-text-alignment: center;" styleClass="title-text" text="Välj en order i listan till vänster! " wrapText="true" />
                                        </children>
                                     </AnchorPane>
                                  </content>
@@ -168,7 +168,7 @@
                               <Label layoutX="31.0" layoutY="42.0" styleClass="text-larger-bold" text="Datum" />
                               <Label layoutX="175.0" layoutY="42.0" styleClass="text-larger-bold" text="Order" />
                               <Label layoutX="423.0" layoutY="42.0" styleClass="text-larger-bold" text="Orderdetaljer" />
-                              <Button layoutX="608.0" layoutY="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="173.0" styleClass="roundedbuttonoff" text="Lägg till hela ordern       ">
+                              <Button fx:id="addOrderButton" layoutX="608.0" layoutY="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="173.0" styleClass="roundedbuttonoff" text="Lägg till hela ordern       ">
                                  <font>
                                     <Font size="13.0" />
                                  </font>
