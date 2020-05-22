@@ -127,21 +127,6 @@
                               <Font size="18.0" />
                            </font>
                         </TextField>
-                        <ImageView fx:id="helpImageView" fitHeight="70.0" fitWidth="70.0" layoutX="711.0" layoutY="30.0" pickOnBounds="true">
-                           <image>
-                              <Image url="@../images/menuIcons/Hjälp.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="historyImageView" fitHeight="70.0" fitWidth="70.0" layoutX="811.0" layoutY="30.0" pickOnBounds="true">
-                           <image>
-                              <Image url="@../images/menuIcons/MinHistorik.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="personalImageView" fitHeight="62.0" fitWidth="55.0" layoutX="917.0" layoutY="35.0" pickOnBounds="true">
-                           <image>
-                              <Image url="@../images/menuIcons/MinaUppgifter.png" />
-                           </image>
-                        </ImageView>
                         <Pane layoutX="200.0" layoutY="110.0" prefHeight="42.0" prefWidth="825.0" styleClass="grey-nuance">
                            <children>
                               <Pane layoutX="615.0" prefHeight="42.0" prefWidth="210.0" style="-fx-background-color: white;" styleClass="cartpane">
@@ -156,7 +141,7 @@
                               </Pane>
                            </children>
                         </Pane>
-                        <Pane layoutY="111.0" prefHeight="39.0" prefWidth="0.0" styleClass="primary-colour" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="825.0" AnchorPane.topAnchor="111.0">
+                        <Pane fx:id="dealsCategory" layoutY="111.0" prefHeight="39.0" prefWidth="0.0" styleClass="primary-colour" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="825.0" AnchorPane.topAnchor="111.0">
                            <children>
                               <ImageView fitHeight="39.0" fitWidth="38.0" layoutX="5.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -170,6 +155,33 @@
                               </Label>
                            </children>
                         </Pane>
+                        <Button fx:id="helpButton" layoutX="713.0" layoutY="26.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="66.0" styleClass="transparent-button">
+                           <graphic>
+                              <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../images/menuIcons/Hjälp.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="historyButton" layoutX="803.0" layoutY="26.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="0.0" styleClass="transparent-button">
+                           <graphic>
+                              <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../images/menuIcons/MinHistorik.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="personalButton" layoutX="897.0" layoutY="25.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="0.0" styleClass="transparent-button">
+                           <graphic>
+                              <ImageView fitHeight="62.0" fitWidth="55.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../images/menuIcons/MinaUppgifter.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
                      </children>
                   </AnchorPane>
                   <ScrollPane layoutX="200.0" layoutY="150.0" prefHeight="531.0" prefWidth="617.0">
