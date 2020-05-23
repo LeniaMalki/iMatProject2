@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.scene.shape.Circle;
 
 public class checkoutController {
 
@@ -57,6 +58,14 @@ public class checkoutController {
 
         //Step 6 - Ditt köp är bekräftat
     @FXML private Button backToStoreButton;
+
+    // Wizard
+    @FXML private Circle cartCircle;
+    @FXML private Circle contactCircle;
+    @FXML private Circle deliveryCircle;
+    @FXML private Circle accountCircle;
+    @FXML private Circle summaryCircle;
+
 
 
 }
