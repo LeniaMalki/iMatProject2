@@ -2,45 +2,70 @@ package sample;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
+import javafx.scene.shape.Circle;
 
 public class checkoutController {
 
-    //Din varukorg
+    //Framework
+    @FXML private ImageView Logo;
+    @FXML private Pane dealsCategory;
+    @FXML private TextField searchBar;
+    @FXML private Button searchButton;
+    @FXML private Button helpButton;
+    @FXML private Button historyButton;
+    @FXML private Button personalButton;
+
+    //Main stage
+
+        //Step 1 - Din varukorg
+    @FXML private Button cartContinueButton;
     @FXML private ScrollPane varukorgScrollPane;
-    @FXML private Label totaltPrisLabel;
-    @FXML private Button vidareKorgButton;
-    @FXML private Button tomButtom;
+    @FXML private Label totalPriceLabel;
+    @FXML private Button emptyButtom;
 
-    //Kontaktuppgifter
-    @FXML private TextField fornamnTextField;
-    @FXML private TextField efternamnTextField;
-    @FXML private TextField telefonnummerTextField;
-    @FXML private Button vidareKontaktButton;
-    @FXML private Button tillbakaKontaktButton;
+        //Step 2 - Kontaktuppgifter
+    @FXML private TextField nameTextField;
+    @FXML private TextField surnameTextField;
+    @FXML private TextField phoneNumberTextField;
+    @FXML private Button contactContinueButton;
+    @FXML private Button contactBackButton;
 
-    //Leveransuppgifter
-    @FXML private TextField adressTextField;
-    @FXML private TextField postnummerTextField;
-    @FXML private TextField stadTextField;
-    @FXML private RadioButton leveransdag1RadioButton;
-    @FXML private RadioButton leveransdag2RadioButton;
-    @FXML private Button vidareLeveransButton;
-    @FXML private Button tillbakaLeveransButton;
+        //Step 3 - Leveransuppgifter
+    @FXML private TextField addressTextField;
+    @FXML private TextField postCodeTextField;
+    @FXML private TextField cityTextField;
+    @FXML private RadioButton deliveryDay1RadioButton;
+    @FXML private RadioButton deliveryDay2RadioButton;
+    @FXML private RadioButton deliveryDay3RadioButton;
+    @FXML private Button deliveryContinueButton;
+    @FXML private Button deliveryBackButton;
+    @FXML private Spinner timeSpinner;
 
-    //Kontouppgifter
-    @FXML private TextField kortnummerTextField;
-    @FXML private TextField utgangsdatumTextField;
-    @FXML private TextField sakerhetskodTextField;
-    @FXML private Button vidareKontoButton;
-    @FXML private Button tillbakaKontoButton;
+        //Step 4 - Kontouppgifter
+    @FXML private TextField cardNumberTextField;
+    @FXML private TextField expiryDateTextField;
+    @FXML private TextField securityCodeTextField;
+    @FXML private Button accountContinueButton;
+    @FXML private Button accountBackButton;
 
-    //Summering av order
-    @FXML private Label totalbeloppLabel;
-    @FXML private Label leveranstidLabel;
-    @FXML private Button slutforKopButton;
-    @FXML private Button tillbakaSummButton;
+        //Step 5 - Summering av order
+    @FXML private Label totalPriceAmountLabel;
+    @FXML private Label deliveryDateLabel;
+    @FXML private Button completePurchaseButton;
+    @FXML private Button summaryBackButton;
 
-    //Köp bekräftat
-    @FXML private Button tillbakaTillStartButton;
+        //Step 6 - Ditt köp är bekräftat
+    @FXML private Button backToStoreButton;
+
+    // Wizard
+    @FXML private Circle cartCircle;
+    @FXML private Circle contactCircle;
+    @FXML private Circle deliveryCircle;
+    @FXML private Circle accountCircle;
+    @FXML private Circle summaryCircle;
+
+
 
 }
