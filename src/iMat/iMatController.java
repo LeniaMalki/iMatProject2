@@ -26,7 +26,7 @@ public class iMatController implements Initializable {
 
     private Button selectedButton;
 
-    private Parent homeView;
+    private Parent mainView;
     private Parent personalView;
     private Parent historyView;
     private Parent checkoutView;
@@ -36,28 +36,24 @@ public class iMatController implements Initializable {
     private personalController personalController;
     private historyController historyController;
     private checkoutController checkoutController;
-    private helpController helpController;
     private searchController searchController;
 
     public void initialize(URL location, ResourceBundle resources) {
         instance = this;
         FXMLLoader loader;
         try {
-            loader = new FXMLLoader(getClass().getResource("/homeView.fxml"));
-            homeView = loader.load();
-            loader = new FXMLLoader(getClass().getResource("/personalView.fxml"));
+            loader = new FXMLLoader(getClass().getResource("mainView.fxml"));
+            mainView = loader.load();
+            loader = new FXMLLoader(getClass().getResource("personalView.fxml"));
             personalView = loader.load();
             personalController = loader.getController();
-            loader = new FXMLLoader(getClass().getResource("/historyView.fxml"));
+            loader = new FXMLLoader(getClass().getResource("historyView.fxml"));
             historyView = loader.load();
             historyController = loader.getController();
-            loader = new FXMLLoader(getClass().getResource("/checkoutView.fxml"));
+            loader = new FXMLLoader(getClass().getResource("checkoutView.fxml"));
             checkoutView = loader.load();
             checkoutController = loader.getController();
-            loader = new FXMLLoader(getClass().getResource("/helpView.fxml"));
-            helpView = loader.load();
-            helpController = loader.getController();
-            loader = new FXMLLoader(getClass().getResource("/searchView.fxml"));
+            loader = new FXMLLoader(getClass().getResource("searchView.fxml"));
             searchView = loader.load();
             searchController = loader.getController();
 
@@ -77,8 +73,8 @@ public class iMatController implements Initializable {
         mainStackpane.getChildren().add(newView);
 
         if(selectedButton != null) {
-            selectedButton.getStyleClass().remove("buttonHighlight");
-            newButton.getStyleClass().add("buttonHighlight");
+            /*selectedButton.getStyleClass().remove("buttonHighlight");
+            newButton.getStyleClass().add("buttonHighlight");*/
             selectedButton = newButton;
         }
     }
