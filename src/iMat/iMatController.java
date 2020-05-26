@@ -6,6 +6,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.Parent;
+import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 
 import java.util.ResourceBundle;
@@ -15,14 +21,35 @@ public class iMatController implements Initializable {
 
     private static iMatController instance;
 
-    @FXML
-    private StackPane mainStackpane;
+    @FXML private StackPane mainStackpane;
 
-    @FXML
-    private Button homeButton;
+    @FXML private ScrollPane historyPane;
+    @FXML private AnchorPane manePane2;
+    @FXML private AnchorPane manePane3;
+    @FXML private AnchorPane wizard1;
+//    @FXML
+//    private Button homeButton;
 
-    @FXML
-    private Button personalButton;
+    //Framework
+    @FXML private ImageView Logo;
+    @FXML private Pane dealsCategory;
+    @FXML private TextField searchBar;
+    @FXML private Button searchButton;
+    @FXML private Button helpButton;
+    @FXML private Button historyButton;
+    @FXML private Button personalButton;
+
+    //Cart
+    @FXML private ScrollPane scrollCart;
+    @FXML private Label totalPriceLabel;
+    @FXML private Button checkoutButton;
+
+    //Categories
+    @FXML private Pane Category;
+
+    //Main stage
+    @FXML private ScrollPane profilePane;
+    @FXML private Pane Card;
 
     private Button selectedButton;
 
@@ -39,29 +66,29 @@ public class iMatController implements Initializable {
     private searchController searchController;
 
     public void initialize(URL location, ResourceBundle resources) {
-        instance = this;
-        FXMLLoader loader;
-        try {
-            loader = new FXMLLoader(getClass().getResource("mainView.fxml"));
-            mainView = loader.load();
-            loader = new FXMLLoader(getClass().getResource("personalView.fxml"));
-            personalView = loader.load();
-            personalController = loader.getController();
-            loader = new FXMLLoader(getClass().getResource("historyView.fxml"));
-            historyView = loader.load();
-            historyController = loader.getController();
-            loader = new FXMLLoader(getClass().getResource("checkoutView.fxml"));
-            checkoutView = loader.load();
-            checkoutController = loader.getController();
-            loader = new FXMLLoader(getClass().getResource("searchView.fxml"));
-            searchView = loader.load();
-            searchController = loader.getController();
-
-
-        } catch (Exception e){
-            e.printStackTrace();
-            System.exit(0);
-        }
+//        instance = this;
+//        FXMLLoader loader;
+//        try {
+//            loader = new FXMLLoader(getClass().getResource("mainView.fxml"));
+//            mainView = loader.load();
+//            loader = new FXMLLoader(getClass().getResource("personalView.fxml"));
+//            personalView = loader.load();
+//            personalController = loader.getController();
+//            loader = new FXMLLoader(getClass().getResource("historyView.fxml"));
+//            historyView = loader.load();
+//            historyController = loader.getController();
+//            loader = new FXMLLoader(getClass().getResource("checkoutView.fxml"));
+//            checkoutView = loader.load();
+//            checkoutController = loader.getController();
+//            loader = new FXMLLoader(getClass().getResource("searchView.fxml"));
+//            searchView = loader.load();
+//            searchController = loader.getController();
+//
+//
+//        } catch (Exception e){
+//            e.printStackTrace();
+//            System.exit(0);
+//        }
     }
 
     public static iMatController getInstance(){
@@ -81,9 +108,26 @@ public class iMatController implements Initializable {
 
     @FXML
     public void personalButtonPressed(){
-        personalController.onEnter();
-        switchView(personalView, personalButton);
+//        personalController.onEnter();
+//        switchView(personalView, personalButton);
+        profilePane.toFront();
     }
+    @FXML
+    public void historyButtonPressed(){
+        historyPane.toFront();
+    }
+    @FXML
+    public void logoPressed(){
+        manePane3.toFront();
+        manePane2.toFront();
+
+    }
+    @FXML
+    public void checkoutPressed(){
+        wizard1.toFront();
+    }
+
+
 
 
 }

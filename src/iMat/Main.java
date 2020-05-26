@@ -22,7 +22,7 @@ public class Main extends Application {
 
         ResourceBundle bundle = java.util.ResourceBundle.getBundle("iMat/imat");
 
-        Parent root = FXMLLoader.load(getClass().getResource("/iMat/mainView.fxml"), bundle);
+        Parent root = FXMLLoader.load(getClass().getResource("/iMat/newMainView.fxml"), bundle);
 
         Scene scene = new Scene(root, 1024, 680);
 
@@ -33,9 +33,10 @@ public class Main extends Application {
         });
         stage.setTitle(bundle.getString("application.name"));
         stage.setScene(scene);
-        stage.setMaximized(true);
+        stage.setMaximized(false);
         stage.show();
 
     }
+
 }
 
