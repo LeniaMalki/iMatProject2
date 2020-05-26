@@ -32,4 +32,9 @@ public class personalController {
     @FXML private TextField txfCity;
 
 
+    public void onEnter() {
+
+
+
+    }
 }

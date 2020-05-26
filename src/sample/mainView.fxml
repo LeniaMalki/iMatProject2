@@ -85,58 +85,103 @@
             </AnchorPane>
             <AnchorPane prefHeight="680.0" prefWidth="1024.0" styleClass="white-color">
                <children>
-                  <AnchorPane layoutX="1.0" layoutY="150.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="531.0" prefWidth="199.0" styleClass="grey-nuance">
+                  <AnchorPane layoutX="1.0" layoutY="150.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0" prefWidth="199.0" styleClass="grey-nuance">
                      <children>
-                        <Pane fx:id="Category" layoutX="1.0" prefHeight="39.0" prefWidth="198.0" styleClass="category">
+                        <Pane fx:id="Category" layoutX="1.0" prefHeight="48.3" prefWidth="198.0" styleClass="category">
                            <children>
-                              <Label layoutX="14.0" layoutY="10.0" text="Bröd">
+                              <Label layoutX="14.0" layoutY="15.0" text="Favoriter">
                                  <font>
-                                    <Font name="Arial" size="17.0" />
+                                    <Font name="Arial" size="20.0" />
                                  </font>
                               </Label>
                            </children>
                         </Pane>
-                        <Pane layoutX="1.0" layoutY="38.0" prefHeight="39.0" prefWidth="198.0" styleClass="category">
+                        <Pane layoutX="1.0" layoutY="48.0" prefHeight="48.3" prefWidth="198.0" styleClass="category">
                            <children>
-                              <Label layoutX="14.0" layoutY="10.0" text="Bröd">
+                              <Label layoutX="14.0" layoutY="15.0" text="Bröd">
                                  <font>
-                                    <Font name="Arial" size="17.0" />
+                                    <Font name="Arial" size="20.0" />
                                  </font>
                               </Label>
                            </children>
                         </Pane>
-                        <Pane layoutX="1.0" layoutY="76.0" prefHeight="39.0" prefWidth="198.0" styleClass="category">
+                        <Pane layoutX="1.0" layoutY="144.0" prefHeight="48.3" prefWidth="198.0" styleClass="category">
                            <children>
-                              <Label layoutX="14.0" layoutY="10.0" text="Bröd">
+                              <Label layoutX="14.0" layoutY="15.0" text="Fisk">
                                  <font>
-                                    <Font name="Arial" size="17.0" />
+                                    <Font name="Arial" size="20.0" />
                                  </font>
                               </Label>
                            </children>
                         </Pane>
-                        <Pane layoutX="1.0" layoutY="114.0" prefHeight="39.0" prefWidth="198.0" styleClass="category">
+                        <Pane layoutX="1.0" layoutY="192.0" prefHeight="48.3" prefWidth="198.0" styleClass="category">
                            <children>
-                              <Label layoutX="14.0" layoutY="10.0" text="Bröd">
+                              <Label layoutX="14.0" layoutY="15.0" text="Frukt">
                                  <font>
-                                    <Font name="Arial" size="17.0" />
+                                    <Font name="Arial" size="20.0" />
                                  </font>
                               </Label>
                            </children>
                         </Pane>
-                        <Pane layoutX="2.0" layoutY="152.0" prefHeight="39.0" prefWidth="198.0" styleClass="category">
+                        <Pane layoutX="1.0" layoutY="240.0" prefHeight="48.3" prefWidth="198.0" styleClass="category">
                            <children>
-                              <Label layoutX="14.0" layoutY="10.0" text="Bröd">
+                              <Label layoutX="14.0" layoutY="15.0" text="Grönsaker">
                                  <font>
-                                    <Font name="Arial" size="17.0" />
+                                    <Font name="Arial" size="20.0" />
                                  </font>
                               </Label>
                            </children>
                         </Pane>
-                        <Pane layoutX="1.0" layoutY="190.0" prefHeight="39.0" prefWidth="198.0" styleClass="category">
+                        <Pane layoutX="1.0" layoutY="384.0" prefHeight="48.3" prefWidth="198.0" styleClass="category">
                            <children>
-                              <Label layoutX="14.0" layoutY="10.0" text="Bröd">
+                              <Label layoutX="14.0" layoutY="2.0" prefHeight="45.0" text="Mjöjkprodukter">
                                  <font>
-                                    <Font name="Arial" size="17.0" />
+                                    <Font name="Arial" size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="1.0" layoutY="432.0" prefHeight="48.3" prefWidth="198.0" styleClass="category">
+                           <children>
+                              <Label layoutX="14.0" layoutY="15.0" text="Skafferi">
+                                 <font>
+                                    <Font name="Arial" size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="1.0" layoutY="480.0" prefHeight="49.0" prefWidth="198.0" styleClass="category">
+                           <children>
+                              <Label layoutX="14.0" layoutY="15.0" text="Sötsaker">
+                                 <font>
+                                    <Font name="Arial" size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="1.0" layoutY="96.0" prefHeight="48.3" prefWidth="198.0" styleClass="category">
+                           <children>
+                              <Label layoutX="14.0" layoutY="15.0" text="Drycker">
+                                 <font>
+                                    <Font name="Arial" size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="1.0" layoutY="288.0" prefHeight="48.3" prefWidth="198.0" styleClass="category">
+                           <children>
+                              <Label layoutX="14.0" layoutY="15.0" text="Kryddor">
+                                 <font>
+                                    <Font name="Arial" size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="1.0" layoutY="336.0" prefHeight="48.3" prefWidth="198.0" styleClass="category">
+                           <children>
+                              <Label layoutX="14.0" layoutY="15.0" text="Kött">
+                                 <font>
+                                    <Font name="Arial" size="20.0" />
                                  </font>
                               </Label>
                            </children>
@@ -219,7 +264,7 @@
                   </AnchorPane>
                   <ScrollPane layoutX="200.0" layoutY="150.0" prefHeight="531.0" prefWidth="617.0">
                      <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="519.0" prefWidth="615.0">
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="529.0" prefWidth="615.0">
                            <children>
                               <Label layoutX="38.0" layoutY="30.0" style="-fx-underline: true;" styleClass="title-text" text="Erbjudanden" />
                               <Pane fx:id="Card" layoutX="38.0" layoutY="76.0" prefHeight="200.0" prefWidth="160.0" styleClass="card">
@@ -266,7 +311,7 @@
                               </AnchorPane>
                            </content>
                         </ScrollPane>
-                        <Pane layoutX="1.0" layoutY="400.0" prefHeight="129.0" prefWidth="210.0">
+                        <Pane layoutX="1.0" layoutY="399.0" prefHeight="129.0" prefWidth="210.0">
                            <children>
                               <Label fx:id="totalPriceLabel" layoutX="73.0" layoutY="29.0" styleClass="text-larger-bold" text="Totalt: ___" />
                               <Button fx:id="checkoutButton" layoutX="7.0" layoutY="70.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="198.0" text="Gå till kassan ">
