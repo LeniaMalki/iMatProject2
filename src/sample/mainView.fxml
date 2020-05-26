@@ -14,9 +14,9 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" pickOnBounds="false" prefHeight="680.0" prefWidth="1024.0" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" pickOnBounds="false" prefHeight="680.0" prefWidth="1024.0" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.mainController">
    <children>
-      <StackPane prefHeight="680.0" prefWidth="1024.0" AnchorPane.topAnchor="0.0">
+      <StackPane fx:id="mainStackPane" prefHeight="680.0" prefWidth="1024.0" AnchorPane.topAnchor="0.0">
          <children>
             <AnchorPane prefHeight="680.0" prefWidth="1025.0" styleClass="lightbox-shadow">
                <children>

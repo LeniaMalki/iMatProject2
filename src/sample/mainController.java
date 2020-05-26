@@ -1,5 +1,6 @@
 package sample;
 
+import iMat.iMatController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -40,5 +41,10 @@ public class mainController {
 
     public void sayHelloWorld(ActionEvent actionEvent) {
         helloWorld.setText("Helloooooo World!");
+    }
+
+    @FXML
+    public void personalButton(){
+
     }
 }
