@@ -27,7 +27,7 @@ public class Card implements ShoppingCartListener {
     private Product product;
 
     private iMatController parentController;
-    private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
+    private IMatDataHandler iMatDataHandler = IMatDataHandler.getInstance();
 
     public Card(Product product, iMatController parentController){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Card.fxml"));
@@ -42,7 +42,7 @@ public class Card implements ShoppingCartListener {
             throw new RuntimeException(exception);
         }
         this.product = product;
-        this.cardImageView.setImage(dataHandler.getFXImage(product));
+        this.cardImageView.setImage(iMatDataHandler.getFXImage(product));
         this.cardNameLabel.setText(product.getName());
         this.cardPriceLabel.setText(product.getPrice() + product.getUnit());
 /*
@@ -66,33 +66,35 @@ public class Card implements ShoppingCartListener {
     }
 
     @FXML
-    public void incrementProduct(){
-        parentController.incrementProduct(product);
+    public void addProduct(){
+        parentController.addProduct(product);
     }
 
     @FXML
-    public void decrementProduct(){
-        parentController.decrementProduct(product);
+    public void removeProduct(){
+        parentController.removeProduct(product);
     }
 
     @FXML
     public void setCardAmount(){
         String input = txfCardAmount.getText();
+            //hämta siffran som finns i rutan
             double amount = Double.parseDouble(input);
-            if(!product.getUnitSuffix().equals("kg")){
+            //är det inte kg så kan man runda av
+            if(!product.getUnitSuffix().equals("kg.")){
                 amount = (int) amount;
             }
             parentController.setCardAmount(product, amount);
 
-
-
     }
+
+
 
     public void updateAmount() {
         boolean instance = false;
         String suffix;
         //för alla shoppingitems i shoppingcart:en:
-        for (ShoppingItem si : dataHandler.getShoppingCart().getItems()) {
+        for (ShoppingItem si : iMatDataHandler.getShoppingCart().getItems()) {
             if (si.getProduct() == product) {
                 //har vi ett helttal eller ett decimaltal?
                 if (si.getAmount() % 1 == 0) {
@@ -101,8 +103,8 @@ public class Card implements ShoppingCartListener {
                     txfCardAmount.setText(String.valueOf(si.getAmount()));
                 }
                 suffix = product.getUnitSuffix();
-                if (suffix.equals("förp")) {
-                    suffix = "st";
+                if (suffix.equals("förp.")) {
+                    suffix = "st.";
                 }
                 txfCardAmount.setText(txfCardAmount.getText() + " " + suffix);
                 instance = true;
@@ -116,30 +118,13 @@ public class Card implements ShoppingCartListener {
         }
     }
 
-    public void onlyShowNumber(){
-        String currentText = txfCardAmount.getText();
-        int length = 0;
-        if(!currentText.equals("")){
-            for(int i = 0; i<currentText.length(); i++){
-                if(currentText.charAt(i) == ' '){
-                    length = i;
-                    break;
-                }
-            }
-            currentText = currentText.substring(0,length);
-            txfCardAmount.setText(currentText);
-        }
-        txfCardAmount.selectAll();
-
-    }
-
     public void shoppingCartChanged(CartEvent cartEvent) {
         if (cartEvent != null) {
             if(cartEvent.getShoppingItem() != null) {
                 if(cartEvent.getShoppingItem().getProduct() == product){
                     updateAmount();
                 }
-            }else if (dataHandler.getShoppingCart().getItems().isEmpty()){
+            }else if (iMatDataHandler.getShoppingCart().getItems().isEmpty()){
                 updateAmount();
             }
 
