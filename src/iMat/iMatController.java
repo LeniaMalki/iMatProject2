@@ -3,6 +3,7 @@ package iMat;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.Parent;
@@ -101,7 +102,7 @@ public class iMatController implements Initializable {
     //Main stage
     @FXML private ScrollPane scrollMain;
     @FXML private Pane Card;
-    @FXML private FlowPane cardFlow;
+    @FXML private FlowPane cardFlow = new FlowPane();
     @FXML private Label categoryTitle;
 
     //----------------Personal-------------------
@@ -154,10 +155,8 @@ public class iMatController implements Initializable {
     List<Product> tempList;
 
     public void initialize(URL location, ResourceBundle resources) {
-
-        FlowPane cardFlow = new FlowPane();
-        cardFlow.setVgap(80);
-        cardFlow.setHgap(40);
+        cardFlow.setVgap(10);
+        cardFlow.setHgap(25);
         cardFlow.setPrefWrapLength(400); // preferred width = 400
     }
 
