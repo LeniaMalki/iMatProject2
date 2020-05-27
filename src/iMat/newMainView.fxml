@@ -22,11 +22,11 @@
    <children>
       <StackPane fx:id="mainStackPane" prefHeight="680.0" prefWidth="1024.0" AnchorPane.topAnchor="0.0">
          <children>
-            <AnchorPane prefHeight="680.0" prefWidth="1025.0" styleClass="lightbox-shadow">
+            <AnchorPane fx:id="helpPane" prefHeight="680.0" prefWidth="1025.0" styleClass="lightbox-shadow">
                <children>
                   <AnchorPane layoutX="200.0" layoutY="143.0" prefHeight="398.0" prefWidth="626.0" styleClass="white-color">
                      <children>
-                        <ImageView fitHeight="30.0" fitWidth="36.0" layoutX="582.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="30.0" fitWidth="36.0" layoutX="582.0" layoutY="14.0" onMousePressed="#xPressed" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../images/icon_close.png" />
                            </image>
@@ -91,7 +91,7 @@
                <children>
                   <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" pickOnBounds="false" prefHeight="150.0" prefWidth="1024.0" styleClass="white-color">
                      <children>
-                        <Button fx:id="helpButton" layoutX="713.0" layoutY="26.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="66.0" styleClass="transparent-button">
+                        <Button fx:id="helpButton" layoutX="713.0" layoutY="26.0" mnemonicParsing="false" onAction="#helpPressed" prefHeight="78.0" prefWidth="66.0" styleClass="transparent-button">
                            <graphic>
                               <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true">
                                  <image>
@@ -117,7 +117,7 @@
                         </Button>
                         <Pane layoutX="200.0" layoutY="110.0" prefHeight="42.0" prefWidth="825.0" styleClass="grey-nuance">
                            <children>
-                              <Pane layoutX="615.0" prefHeight="42.0" prefWidth="210.0" style="-fx-background-color: white;" styleClass="cartpane">
+                              <Pane fx:id="cartIconPane" layoutX="615.0" prefHeight="42.0" prefWidth="210.0" style="-fx-background-color: white;" styleClass="cartpane">
                                  <children>
                                     <ImageView fitHeight="40.0" fitWidth="48.0" layoutX="16.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -131,12 +131,12 @@
                         </Pane>
                         <Pane fx:id="dealsCategory" layoutY="111.0" prefHeight="39.0" prefWidth="0.0" styleClass="primary-colour" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="825.0" AnchorPane.topAnchor="111.0">
                            <children>
-                              <ImageView fitHeight="39.0" fitWidth="38.0" layoutX="5.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="erbjudandenImage" fitHeight="39.0" fitWidth="38.0" layoutX="5.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../images/procent.PNG" />
                                  </image>
                               </ImageView>
-                              <Label layoutX="51.0" layoutY="10.0" text="Erbjudanden" textFill="WHITE">
+                              <Label fx:id="erbjudandenLabel" layoutX="51.0" layoutY="10.0" text="Erbjudanden" textFill="WHITE">
                                  <font>
                                     <Font name="Arial" size="17.0" />
                                  </font>

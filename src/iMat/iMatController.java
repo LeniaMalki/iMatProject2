@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
@@ -27,6 +28,11 @@ public class iMatController implements Initializable {
     @FXML private AnchorPane manePane2;
     @FXML private AnchorPane manePane3;
     @FXML private AnchorPane wizard1;
+    @FXML private AnchorPane helpPane;
+
+    @FXML private Label  erbjudandenLabel;
+    @FXML private ImageView erbjudandenImage;
+    @FXML private Pane  cartIconPane;
 //    @FXML
 //    private Button homeButton;
 
@@ -108,13 +114,13 @@ public class iMatController implements Initializable {
 
     @FXML
     public void personalButtonPressed(){
-//        personalController.onEnter();
-//        switchView(personalView, personalButton);
         profilePane.toFront();
+        manePane2.toFront();
     }
     @FXML
     public void historyButtonPressed(){
         historyPane.toFront();
+        manePane2.toFront();
     }
     @FXML
     public void logoPressed(){
@@ -125,7 +131,22 @@ public class iMatController implements Initializable {
     @FXML
     public void checkoutPressed(){
         wizard1.toFront();
+        cartIconPane.setVisible(false);
+        erbjudandenLabel.setText("Fortsätt handla");
+        erbjudandenImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                "iMatProject2/src/images/history.png")));
+
     }
+
+    @FXML
+    public void helpPressed(){
+        helpPane.toFront();
+    }
+    @FXML
+    public void xPressed(){
+        helpPane.toBack();
+    }
+
 
 
 
