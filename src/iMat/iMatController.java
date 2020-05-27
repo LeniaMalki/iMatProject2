@@ -27,7 +27,7 @@ import java.util.stream.Stream;
 public class iMatController implements Initializable {
 
     private static iMatController instance;
-    private IMatDataHandler iMatDataHandler;
+    private IMatDataHandler iMatDataHandler = IMatDataHandler.getInstance();
 
     //----------------Checkout------------------------
 
@@ -148,10 +148,6 @@ public class iMatController implements Initializable {
     private Parent helpView;
     private Parent searchView;
 
-    private personalController personalController;
-    private historyController historyController;
-    private checkoutController checkoutController;
-    private searchController searchController;
 
     List<Product> productList;
     List<Product> tempList;
@@ -194,6 +190,7 @@ public class iMatController implements Initializable {
 
     public void breadCategoryPressed(){
         productList = iMatDataHandler.getProducts(ProductCategory.BREAD);
+        //System.out.println(iMatDataHandler.getProducts(ProductCategory.BREAD));
     }
 
     public void drinksCategoryPressed(){
@@ -203,6 +200,7 @@ public class iMatController implements Initializable {
         for (Product p: tempList) {
             productList.add(p);
         }
+
         updateCards(productList);
     }
 

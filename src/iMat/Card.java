@@ -4,12 +4,15 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Label;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
 import se.chalmers.cse.dat216.project.*;
 import javafx.scene.image.ImageView;
-import java.awt.*;
 import java.io.IOException;
 
-public class Card implements ShoppingCartListener {
+public class Card extends Pane implements ShoppingCartListener {
 
     @FXML
     private Label cardNameLabel;
@@ -108,12 +111,12 @@ public class Card implements ShoppingCartListener {
                 }
                 txfCardAmount.setText(txfCardAmount.getText() + " " + suffix);
                 instance = true;
-                removeItemButton.setEnabled(true);
+                removeItemButton.setDisable(false);
 
             }
             if (!instance) {
                 txfCardAmount.setText("0");
-                removeItemButton.setEnabled(true);
+                removeItemButton.setDisable(false);
             }
         }
     }
