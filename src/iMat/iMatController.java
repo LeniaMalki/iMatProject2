@@ -153,7 +153,8 @@ public class iMatController implements Initializable {
     private checkoutController checkoutController;
     private searchController searchController;
 
-    List<Product> productList = new ArrayList<>();
+    List<Product> productList;
+    List<Product> tempList;
 
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -179,8 +180,7 @@ public class iMatController implements Initializable {
 //            loader = new FXMLLoader(getClass().getResource("searchView.fxml"));
 //            searchView = loader.load();
 //            searchController = loader.getController();
-//
-//
+
 //        } catch (Exception e){
 //            e.printStackTrace();
 //            System.exit(0);
@@ -188,34 +188,92 @@ public class iMatController implements Initializable {
     }
 
 
-    public void favoritesCategoryPressed{
-
-
-
+    public void favoritesCategoryPressed(){
 
     }
 
-    public void breadCategoryPressed{
-
+    public void breadCategoryPressed(){
         productList = iMatDataHandler.getProducts(ProductCategory.BREAD);
-
     }
 
-    public void drinksCategoryPressed{
-
+    public void drinksCategoryPressed(){
 
         productList = iMatDataHandler.getProducts(ProductCategory.COLD_DRINKS);
-        List<Product> addList = new ArrayList<>();
-
-
-
+        tempList = iMatDataHandler.getProducts(ProductCategory.HOT_DRINKS);
+        for (Product p: tempList) {
+            productList.add(p);
+        }
+        updateCards(productList);
     }
 
-    public void fishCategoryPressed{
-
-        productList = iMatDataHandler.getProducts(ProductCategory.COLD_DRINKS);
-
-
+    public void fishCategoryPressed(){
+        productList = iMatDataHandler.getProducts(ProductCategory.FISH);
+        updateCards(productList);
+    }
+    public void fruitCategoryPressed(){
+        productList = iMatDataHandler.getProducts(ProductCategory.FRUIT);
+        tempList = iMatDataHandler.getProducts(ProductCategory.CITRUS_FRUIT);
+        for (Product p: tempList) {
+            productList.add(p);
+        }tempList = iMatDataHandler.getProducts(ProductCategory.MELONS);
+        for (Product p: tempList) {
+            productList.add(p);
+        }tempList = iMatDataHandler.getProducts(ProductCategory.EXOTIC_FRUIT);
+        for (Product p: tempList) {
+            productList.add(p);
+        }tempList = iMatDataHandler.getProducts(ProductCategory.BERRY);
+        for (Product p: tempList) {
+            productList.add(p);
+        }
+        updateCards(productList);
+    }
+    public void vegetableCategoryPressed(){
+        productList = iMatDataHandler.getProducts(ProductCategory.VEGETABLE_FRUIT);
+        tempList = iMatDataHandler.getProducts(ProductCategory.POD);
+        for (Product p: tempList) {
+            productList.add(p);
+        }
+        tempList = iMatDataHandler.getProducts(ProductCategory.CABBAGE);
+        for (Product p: tempList) {
+            productList.add(p);
+        }
+        tempList = iMatDataHandler.getProducts(ProductCategory.ROOT_VEGETABLE);
+        for (Product p: tempList) {
+            productList.add(p);
+        }
+        updateCards(productList);
+    }
+    public void spicesCategoryPressed(){
+        productList = iMatDataHandler.getProducts(ProductCategory.HERB);
+        updateCards(productList);
+    }
+    public void MeatCategoryPressed(){
+        productList = iMatDataHandler.getProducts(ProductCategory.MEAT);
+        updateCards(productList);
+    }
+    public void DairyCategoryPressed(){
+        productList = iMatDataHandler.getProducts(ProductCategory.DAIRIES);
+        updateCards(productList);
+    }
+    public void pantryCategoryPressed(){
+        productList = iMatDataHandler.getProducts(ProductCategory.NUTS_AND_SEEDS);
+        tempList = iMatDataHandler.getProducts(ProductCategory.FLOUR_SUGAR_SALT);
+        for (Product p: tempList) {
+            productList.add(p);
+        }
+        tempList = iMatDataHandler.getProducts(ProductCategory.PASTA);
+        for (Product p: tempList) {
+            productList.add(p);
+        }
+        tempList = iMatDataHandler.getProducts(ProductCategory.POTATO_RICE);
+        for (Product p: tempList) {
+            productList.add(p);
+        }
+        updateCards(productList);
+    }
+    public void sweetsCategoryPressed(){
+        productList = iMatDataHandler.getProducts(ProductCategory.SWEET);
+        updateCards(productList);
     }
 
 
@@ -223,12 +281,10 @@ public class iMatController implements Initializable {
     private void updateCards(List<Product> productList){
 
         cardFlow.getChildren().clear();
-        productList = iMatDataHandler.findProducts();
-
 
         for (Product p : productList){
 
-            cardFlow.getChildren().add(new Product(p, this));
+            cardFlow.getChildren().add(new Card(p, this));
 
         }
 
@@ -361,14 +417,14 @@ public class iMatController implements Initializable {
 
         for(ShoppingItem si: iMatDataHandler.getShoppingCart().getItems()){
             shoppingCartItemClass temp = new shoppingCartItemClass(si,this);
-            dataHandler.getShoppingCart().addShoppingCartListener(temp);
+            iMatDataHandler.getShoppingCart().addShoppingCartListener(temp);
             cartFlowPane.getChildren().add(temp);
         }
     }
 
     @FXML
     public void incrementProductTest(){
-        incrementProduct(dataHandler.getProduct(8));
+        incrementProduct(iMatDataHandler.getProduct(8));
         cartEmptyLabel.setVisible(true);
 
     }

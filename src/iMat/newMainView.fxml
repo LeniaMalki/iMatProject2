@@ -684,35 +684,7 @@
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="529.0" prefWidth="615.0">
                                                    <children>
                                                       <Label layoutX="38.0" layoutY="30.0" style="-fx-underline: true;" styleClass="title-text" text="Erbjudanden" />
-                                                      <Pane fx:id="Card" layoutX="38.0" layoutY="76.0" prefHeight="200.0" prefWidth="160.0" styleClass="card">
-                                                         <children>
-                                                            <Line endX="80.0" layoutX="80.0" layoutY="154.0" startX="-80.0" stroke="#999999" />
-                                                            <ImageView fitHeight="105.0" fitWidth="105.0" layoutX="28.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" />
-                                                            <Label layoutX="59.0" layoutY="3.0" styleClass="text-larger-bold" text="Äpple" />
-                                                            <Label layoutX="62.0" layoutY="133.0" styleClass="text-larger-bold" text="10 kr" />
-                                                            <Button fx:id="addItemButton" layoutX="113.0" layoutY="158.0" mnemonicParsing="false" onAction="#incrementProductTest" prefHeight="36.0" prefWidth="36.0" styleClass="round-button-orange">
-                                                               <graphic>
-                                                                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" styleClass="round-button-orange">
-                                                                     <image>
-                                                                        <Image url="@../images/Vitt_pluss.png" />
-                                                                     </image>
-                                                                  </ImageView>
-                                                               </graphic>
-                                                            </Button>
-                                                            <Button fx:id="removeItemButton" layoutX="10.0" layoutY="159.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="36.0" styleClass="round-button-white">
-                                                               <graphic>
-                                                                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                                                                     <image>
-                                                                        <Image url="@../images/Orange_minus.png" />
-                                                                     </image>
-                                                                  </ImageView>
-                                                               </graphic>
-                                                            </Button>
-                                                            <TextField alignment="CENTER" layoutX="57.0" layoutY="161.0" prefHeight="30.0" prefWidth="46.0" text="0 st" />
-                                                         </children>
-                                                      </Pane>
-                                                      <Pane layoutX="225.0" layoutY="76.0" prefHeight="200.0" prefWidth="160.0" styleClass="card" />
-                                                      <Pane layoutX="410.0" layoutY="76.0" prefHeight="200.0" prefWidth="160.0" styleClass="card" />
+                                                      <FlowPane fx:id="cardFlow" layoutX="38.0" layoutY="72.0" prefHeight="458.0" prefWidth="537.0" />
                                                    </children>
                                                 </AnchorPane>
                                              </content>
@@ -728,7 +700,7 @@
                                                       </Label>
                                                    </children>
                                                 </Pane>
-                                                <Pane layoutX="1.0" layoutY="48.0" prefHeight="48.3" prefWidth="198.0" styleClass="category">
+                                                <Pane layoutX="1.0" layoutY="48.0" onMouseClicked="#breadCategoryPressed" prefHeight="48.3" prefWidth="198.0" styleClass="category">
                                                    <children>
                                                       <Label layoutX="14.0" layoutY="15.0" text="Bröd">
                                                          <font>
@@ -737,7 +709,7 @@
                                                       </Label>
                                                    </children>
                                                 </Pane>
-                                                <Pane layoutX="1.0" layoutY="144.0" prefHeight="48.3" prefWidth="198.0" styleClass="category">
+                                                <Pane layoutX="1.0" layoutY="144.0" onMouseClicked="#fishCategoryPressed" prefHeight="48.3" prefWidth="198.0" styleClass="category">
                                                    <children>
                                                       <Label layoutX="14.0" layoutY="15.0" text="Fisk">
                                                          <font>
@@ -746,7 +718,7 @@
                                                       </Label>
                                                    </children>
                                                 </Pane>
-                                                <Pane layoutX="1.0" layoutY="192.0" prefHeight="48.3" prefWidth="198.0" styleClass="category">
+                                                <Pane layoutX="1.0" layoutY="192.0" onMouseClicked="#fruitCategoryPressed" prefHeight="48.3" prefWidth="198.0" styleClass="category">
                                                    <children>
                                                       <Label layoutX="14.0" layoutY="15.0" text="Frukt">
                                                          <font>
@@ -755,7 +727,7 @@
                                                       </Label>
                                                    </children>
                                                 </Pane>
-                                                <Pane layoutX="1.0" layoutY="240.0" prefHeight="48.3" prefWidth="198.0" styleClass="category">
+                                                <Pane layoutX="1.0" layoutY="240.0" onMouseClicked="#vegetableCategoryPressed" prefHeight="48.3" prefWidth="198.0" styleClass="category">
                                                    <children>
                                                       <Label layoutX="14.0" layoutY="15.0" text="Grönsaker">
                                                          <font>
@@ -764,7 +736,7 @@
                                                       </Label>
                                                    </children>
                                                 </Pane>
-                                                <Pane layoutX="1.0" layoutY="384.0" prefHeight="48.3" prefWidth="198.0" styleClass="category">
+                                                <Pane layoutX="1.0" layoutY="384.0" onMouseClicked="#DairyCategoryPressed" prefHeight="48.3" prefWidth="198.0" styleClass="category">
                                                    <children>
                                                       <Label layoutX="14.0" layoutY="2.0" prefHeight="45.0" text="Mjöjkprodukter">
                                                          <font>
@@ -773,7 +745,7 @@
                                                       </Label>
                                                    </children>
                                                 </Pane>
-                                                <Pane layoutX="1.0" layoutY="432.0" prefHeight="48.3" prefWidth="198.0" styleClass="category">
+                                                <Pane layoutX="1.0" layoutY="432.0" onMouseClicked="#pantryCategoryPressed" prefHeight="48.3" prefWidth="198.0" styleClass="category">
                                                    <children>
                                                       <Label layoutX="14.0" layoutY="15.0" text="Skafferi">
                                                          <font>
@@ -782,7 +754,7 @@
                                                       </Label>
                                                    </children>
                                                 </Pane>
-                                                <Pane layoutX="1.0" layoutY="480.0" prefHeight="49.0" prefWidth="198.0" styleClass="category">
+                                                <Pane layoutX="1.0" layoutY="480.0" onMouseClicked="#sweetsCategoryPressed" prefHeight="49.0" prefWidth="198.0" styleClass="category">
                                                    <children>
                                                       <Label layoutX="14.0" layoutY="15.0" text="Sötsaker">
                                                          <font>
@@ -791,7 +763,7 @@
                                                       </Label>
                                                    </children>
                                                 </Pane>
-                                                <Pane layoutX="1.0" layoutY="96.0" prefHeight="48.3" prefWidth="198.0" styleClass="category">
+                                                <Pane layoutX="1.0" layoutY="96.0" onMouseClicked="#drinksCategoryPressed" prefHeight="48.3" prefWidth="198.0" styleClass="category">
                                                    <children>
                                                       <Label layoutX="14.0" layoutY="15.0" text="Drycker">
                                                          <font>
@@ -800,7 +772,7 @@
                                                       </Label>
                                                    </children>
                                                 </Pane>
-                                                <Pane layoutX="1.0" layoutY="288.0" prefHeight="48.3" prefWidth="198.0" styleClass="category">
+                                                <Pane layoutX="1.0" layoutY="288.0" onMouseClicked="#spicesCategoryPressed" prefHeight="48.3" prefWidth="198.0" styleClass="category">
                                                    <children>
                                                       <Label layoutX="14.0" layoutY="15.0" text="Kryddor">
                                                          <font>
@@ -809,7 +781,7 @@
                                                       </Label>
                                                    </children>
                                                 </Pane>
-                                                <Pane layoutX="1.0" layoutY="336.0" prefHeight="48.3" prefWidth="198.0" styleClass="category">
+                                                <Pane layoutX="1.0" layoutY="336.0" onMouseClicked="#MeatCategoryPressed" prefHeight="48.3" prefWidth="198.0" styleClass="category">
                                                    <children>
                                                       <Label layoutX="14.0" layoutY="15.0" text="Kött">
                                                          <font>
