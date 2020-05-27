@@ -73,51 +73,14 @@ public class iMatController implements Initializable {
     private Parent helpView;
     private Parent searchView;
 
-    private personalController personalController;
-    private historyController historyController;
-    private checkoutController checkoutController;
-    private searchController searchController;
-
     public void initialize(URL location, ResourceBundle resources) {
-//        instance = this;
-//        FXMLLoader loader;
-//        try {
-//            loader = new FXMLLoader(getClass().getResource("mainView.fxml"));
-//            mainView = loader.load();
-//            loader = new FXMLLoader(getClass().getResource("personalView.fxml"));
-//            personalView = loader.load();
-//            personalController = loader.getController();
-//            loader = new FXMLLoader(getClass().getResource("historyView.fxml"));
-//            historyView = loader.load();
-//            historyController = loader.getController();
-//            loader = new FXMLLoader(getClass().getResource("checkoutView.fxml"));
-//            checkoutView = loader.load();
-//            checkoutController = loader.getController();
-//            loader = new FXMLLoader(getClass().getResource("searchView.fxml"));
-//            searchView = loader.load();
-//            searchController = loader.getController();
-//
-//
-//        } catch (Exception e){
-//            e.printStackTrace();
-//            System.exit(0);
-//        }
+
     }
 
     public static iMatController getInstance(){
         return instance;
     }
 
-    private void switchView(Node newView, Button newButton){
-        mainStackpane.getChildren().clear();
-        mainStackpane.getChildren().add(newView);
-
-        if(selectedButton != null) {
-            /*selectedButton.getStyleClass().remove("buttonHighlight");
-            newButton.getStyleClass().add("buttonHighlight");*/
-            selectedButton = newButton;
-        }
-    }
 
     @FXML
     public void personalButtonPressed(){
