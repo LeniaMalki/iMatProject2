@@ -1,7 +1,6 @@
 package iMat;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
@@ -12,8 +11,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
+import se.chalmers.cse.dat216.project.IMatDataHandler;
+import se.chalmers.cse.dat216.project.Product;
+import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.util.ResourceBundle;
 import java.net.URL;
@@ -21,6 +24,7 @@ import java.net.URL;
 public class iMatController implements Initializable {
 
     private static iMatController instance;
+    private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
 
     @FXML private StackPane mainStackpane;
 
@@ -33,6 +37,9 @@ public class iMatController implements Initializable {
     @FXML private Label  erbjudandenLabel;
     @FXML private ImageView erbjudandenImage;
     @FXML private Pane  cartIconPane;
+
+    @FXML private Label cartEmptyLabel;
+    @FXML private FlowPane cartFlowPane;
 //    @FXML
 //    private Button homeButton;
 
@@ -126,15 +133,14 @@ public class iMatController implements Initializable {
     public void logoPressed(){
         manePane3.toFront();
         manePane2.toFront();
-
     }
+
     @FXML
     public void checkoutPressed(){
         wizard1.toFront();
         cartIconPane.setVisible(false);
         erbjudandenLabel.setText("Fortsätt handla");
-        erbjudandenImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
-                "iMatProject2/src/images/history.png")));
+        erbjudandenImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("images/arrow.PNG")));
 
     }
 
@@ -149,6 +155,48 @@ public class iMatController implements Initializable {
 
 
 
+    public void addShoppingCartItem(ShoppingItem shoppingItem) {
+        dataHandler.getShoppingCart().addItem(shoppingItem);
+        shoppingCartItemClass itemTemp = new shoppingCartItemClass(shoppingItem, this);
+        cartFlowPane.getChildren().add(itemTemp);
 
+        dataHandler.getShoppingCart().addShoppingCartListener(itemTemp);
+    }
+
+    @FXML
+    public void incrementProduct(Product product) {
+        boolean exists = false;
+        for (ShoppingItem s : dataHandler.getShoppingCart().getItems()) {
+            if (s.getProduct() == product) {
+                s.setAmount(s.getAmount() + 1);
+                exists = true;
+                dataHandler.getShoppingCart().fireShoppingCartChanged(s, false);
+
+            }
+        }
+        if(!exists){
+
+            ShoppingItem item = new ShoppingItem(product);
+            addShoppingCartItem(item);
+            cartEmptyLabel.setText("funkar");
+        }
+    }
+
+    public void updateShoppingCart(){
+        cartFlowPane.getChildren().clear();
+
+        for(ShoppingItem si: dataHandler.getShoppingCart().getItems()){
+            shoppingCartItemClass temp = new shoppingCartItemClass(si,this);
+            dataHandler.getShoppingCart().addShoppingCartListener(temp);
+            cartFlowPane.getChildren().add(temp);
+        }
+    }
+
+    @FXML
+    public void incrementProductTest(){
+        incrementProduct(dataHandler.getProduct(8));
+        cartEmptyLabel.setVisible(true);
+
+    }
 
 }
