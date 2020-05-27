@@ -102,6 +102,7 @@ public class iMatController implements Initializable {
     @FXML private ScrollPane scrollMain;
     @FXML private Pane Card;
     @FXML private FlowPane cardFlow;
+    @FXML private Label categoryTitle;
 
     //----------------Personal-------------------
 
@@ -155,46 +156,29 @@ public class iMatController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         FlowPane cardFlow = new FlowPane();
-        cardFlow.setVgap(8);
-        cardFlow.setHgap(4);
+        cardFlow.setVgap(80);
+        cardFlow.setHgap(40);
         cardFlow.setPrefWrapLength(400); // preferred width = 400
-//
-//        instance = this;
-//        FXMLLoader loader;
-//        try {
-//            loader = new FXMLLoader(getClass().getResource("mainView.fxml"));
-//            mainView = loader.load();
-//            loader = new FXMLLoader(getClass().getResource("personalView.fxml"));
-//            personalView = loader.load();
-//            personalController = loader.getController();
-//            loader = new FXMLLoader(getClass().getResource("historyView.fxml"));
-//            historyView = loader.load();
-//            historyController = loader.getController();
-//            loader = new FXMLLoader(getClass().getResource("checkoutView.fxml"));
-//            checkoutView = loader.load();
-//            checkoutController = loader.getController();
-//            loader = new FXMLLoader(getClass().getResource("searchView.fxml"));
-//            searchView = loader.load();
-//            searchController = loader.getController();
-
-//        } catch (Exception e){
-//            e.printStackTrace();
-//            System.exit(0);
-//        }
     }
 
 
     public void favoritesCategoryPressed(){
-
+        categoryTitle.setText("Favoriter");
+        if (!(productList.isEmpty())){
+            productList.clear();
+        }
+        updateCards(productList);
     }
 
     public void breadCategoryPressed(){
+        categoryTitle.setText("Bröd");
         productList = iMatDataHandler.getProducts(ProductCategory.BREAD);
-        //System.out.println(iMatDataHandler.getProducts(ProductCategory.BREAD));
+
+        updateCards(productList);
     }
 
     public void drinksCategoryPressed(){
-
+        categoryTitle.setText("Drycker");
         productList = iMatDataHandler.getProducts(ProductCategory.COLD_DRINKS);
         tempList = iMatDataHandler.getProducts(ProductCategory.HOT_DRINKS);
         for (Product p: tempList) {
@@ -205,10 +189,12 @@ public class iMatController implements Initializable {
     }
 
     public void fishCategoryPressed(){
+        categoryTitle.setText("Fisk");
         productList = iMatDataHandler.getProducts(ProductCategory.FISH);
         updateCards(productList);
     }
     public void fruitCategoryPressed(){
+        categoryTitle.setText("Frukt");
         productList = iMatDataHandler.getProducts(ProductCategory.FRUIT);
         tempList = iMatDataHandler.getProducts(ProductCategory.CITRUS_FRUIT);
         for (Product p: tempList) {
@@ -226,6 +212,7 @@ public class iMatController implements Initializable {
         updateCards(productList);
     }
     public void vegetableCategoryPressed(){
+        categoryTitle.setText("Grönsaker");
         productList = iMatDataHandler.getProducts(ProductCategory.VEGETABLE_FRUIT);
         tempList = iMatDataHandler.getProducts(ProductCategory.POD);
         for (Product p: tempList) {
@@ -242,18 +229,22 @@ public class iMatController implements Initializable {
         updateCards(productList);
     }
     public void spicesCategoryPressed(){
+        categoryTitle.setText("Kryddor");
         productList = iMatDataHandler.getProducts(ProductCategory.HERB);
         updateCards(productList);
     }
     public void MeatCategoryPressed(){
+        categoryTitle.setText("Kött");
         productList = iMatDataHandler.getProducts(ProductCategory.MEAT);
         updateCards(productList);
     }
     public void DairyCategoryPressed(){
+        categoryTitle.setText("Mjölkprodukter");
         productList = iMatDataHandler.getProducts(ProductCategory.DAIRIES);
         updateCards(productList);
     }
     public void pantryCategoryPressed(){
+        categoryTitle.setText("Skafferi");
         productList = iMatDataHandler.getProducts(ProductCategory.NUTS_AND_SEEDS);
         tempList = iMatDataHandler.getProducts(ProductCategory.FLOUR_SUGAR_SALT);
         for (Product p: tempList) {
@@ -270,6 +261,7 @@ public class iMatController implements Initializable {
         updateCards(productList);
     }
     public void sweetsCategoryPressed(){
+        categoryTitle.setText("Sötsaker");
         productList = iMatDataHandler.getProducts(ProductCategory.SWEET);
         updateCards(productList);
     }
