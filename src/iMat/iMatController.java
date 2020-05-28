@@ -543,11 +543,24 @@ public class iMatController implements Initializable {
        totalPriceLabel.setText("Totalt: " + Double.toString(iMatDataHandler.getShoppingCart().getTotal()));
    }
 
-
+    @FXML
+    public void searchButtonPressed(){
+        String categoryText;
+        String keyword = searchBar.getText().toLowerCase();
+        productList = iMatDataHandler.findProducts(keyword);
+        if (productList.isEmpty()){
+            categoryText = "Inga resultat för " + keyword;
+        } else {
+            categoryText = "Resultat för " + keyword;
+        }
+        categoryTitle.setText(categoryText);
+        updateCards(productList);
+    }
 
     public void populateHistoryOrders(){
 
     }
+
 
 
     @FXML
