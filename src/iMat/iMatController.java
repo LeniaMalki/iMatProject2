@@ -296,8 +296,6 @@ public class iMatController implements Initializable {
 
     }
 
-
-
     @FXML
     public void personalButtonPressed(){
         profilePane.toFront();
@@ -320,8 +318,20 @@ public class iMatController implements Initializable {
         wizard5.toFront();
     }
     @FXML
-    public void summaryContinue(){
-        wizard6.toFront();
+    public void contactReturn(){
+        wizard1.toFront();
+    }
+    @FXML
+    public void deliveryReturn(){
+        wizard2.toFront();
+    }
+    @FXML
+    public void accountReturn(){
+        wizard3.toFront();
+    }
+    @FXML
+    public void summaryReturn(){
+        wizard4.toFront();
     }
 
     @FXML
@@ -330,7 +340,7 @@ public class iMatController implements Initializable {
         mainPane2.toFront();
     }
     @FXML
-    public void logoPressed(){
+    public void backToStore(){
 
         mainPane3.toFront();
         mainPane2.toFront();
