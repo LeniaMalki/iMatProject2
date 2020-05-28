@@ -158,6 +158,8 @@ public class iMatController implements Initializable {
         cardFlow.setVgap(10);
         cardFlow.setHgap(25);
         cardFlow.setPrefWrapLength(400); // preferred width = 400
+
+        updateShoppingCart();
     }
 
 
@@ -375,12 +377,20 @@ public class iMatController implements Initializable {
 
 
 
+
     public void addShoppingCartItem(ShoppingItem shoppingItem) {
         iMatDataHandler.getShoppingCart().addItem(shoppingItem);
         shoppingCartItemClass itemTemp = new shoppingCartItemClass(shoppingItem, this);
         cartFlowPane.getChildren().add(itemTemp);
+
         iMatDataHandler.getShoppingCart().addShoppingCartListener(itemTemp);
     }
+    public void removeCartItem(shoppingCartItemClass shoppingCartItem){
+        iMatDataHandler.getShoppingCart().removeItem(shoppingCartItem.getShoppingItem());
+        updateShoppingCart();
+        //updateSummaryCart();
+    }
+
 
     @FXML
     public void incrementProduct(Product product) {
@@ -390,32 +400,74 @@ public class iMatController implements Initializable {
                 s.setAmount(s.getAmount() + 1);
                 exists = true;
                 iMatDataHandler.getShoppingCart().fireShoppingCartChanged(s, false);
-
             }
         }
         if(!exists){
-
             ShoppingItem item = new ShoppingItem(product);
             addShoppingCartItem(item);
-            cartEmptyLabel.setText("funkar");
+            updateShoppingCart();
+        }
+    }
+    @FXML
+    public void decrementProduct(Product product) {
+        ShoppingItem shoppingItem = null;
+        boolean remove = false;
+        for (ShoppingItem s : iMatDataHandler.getShoppingCart().getItems()) {
+            if (s.getProduct() == product) {
+                shoppingItem = s;
+                s.setAmount(s.getAmount() - 1);
+                if (s.getAmount() <= 0) {
+                    remove = true;
+                } else {
+                    iMatDataHandler.getShoppingCart().fireShoppingCartChanged(s, false);
+                }
+            }
+        }
+        if (remove) {
+            iMatDataHandler.getShoppingCart().removeItem(shoppingItem);
+            updateShoppingCart();
         }
     }
 
     public void updateShoppingCart(){
-        cartFlowPane.getChildren().clear();
+        updatrTotalPrice();
 
+        if(iMatDataHandler.getShoppingCart().getTotal() == 0){
+            cartEmptyLabel.setVisible(true);
+        }
+        else cartEmptyLabel.setVisible(false);
+
+        cartFlowPane.getChildren().clear();
         for(ShoppingItem si: iMatDataHandler.getShoppingCart().getItems()){
             shoppingCartItemClass temp = new shoppingCartItemClass(si,this);
             iMatDataHandler.getShoppingCart().addShoppingCartListener(temp);
             cartFlowPane.getChildren().add(temp);
+
         }
     }
 
+   public void updatrTotalPrice(){
+       totalPriceLabel.setText("Totalt: " + Double.toString(iMatDataHandler.getShoppingCart().getTotal()));
+   }
+
+
+
     @FXML
     public void incrementProductTest(){
-        incrementProduct(iMatDataHandler.getProduct(8));
-        cartEmptyLabel.setVisible(true);
+        incrementProduct(iMatDataHandler.getProduct(13));
+        cartEmptyLabel.setVisible(false);
+
+    }
+    @FXML
+    public void decrementtProductTest(){
+        decrementProduct(iMatDataHandler.getProduct(13));
+        cartEmptyLabel.setVisible(false);
 
     }
 
+
+
+
 }
+
+
