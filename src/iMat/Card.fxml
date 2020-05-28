@@ -14,7 +14,7 @@
       <ImageView fx:id="cardImageView" fitHeight="105.0" fitWidth="105.0" layoutX="28.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" />
       <Label fx:id="cardNameLabel" layoutX="59.0" layoutY="3.0" styleClass="text-larger-bold" text="Äpple" />
       <Label fx:id="cardPriceLabel" layoutX="62.0" layoutY="133.0" styleClass="text-larger-bold" text="10 kr" />
-      <Button fx:id="addItemButton" layoutX="113.0" layoutY="158.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="36.0" styleClass="round-button-orange">
+      <Button fx:id="addItemButton" layoutX="113.0" layoutY="158.0" mnemonicParsing="false" onAction="#incrementProduct" prefHeight="36.0" prefWidth="36.0" styleClass="round-button-orange">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" styleClass="round-button-orange">
                <image>
@@ -23,7 +23,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="removeItemButton" layoutX="10.0" layoutY="159.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="36.0" styleClass="round-button-white">
+      <Button fx:id="removeItemButton" layoutX="10.0" layoutY="159.0" mnemonicParsing="false" onAction="#decrementProduct" prefHeight="36.0" prefWidth="36.0" styleClass="round-button-white">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>

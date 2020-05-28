@@ -71,6 +71,15 @@ public class Card extends Pane implements ShoppingCartListener {
     }
 
     @FXML
+    public void incrementProduct(){
+        parentController.incrementProduct(product);
+    }
+    @FXML
+    public void decrementProduct(){
+        parentController.decrementProduct(product);
+    }
+
+    @FXML
     public void addProduct(){
         parentController.addProduct(product);
     }

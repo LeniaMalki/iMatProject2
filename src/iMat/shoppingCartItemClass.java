@@ -18,7 +18,7 @@ public class shoppingCartItemClass extends AnchorPane implements ShoppingCartLis
 
     private ShoppingItem shoppingItem;
     private iMatController parentController;
-    private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
+    private IMatDataHandler iMatDataHandler = IMatDataHandler.getInstance();
 
     @FXML private ImageView productImageView;
     @FXML private Label nameLabel;
@@ -37,20 +37,47 @@ public class shoppingCartItemClass extends AnchorPane implements ShoppingCartLis
             throw new RuntimeException(exception);
         }
 
-        DecimalFormat value = new DecimalFormat("#.#");
         Double amount = shoppingItem.getAmount();
         this.shoppingItem = shoppingItem;
         this.nameLabel.setText(shoppingItem.getProduct().getName());
-        this.productPriceLabel.setText(String.valueOf(value.format(shoppingItem.getTotal())) + "kr");
-        this.productImageView.setImage(dataHandler.getFXImage(shoppingItem.getProduct()));
-        //this.txfAmount.setText(String.valueOf(amount));
-        //updateText();
+        this.productPriceLabel.setText(String.valueOf(shoppingItem.getTotal()) + "kr");
+        this.productImageView.setImage(iMatDataHandler.getFXImage(shoppingItem.getProduct()));
+        this.txfAmount.setText(String.valueOf(amount));
 
         this.parentController = parentController;
     }
 
+
+    @FXML
+    public void removeItem(){
+        parentController.removeCartItem(this);
+    }
+
+
     @Override
     public void shoppingCartChanged(CartEvent cartEvent) {
+        if(shoppingItem.getAmount() <= 0) {
+            //removeItem();
+        }
+        if(cartEvent.getShoppingItem() == shoppingItem) {
+            productPriceLabel.setText(String.valueOf(shoppingItem.getTotal()) + "kr");
+            txfAmount.setText(String.valueOf(shoppingItem.getAmount()));
+            parentController.updatrTotalPrice();
+        }
+    }
 
+
+    @FXML
+    public void incrementProduct(){
+        parentController.incrementProduct(shoppingItem.getProduct());
+    }
+    @FXML
+    public void decrementProduct(){
+        parentController.decrementProduct(shoppingItem.getProduct());
+    }
+
+
+    public ShoppingItem getShoppingItem() {
+        return shoppingItem;
     }
 }
