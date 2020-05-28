@@ -1,5 +1,6 @@
 package iMat;
 
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -39,8 +40,12 @@ public class iMatController implements Initializable {
     @FXML private TextField searchBar;
     @FXML private Button searchButton;
     @FXML private Button helpButton;
+    @FXML private ImageView helpButtonImage;
     @FXML private Button historyButton;
     @FXML private Button personalButton;
+    @FXML private Button xButton2;
+    @FXML private Button xButton1;
+
 
     //Main stage
 
@@ -364,7 +369,13 @@ public class iMatController implements Initializable {
     @FXML
     public void xPressed(){
         helpPane.toBack();
+        lightBox.toBack();
     }
+    @FXML
+    public void detailViewOressed(){
+        lightBox.toFront();
+    }
+
 
     public void addProduct(Product product) {
         boolean exists = false;
@@ -509,23 +520,46 @@ public class iMatController implements Initializable {
 
     public void populateHistoryOrders(){
 
+    }
 
+
+    @FXML
+    public void mouseTrap(Event event){
+        event.consume();
+    }
+    @FXML
+    public void xButtonMouseEntered(){
+        helpButtonImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                "images/menuIcons/icon_close_hover.png")));
+    }
+    @FXML
+    public void xButtonMousePressed(){
+        helpButtonImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                "images/icon_close.png")));
+    }
+    @FXML
+    public void xButtonMouseExited(){
+        helpButtonImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                "images/icon_close.png")));
+        //ifall användaren tar bort musen.
     }
 
     @FXML
-    public void incrementProductTest(){
-        incrementProduct(iMatDataHandler.getProduct(13));
-        cartEmptyLabel.setVisible(false);
-
+    public void HelpButtonMouseEntered(){
+        helpButtonImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                "images/menuIcons/Hjälp-Hover.png")));
     }
     @FXML
-    public void decrementtProductTest(){
-        decrementProduct(iMatDataHandler.getProduct(13));
-        cartEmptyLabel.setVisible(false);
-
+    public void HelpButtonMousePressed(){
+        helpButtonImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                "images/menuIcons/Hjälp-Hover-Pressed.png")));
     }
-
-
+    @FXML
+    public void HelpButtonMouseExited(){
+        helpButtonImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                "images/menuIcons/Hjälp.png")));
+        //ifall användaren tar bort musen.
+    }
 
 
 }

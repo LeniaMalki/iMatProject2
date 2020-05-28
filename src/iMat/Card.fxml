@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Line?>
 
-<fx:root fx:id="Card" prefHeight="200.0" prefWidth="160.0" styleClass="card" stylesheets="@iMat.css" type="Pane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root fx:id="Card" onMousePressed="#detailViewOressed" prefHeight="200.0" prefWidth="160.0" styleClass="card" stylesheets="@iMat.css" type="Pane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Line endX="80.0" layoutX="80.0" layoutY="154.0" startX="-80.0" stroke="#999999" />
       <ImageView fx:id="cardImageView" fitHeight="105.0" fitWidth="105.0" layoutX="28.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" />

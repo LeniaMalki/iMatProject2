@@ -90,6 +90,9 @@ public class Card extends Pane implements ShoppingCartListener {
     }
 
     @FXML
+    public void detailViewOressed(){ parentController.detailViewOressed();}
+
+    @FXML
     public void setCardAmount(){
         String input = txfCardAmount.getText();
             //hämta siffran som finns i rutan
