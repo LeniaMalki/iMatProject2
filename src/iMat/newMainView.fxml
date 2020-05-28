@@ -101,7 +101,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <ImageView fx:id="Logo" fitHeight="100.0" fitWidth="199.0" onMousePressed="#logoPressed" pickOnBounds="true" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="826.0" AnchorPane.topAnchor="0.0">
+                        <ImageView fx:id="Logo" fitHeight="100.0" fitWidth="199.0" onMouseClicked="#backToStore" onMousePressed="#logoPressed" pickOnBounds="true" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="826.0" AnchorPane.topAnchor="0.0">
                            <image>
                               <Image url="@../images/nyimatlogo.png" />
                            </image>
@@ -130,7 +130,7 @@
                               </Pane>
                            </children>
                         </Pane>
-                        <Pane fx:id="dealsCategory" layoutY="111.0" prefHeight="39.0" prefWidth="0.0" styleClass="primary-colour" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="825.0" AnchorPane.topAnchor="111.0">
+                        <Pane fx:id="dealsCategory" layoutY="111.0" onMouseClicked="#backToStore" prefHeight="39.0" prefWidth="0.0" styleClass="primary-colour" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="825.0" AnchorPane.topAnchor="111.0">
                            <children>
                               <ImageView fx:id="erbjudandenImage" fitHeight="39.0" fitWidth="38.0" layoutX="5.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -296,7 +296,7 @@
                         </AnchorPane>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="white-color">
                            <children>
-                              <Button fx:id="backToStoreButton" layoutX="786.0" layoutY="617.0" mnemonicParsing="false" onMouseClicked="#logoPressed" prefHeight="36.0" prefWidth="182.0" text="Tillbaka till startsidan" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="40.0">
+                              <Button fx:id="backToStoreButton" layoutX="786.0" layoutY="617.0" mnemonicParsing="false" onMouseClicked="#backToStore" prefHeight="36.0" prefWidth="182.0" text="Tillbaka till startsidan" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="40.0">
                                  <styleClass>
                                     <String fx:value="text-larger-bold" />
                                     <String fx:value="roundedbuttonon" />

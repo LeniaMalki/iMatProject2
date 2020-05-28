@@ -102,8 +102,6 @@ public class Card extends Pane implements ShoppingCartListener {
 
     }
 
-
-
     public void updateAmount() {
         boolean instance = false;
         String suffix;
