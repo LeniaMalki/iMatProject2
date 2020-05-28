@@ -41,11 +41,17 @@ public class iMatController implements Initializable {
     @FXML private Button helpButton;
     @FXML private ImageView helpButtonImage;
     @FXML private Button historyButton;
+    @FXML private ImageView historyButtonImage;
     @FXML private Button personalButton;
-    @FXML private Button xButton2;
-    @FXML private Button xButton1;
+    @FXML private ImageView personalButtonImage;
 
 
+    //DetailView
+    @FXML private ImageView xImageHelp;
+    @FXML private ImageView xImageDetail;
+    @FXML private Label detailViewNameLabel;
+    @FXML private Label detailViewPriceLabel;
+    @FXML private ImageView detailViewImage;
     //Main stage
 
     //Step 1 - Din varukorg
@@ -389,7 +395,11 @@ public class iMatController implements Initializable {
         lightBox.toBack();
     }
     @FXML
-    public void detailViewPressed(){
+    public void detailViewPressed(Product product){
+        detailViewNameLabel.setText(product.getName());
+        detailViewImage.setImage(iMatDataHandler.getFXImage(product));
+        detailViewPriceLabel.setText(product.getPrice() + " " + product.getUnit());
+
         lightBox.toFront();
     }
 
@@ -546,19 +556,24 @@ public class iMatController implements Initializable {
     }
     @FXML
     public void xButtonMouseEntered(){
-        helpButtonImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
-                "images/menuIcons/icon_close_hover.png")));
+        xImageDetail.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                "images/icon_close_hover.png")));
+        xImageHelp.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                "images/icon_close_hover.png")));
     }
     @FXML
     public void xButtonMousePressed(){
-        helpButtonImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+        xImageDetail.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                "images/icon_close.png")));
+        xImageHelp.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
                 "images/icon_close.png")));
     }
     @FXML
     public void xButtonMouseExited(){
-        helpButtonImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+        xImageDetail.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
                 "images/icon_close.png")));
-        //ifall användaren tar bort musen.
+        xImageHelp.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                "images/icon_close.png")));
     }
 
     @FXML
@@ -622,6 +637,38 @@ public class iMatController implements Initializable {
 
 
 
+
+    @FXML
+    public void historyButtonMouseEntered(){
+            historyButtonImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                    "images/menuIcons/MinHistorik-Hover.png")));
+    }
+    @FXML
+    public void historyButtonMousePressed(){
+            historyButtonImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                    "images/menuIcons/MinHistorik-Hover-Pressed.png")));
+    }
+    @FXML
+    public void historyButtonMouseExited(){
+            historyButtonImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                    "images/menuIcons/MinHistorik.png")));
+    }
+
+    @FXML
+    public void personalButtonMouseEntered(){
+            personalButtonImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                    "images/menuIcons/MinaUppgifter-Hover.png")));
+    }
+    @FXML
+    public void personalButtonMousePressed(){
+            personalButtonImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                    "images/menuIcons/MinaUppgifter-Hover-Pressed.png")));
+    }
+    @FXML
+    public void personalButtonMouseExited(){
+            personalButtonImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                    "images/menuIcons/MinaUppgifter.png")));
+    }
 
 
 }

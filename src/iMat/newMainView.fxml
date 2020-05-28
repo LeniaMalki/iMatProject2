@@ -23,11 +23,11 @@
    <children>
       <StackPane fx:id="mainStackPane" prefHeight="680.0" prefWidth="1024.0" AnchorPane.topAnchor="0.0">
          <children>
-            <AnchorPane fx:id="helpPane" prefHeight="680.0" prefWidth="1025.0" styleClass="lightbox-shadow">
+            <AnchorPane fx:id="helpPane" onMousePressed="#xPressed" prefHeight="680.0" prefWidth="1025.0" styleClass="lightbox-shadow">
                <children>
-                  <AnchorPane layoutX="200.0" layoutY="143.0" prefHeight="398.0" prefWidth="626.0" styleClass="white-color">
+                  <AnchorPane layoutX="200.0" layoutY="143.0" onMousePressed="#mouseTrap" prefHeight="398.0" prefWidth="626.0" styleClass="white-color">
                      <children>
-                        <ImageView fitHeight="30.0" fitWidth="36.0" layoutX="582.0" layoutY="14.0" onMousePressed="#xPressed" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="30.0" fitWidth="36.0" layoutX="582.0" layoutY="14.0" onMouseEntered="#xButtonMouseEntered" onMouseExited="#xButtonMouseExited" onMousePressed="#xButtonMousePressed" onMouseReleased="#xPressed" pickOnBounds="true" preserveRatio="true" fx:id="xImageHelp">
                            <image>
                               <Image url="@../images/icon_close.png" />
                            </image>
@@ -51,12 +51,12 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="lightBox" onKeyPressed="#lightboxPressed" onMouseClicked="#xPressed" prefHeight="683.0" prefWidth="1025.0" styleClass="lightbox-shadow">
+            <AnchorPane fx:id="lightBox" onKeyPressed="#lightboxPressed" onMousePressed="#xPressed" prefHeight="683.0" prefWidth="1025.0" styleClass="lightbox-shadow">
                <children>
-                  <AnchorPane layoutX="206.0" layoutY="141.0" prefHeight="398.0" prefWidth="626.0" style="-fx-background-color: -fx-background;">
+                  <AnchorPane layoutX="206.0" layoutY="141.0" onMousePressed="#mouseTrap" prefHeight="398.0" prefWidth="626.0" style="-fx-background-color: -fx-background;">
                      <children>
-                        <ImageView fitHeight="208.0" fitWidth="243.0" layoutX="23.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true" />
-                        <Label layoutX="294.0" layoutY="49.0" styleClass="text-larger2" text="Äpple Granny Smith Eko" />
+                        <ImageView fx:id="detailViewImage" fitHeight="208.0" fitWidth="243.0" layoutX="23.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="detailViewNameLabel" layoutX="294.0" layoutY="49.0" styleClass="text-larger2" text="Äpple Granny Smith Eko" />
                         <Button layoutX="538.0" layoutY="312.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="46.0" styleClass="round-button-orange">
                            <graphic>
                               <ImageView fitHeight="29.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" styleClass="round-button-orange">
@@ -77,13 +77,13 @@
                         </Button>
                         <TextField alignment="CENTER" layoutX="442.0" layoutY="317.0" prefHeight="39.0" prefWidth="79.0" text="0 st" />
                         <Label layoutX="294.0" layoutY="113.0" styleClass="text-larger-bold" text="Pris:" />
-                        <TextArea layoutX="294.0" layoutY="153.0" prefHeight="138.0" prefWidth="290.0" wrapText="true" />
-                        <ImageView fitHeight="30.0" fitWidth="36.0" layoutX="582.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                        <TextArea editable="false" layoutX="294.0" layoutY="153.0" prefHeight="138.0" prefWidth="290.0" wrapText="true" />
+                        <ImageView fitHeight="30.0" fitWidth="36.0" layoutX="582.0" layoutY="14.0" onMouseEntered="#xButtonMouseEntered" onMouseExited="#xButtonMouseExited" onMousePressed="#xButtonMousePressed" onMouseReleased="#xPressed" pickOnBounds="true" preserveRatio="true" fx:id="xImageDetail">
                            <image>
                               <Image url="@../images/icon_close.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="338.0" layoutY="113.0" styleClass="text-larger-bold" text="5 kr / st" />
+                        <Label fx:id="detailViewPriceLabel" layoutX="338.0" layoutY="113.0" styleClass="text-larger-bold" text="5 kr / st" />
                      </children>
                   </AnchorPane>
                </children>
@@ -92,16 +92,16 @@
                <children>
                   <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" pickOnBounds="false" prefHeight="150.0" prefWidth="1024.0" styleClass="white-color">
                      <children>
-                        <Button fx:id="helpButton" layoutX="713.0" layoutY="26.0" mnemonicParsing="false" onAction="#helpPressed" prefHeight="78.0" prefWidth="66.0" styleClass="transparent-button">
+                        <Button fx:id="helpButton" layoutX="713.0" layoutY="26.0" mnemonicParsing="false" onAction="#helpPressed" onMouseEntered="#HelpButtonMouseEntered" onMouseExited="#HelpButtonMouseExited" onMousePressed="#HelpButtonMousePressed" prefHeight="78.0" prefWidth="66.0" styleClass="transparent-button">
                            <graphic>
-                              <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true">
+                              <ImageView fx:id="helpButtonImage" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true">
                                  <image>
                                     <Image url="@../images/menuIcons/Hjälp.png" />
                                  </image>
                               </ImageView>
                            </graphic>
                         </Button>
-                        <ImageView fx:id="Logo" fitHeight="100.0" fitWidth="199.0" onMouseClicked="#backToStore" onMousePressed="#backToStore" pickOnBounds="true" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="826.0" AnchorPane.topAnchor="0.0">
+                        <ImageView fx:id="Logo" fitHeight="100.0" fitWidth="199.0" onMousePressed="#backToStore" pickOnBounds="true" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="826.0" AnchorPane.topAnchor="0.0">
                            <image>
                               <Image url="@../images/nyimatlogo.png" />
                            </image>
@@ -144,9 +144,9 @@
                               </Label>
                            </children>
                         </Pane>
-                        <Button fx:id="historyButton" layoutX="803.0" layoutY="26.0" mnemonicParsing="false" onAction="#historyButtonPressed" prefHeight="78.0" prefWidth="0.0" styleClass="transparent-button">
+                        <Button fx:id="historyButton" layoutX="803.0" layoutY="26.0" mnemonicParsing="false" onAction="#historyButtonPressed" onMouseEntered="#historyButtonMouseEntered" onMouseExited="#historyButtonMouseExited" onMousePressed="#historyButtonMousePressed" prefHeight="78.0" prefWidth="0.0" styleClass="transparent-button">
                            <graphic>
-                              <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true">
+                              <ImageView fx:id="historyButtonImage" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true">
                                  <image>
                                     <Image url="@../images/menuIcons/MinHistorik.png" />
                                  </image>
@@ -155,7 +155,7 @@
                         </Button>
                         <Button fx:id="personalButton" layoutX="897.0" layoutY="25.0" mnemonicParsing="false" onAction="#personalButtonPressed" onMouseClicked="#loadPersonal" prefHeight="78.0" prefWidth="0.0" styleClass="transparent-button">
                            <graphic>
-                              <ImageView fitHeight="62.0" fitWidth="55.0" pickOnBounds="true">
+                              <ImageView fx:id="personalButtonImage" fitHeight="62.0" fitWidth="55.0" pickOnBounds="true">
                                  <image>
                                     <Image url="@../images/menuIcons/MinaUppgifter.png" />
                                  </image>
@@ -166,71 +166,6 @@
                   </AnchorPane>
                   <StackPane fx:id="mainStackpane2" layoutY="149.0" prefHeight="530.0" prefWidth="1024.0">
                      <children>
-                        <AnchorPane fx:id="wizard2" prefHeight="200.0" prefWidth="1113.0" styleClass="white-color">
-                           <children>
-                              <Button fx:id="contactContinueButton" layoutX="667.0" layoutY="595.0" mnemonicParsing="false" onMouseClicked="#contactContinue" prefHeight="36.0" prefWidth="188.0" text="Spara &amp; gå vidare" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="40.0">
-                                 <styleClass>
-                                    <String fx:value="text-larger-bold" />
-                                    <String fx:value="roundedbuttonon" />
-                                 </styleClass>
-                              </Button>
-                              <Label layoutX="355.0" layoutY="119.0" styleClass="text-larger2" text="Kontaktuppgifter" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="110.0" />
-                              <Button fx:id="contactBackButton" layoutX="216.0" layoutY="452.0" mnemonicParsing="false" onMouseClicked="#contactReturn" prefHeight="36.0" prefWidth="130.0" styleClass="wizard-back-button" text="Tillbaka" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="40.0">
-                                 <graphic>
-                                    <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../images/greyarrow.PNG" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                              <TextField fx:id="nameTextField" layoutX="200.0" layoutY="171.0" prefHeight="25.0" prefWidth="504.0" promptText="Förnamn..." AnchorPane.leftAnchor="200.0" />
-                              <TextField fx:id="surnameTextField" layoutX="200.0" layoutY="228.0" prefHeight="25.0" prefWidth="504.0" promptText="Efternamn..." AnchorPane.leftAnchor="200.0" />
-                              <TextField fx:id="phoneNumberTextField" layoutX="200.0" layoutY="286.0" prefHeight="25.0" prefWidth="504.0" promptText="Telefonnummer..." AnchorPane.leftAnchor="200.0" />
-                              <Label layoutX="384.0" layoutY="174.0" styleClass="text-larger-bold" text="Förnamn" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="150.0" />
-                              <Label layoutX="200.0" layoutY="207.0" styleClass="text-larger-bold" text="Efternamn" AnchorPane.leftAnchor="200.0" />
-                              <Label layoutX="200.0" layoutY="265.0" styleClass="text-larger-bold" text="Telefonnummer" AnchorPane.leftAnchor="200.0" />
-                              <Pane layoutX="268.0" layoutY="15.0" prefHeight="100.0" prefWidth="489.0">
-                                 <children>
-                                    <Line endX="567.0" layoutX="-91.0" layoutY="50.0" startX="103.0" stroke="#a19393" />
-                                    <Circle fill="#f79b31" layoutX="36.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
-                                    <Circle fill="DODGERBLUE" layoutX="244.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
-                                    <Circle fill="ORANGERED" layoutX="140.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
-                                    <Circle fill="DODGERBLUE" layoutX="452.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
-                                    <Circle fill="DODGERBLUE" layoutX="348.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
-                                    <ImageView fitHeight="42.0" fitWidth="41.0" layoutX="120.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../images/Wizard/Account_white.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="42.0" fitWidth="41.0" layoutX="224.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../images/Wizard/Shipping_grey.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="42.0" fitWidth="41.0" layoutX="328.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../images/Wizard/Payment_grey.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="35.0" fitWidth="31.0" layoutX="437.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../images/Wizard/Done_grey.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="36.0" fitWidth="46.0" layoutX="13.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../images/Wizard/Cart_grey.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Polyline fill="#ffffff00" layoutX="84.0" layoutY="63.0" points="0.0, -24.0, 12.0, -12.0, 0.0, 0.0, 0.0, 0.0" stroke="#b5b2b2" strokeType="INSIDE" />
-                                    <Polyline fill="#ffffff00" layoutX="184.0" layoutY="63.0" points="0.0, -24.0, 12.0, -12.0, 0.0, 0.0, 0.0, 0.0" stroke="#b5b2b2" strokeType="INSIDE" />
-                                    <Polyline fill="#ffffff00" layoutX="288.0" layoutY="62.0" points="0.0, -24.0, 12.0, -12.0, 0.0, 0.0, 0.0, 0.0" stroke="#b5b2b2" strokeType="INSIDE" />
-                                    <Polyline fill="#ffffff00" layoutX="391.0" layoutY="63.0" points="0.0, -24.0, 12.0, -12.0, 0.0, 0.0, 0.0, 0.0" stroke="#b5b2b2" strokeType="INSIDE" />
-                                 </children>
-                              </Pane>
-                           </children>
-                        </AnchorPane>
                         <AnchorPane fx:id="wizard5" prefHeight="200.0" prefWidth="200.0" styleClass="white-color">
                            <children>
                               <Label layoutX="160.0" layoutY="130.0" styleClass="text-larger2" text="Summering av order" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="110.0" />
@@ -290,69 +225,6 @@
                                     <Polyline fill="#ffffff00" layoutX="184.0" layoutY="63.0" points="0.0, -24.0, 12.0, -12.0, 0.0, 0.0, 0.0, 0.0" stroke="#b5b2b2" strokeType="INSIDE" />
                                     <Polyline fill="#ffffff00" layoutX="288.0" layoutY="62.0" points="0.0, -24.0, 12.0, -12.0, 0.0, 0.0, 0.0, 0.0" stroke="#b5b2b2" strokeType="INSIDE" />
                                     <Polyline fill="#ffffff00" layoutX="391.0" layoutY="63.0" points="0.0, -24.0, 12.0, -12.0, 0.0, 0.0, 0.0, 0.0" stroke="#b5b2b2" strokeType="INSIDE" />
-                                 </children>
-                              </Pane>
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane fx:id="wizard6" prefHeight="200.0" prefWidth="200.0" styleClass="white-color">
-                           <children>
-                              <Button fx:id="backToStoreButton" layoutX="786.0" layoutY="617.0" mnemonicParsing="false" onMouseClicked="#backToStore" prefHeight="36.0" prefWidth="182.0" text="Tillbaka till startsidan" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="40.0">
-                                 <styleClass>
-                                    <String fx:value="text-larger-bold" />
-                                    <String fx:value="roundedbuttonon" />
-                                 </styleClass>
-                              </Button>
-                              <Pane layoutX="268.0" layoutY="30.0" prefHeight="100.0" prefWidth="489.0" AnchorPane.topAnchor="15.0">
-                                 <children>
-                                    <Line endX="567.0" layoutX="-91.0" layoutY="50.0" startX="103.0" stroke="#a19393" />
-                                    <Circle fill="#f79b31" layoutX="36.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
-                                    <Circle fill="DODGERBLUE" layoutX="244.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
-                                    <Circle fill="DODGERBLUE" layoutX="140.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
-                                    <Circle fill="DODGERBLUE" layoutX="452.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
-                                    <Circle fill="DODGERBLUE" layoutX="348.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
-                                    <ImageView fitHeight="42.0" fitWidth="41.0" layoutX="120.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../images/Wizard/Account_grey.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="42.0" fitWidth="41.0" layoutX="224.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../images/Wizard/Shipping_grey.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="42.0" fitWidth="41.0" layoutX="328.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../images/Wizard/Payment_grey.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="35.0" fitWidth="31.0" layoutX="437.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../images/Wizard/Done_grey.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="36.0" fitWidth="46.0" layoutX="13.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../images/Wizard/Cart_grey.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Polyline fill="#ffffff00" layoutX="84.0" layoutY="63.0" points="0.0, -24.0, 12.0, -12.0, 0.0, 0.0, 0.0, 0.0" stroke="#b5b2b2" strokeType="INSIDE" />
-                                    <Polyline fill="#ffffff00" layoutX="184.0" layoutY="63.0" points="0.0, -24.0, 12.0, -12.0, 0.0, 0.0, 0.0, 0.0" stroke="#b5b2b2" strokeType="INSIDE" />
-                                    <Polyline fill="#ffffff00" layoutX="288.0" layoutY="62.0" points="0.0, -24.0, 12.0, -12.0, 0.0, 0.0, 0.0, 0.0" stroke="#b5b2b2" strokeType="INSIDE" />
-                                    <Polyline fill="#ffffff00" layoutX="391.0" layoutY="63.0" points="0.0, -24.0, 12.0, -12.0, 0.0, 0.0, 0.0, 0.0" stroke="#b5b2b2" strokeType="INSIDE" />
-                                 </children>
-                              </Pane>
-                              <Pane layoutX="251.0" layoutY="122.0" prefHeight="249.0" prefWidth="524.0" styleClass="done-pane">
-                                 <children>
-                                    <ImageView fitHeight="113.0" fitWidth="122.0" layoutX="201.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../images/tick.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="78.0" fitWidth="516.0" layoutX="4.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../images/done_text.PNG" />
-                                       </image>
-                                    </ImageView>
                                  </children>
                               </Pane>
                            </children>
@@ -542,6 +414,197 @@
                                     <ImageView fitHeight="36.0" fitWidth="46.0" layoutX="13.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/Wizard/Cart_white.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Polyline fill="#ffffff00" layoutX="84.0" layoutY="63.0" points="0.0, -24.0, 12.0, -12.0, 0.0, 0.0, 0.0, 0.0" stroke="#b5b2b2" strokeType="INSIDE" />
+                                    <Polyline fill="#ffffff00" layoutX="184.0" layoutY="63.0" points="0.0, -24.0, 12.0, -12.0, 0.0, 0.0, 0.0, 0.0" stroke="#b5b2b2" strokeType="INSIDE" />
+                                    <Polyline fill="#ffffff00" layoutX="288.0" layoutY="62.0" points="0.0, -24.0, 12.0, -12.0, 0.0, 0.0, 0.0, 0.0" stroke="#b5b2b2" strokeType="INSIDE" />
+                                    <Polyline fill="#ffffff00" layoutX="391.0" layoutY="63.0" points="0.0, -24.0, 12.0, -12.0, 0.0, 0.0, 0.0, 0.0" stroke="#b5b2b2" strokeType="INSIDE" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="wizard5" prefHeight="200.0" prefWidth="200.0" styleClass="white-color">
+                           <children>
+                              <Label layoutX="160.0" layoutY="130.0" styleClass="text-larger2" text="Summering av order" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="110.0" />
+                              <Button fx:id="summaryBackButton" layoutX="49.0" layoutY="466.0" mnemonicParsing="false" onMouseClicked="#summaryReturn" prefHeight="36.0" prefWidth="130.0" styleClass="wizard-back-button" text="Tillbaka" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="40.0">
+                                 <graphic>
+                                    <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/greyarrow.PNG" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="completePurchaseButton" layoutX="860.0" layoutY="466.0" mnemonicParsing="false" onMouseClicked="#summaryContinue" prefHeight="36.0" prefWidth="113.0" text="Slutför köp " AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="40.0">
+                                 <styleClass>
+                                    <String fx:value="text-larger-bold" />
+                                    <String fx:value="roundedbuttonon" />
+                                 </styleClass>
+                              </Button>
+                              <Label layoutX="160.0" layoutY="193.0" styleClass="text-larger-bold" text="Totalbelopp:" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="150.0" />
+                              <Label layoutX="202.0" layoutY="191.0" styleClass="text-larger-bold" text="Leveranstid:" AnchorPane.leftAnchor="202.0" />
+                              <Label fx:id="deliveryDateLabel" layoutX="350.0" layoutY="191.0" styleClass="text-larger-bold" text="Måndag 10 Maj" AnchorPane.leftAnchor="350.0" />
+                              <Label fx:id="totalPriceAmountLabel" layoutX="308.0" layoutY="193.0" styleClass="text-larger-bold" text="360 kr" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="150.0" />
+                              <Pane layoutX="268.0" layoutY="15.0" prefHeight="100.0" prefWidth="489.0">
+                                 <children>
+                                    <Line endX="567.0" layoutX="-91.0" layoutY="50.0" startX="103.0" stroke="#a19393" />
+                                    <Circle fill="#f79b31" layoutX="36.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
+                                    <Circle fill="DODGERBLUE" layoutX="244.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
+                                    <Circle fill="DODGERBLUE" layoutX="140.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
+                                    <Circle fill="ORANGERED" layoutX="452.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+                                    <Circle fill="DODGERBLUE" layoutX="348.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
+                                    <ImageView fitHeight="42.0" fitWidth="41.0" layoutX="120.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/Wizard/Account_grey.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="42.0" fitWidth="41.0" layoutX="224.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/Wizard/Shipping_grey.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="42.0" fitWidth="41.0" layoutX="328.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/Wizard/Payment_grey.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="35.0" fitWidth="31.0" layoutX="437.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/Wizard/Done_white.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="36.0" fitWidth="46.0" layoutX="13.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/Wizard/Cart_grey.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Polyline fill="#ffffff00" layoutX="84.0" layoutY="63.0" points="0.0, -24.0, 12.0, -12.0, 0.0, 0.0, 0.0, 0.0" stroke="#b5b2b2" strokeType="INSIDE" />
+                                    <Polyline fill="#ffffff00" layoutX="184.0" layoutY="63.0" points="0.0, -24.0, 12.0, -12.0, 0.0, 0.0, 0.0, 0.0" stroke="#b5b2b2" strokeType="INSIDE" />
+                                    <Polyline fill="#ffffff00" layoutX="288.0" layoutY="62.0" points="0.0, -24.0, 12.0, -12.0, 0.0, 0.0, 0.0, 0.0" stroke="#b5b2b2" strokeType="INSIDE" />
+                                    <Polyline fill="#ffffff00" layoutX="391.0" layoutY="63.0" points="0.0, -24.0, 12.0, -12.0, 0.0, 0.0, 0.0, 0.0" stroke="#b5b2b2" strokeType="INSIDE" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="wizard6" prefHeight="200.0" prefWidth="200.0" styleClass="white-color">
+                           <children>
+                              <Button fx:id="backToStoreButton" layoutX="786.0" layoutY="617.0" mnemonicParsing="false" onMouseClicked="#backToStore" prefHeight="36.0" prefWidth="182.0" text="Tillbaka till startsidan" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="40.0">
+                                 <styleClass>
+                                    <String fx:value="text-larger-bold" />
+                                    <String fx:value="roundedbuttonon" />
+                                 </styleClass>
+                              </Button>
+                              <Pane layoutX="268.0" layoutY="30.0" prefHeight="100.0" prefWidth="489.0" AnchorPane.topAnchor="15.0">
+                                 <children>
+                                    <Line endX="567.0" layoutX="-91.0" layoutY="50.0" startX="103.0" stroke="#a19393" />
+                                    <Circle fill="#f79b31" layoutX="36.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
+                                    <Circle fill="DODGERBLUE" layoutX="244.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
+                                    <Circle fill="DODGERBLUE" layoutX="140.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
+                                    <Circle fill="DODGERBLUE" layoutX="452.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
+                                    <Circle fill="DODGERBLUE" layoutX="348.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
+                                    <ImageView fitHeight="42.0" fitWidth="41.0" layoutX="120.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/Wizard/Account_grey.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="42.0" fitWidth="41.0" layoutX="224.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/Wizard/Shipping_grey.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="42.0" fitWidth="41.0" layoutX="328.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/Wizard/Payment_grey.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="35.0" fitWidth="31.0" layoutX="437.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/Wizard/Done_grey.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="36.0" fitWidth="46.0" layoutX="13.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/Wizard/Cart_grey.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Polyline fill="#ffffff00" layoutX="84.0" layoutY="63.0" points="0.0, -24.0, 12.0, -12.0, 0.0, 0.0, 0.0, 0.0" stroke="#b5b2b2" strokeType="INSIDE" />
+                                    <Polyline fill="#ffffff00" layoutX="184.0" layoutY="63.0" points="0.0, -24.0, 12.0, -12.0, 0.0, 0.0, 0.0, 0.0" stroke="#b5b2b2" strokeType="INSIDE" />
+                                    <Polyline fill="#ffffff00" layoutX="288.0" layoutY="62.0" points="0.0, -24.0, 12.0, -12.0, 0.0, 0.0, 0.0, 0.0" stroke="#b5b2b2" strokeType="INSIDE" />
+                                    <Polyline fill="#ffffff00" layoutX="391.0" layoutY="63.0" points="0.0, -24.0, 12.0, -12.0, 0.0, 0.0, 0.0, 0.0" stroke="#b5b2b2" strokeType="INSIDE" />
+                                 </children>
+                              </Pane>
+                              <Pane layoutX="251.0" layoutY="122.0" prefHeight="249.0" prefWidth="524.0" styleClass="done-pane">
+                                 <children>
+                                    <ImageView fitHeight="113.0" fitWidth="122.0" layoutX="201.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/tick.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="78.0" fitWidth="516.0" layoutX="4.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/done_text.PNG" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="wizard2" prefHeight="200.0" prefWidth="1113.0" styleClass="white-color">
+                           <children>
+                              <Button fx:id="contactContinueButton" layoutX="667.0" layoutY="595.0" mnemonicParsing="false" onMouseClicked="#contactContinue" prefHeight="36.0" prefWidth="188.0" text="Spara &amp; gå vidare" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="40.0">
+                                 <styleClass>
+                                    <String fx:value="text-larger-bold" />
+                                    <String fx:value="roundedbuttonon" />
+                                 </styleClass>
+                              </Button>
+                              <Label layoutX="355.0" layoutY="119.0" styleClass="text-larger2" text="Kontaktuppgifter" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="110.0" />
+                              <Button fx:id="contactBackButton" layoutX="216.0" layoutY="452.0" mnemonicParsing="false" onMouseClicked="#contactReturn" prefHeight="36.0" prefWidth="130.0" styleClass="wizard-back-button" text="Tillbaka" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="40.0">
+                                 <graphic>
+                                    <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/greyarrow.PNG" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <TextField fx:id="nameTextField" layoutX="200.0" layoutY="171.0" prefHeight="25.0" prefWidth="504.0" promptText="Förnamn..." AnchorPane.leftAnchor="200.0" />
+                              <TextField fx:id="surnameTextField" layoutX="200.0" layoutY="228.0" prefHeight="25.0" prefWidth="504.0" promptText="Efternamn..." AnchorPane.leftAnchor="200.0" />
+                              <TextField fx:id="phoneNumberTextField" layoutX="200.0" layoutY="286.0" prefHeight="25.0" prefWidth="504.0" promptText="Telefonnummer..." AnchorPane.leftAnchor="200.0" />
+                              <Label layoutX="384.0" layoutY="174.0" styleClass="text-larger-bold" text="Förnamn" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="150.0" />
+                              <Label layoutX="200.0" layoutY="207.0" styleClass="text-larger-bold" text="Efternamn" AnchorPane.leftAnchor="200.0" />
+                              <Label layoutX="200.0" layoutY="265.0" styleClass="text-larger-bold" text="Telefonnummer" AnchorPane.leftAnchor="200.0" />
+                              <Pane layoutX="268.0" layoutY="15.0" prefHeight="100.0" prefWidth="489.0">
+                                 <children>
+                                    <Line endX="567.0" layoutX="-91.0" layoutY="50.0" startX="103.0" stroke="#a19393" />
+                                    <Circle fill="#f79b31" layoutX="36.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
+                                    <Circle fill="DODGERBLUE" layoutX="244.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
+                                    <Circle fill="ORANGERED" layoutX="140.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+                                    <Circle fill="DODGERBLUE" layoutX="452.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
+                                    <Circle fill="DODGERBLUE" layoutX="348.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
+                                    <ImageView fitHeight="42.0" fitWidth="41.0" layoutX="120.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/Wizard/Account_white.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="42.0" fitWidth="41.0" layoutX="224.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/Wizard/Shipping_grey.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="42.0" fitWidth="41.0" layoutX="328.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/Wizard/Payment_grey.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="35.0" fitWidth="31.0" layoutX="437.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/Wizard/Done_grey.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="36.0" fitWidth="46.0" layoutX="13.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/Wizard/Cart_grey.png" />
                                        </image>
                                     </ImageView>
                                     <Polyline fill="#ffffff00" layoutX="84.0" layoutY="63.0" points="0.0, -24.0, 12.0, -12.0, 0.0, 0.0, 0.0, 0.0" stroke="#b5b2b2" strokeType="INSIDE" />
@@ -844,7 +907,8 @@
                               </AnchorPane>
                            </children>
                         </AnchorPane>
-                     </children></StackPane>
+                     </children>
+                  </StackPane>
                </children>
             </AnchorPane>
          </children>
