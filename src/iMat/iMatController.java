@@ -33,7 +33,6 @@ public class iMatController implements Initializable {
 
     //----------------Checkout------------------------
 
-
     //Framework
     @FXML private ImageView Logo;
     @FXML private Pane dealsCategory;
@@ -118,8 +117,9 @@ public class iMatController implements Initializable {
     @FXML private TextField txfLastName;
     @FXML private TextField txfPhoneNumber;
     @FXML private TextField txfMailAddress;
+    @FXML private TextField txfAdress;
     @FXML private TextField txfPostCode;
-    @FXML private TextField txfCity;
+    @FXML private TextField txfPostAdress;
 
     //-------------History-------------------
 
@@ -298,6 +298,7 @@ public class iMatController implements Initializable {
 
     @FXML
     public void personalButtonPressed(){
+        loadPersonal();
         profilePane.toFront();
         mainPane2.toFront();
     }
@@ -320,7 +321,7 @@ public class iMatController implements Initializable {
 
     @FXML
     public void summaryContinue(){
-        wizard5.toFront();
+        wizard6.toFront();
     }
 
     @FXML
@@ -576,6 +577,51 @@ public class iMatController implements Initializable {
                 "images/menuIcons/Hjälp.png")));
         //ifall användaren tar bort musen.
     }
+
+    public void loadPersonal(){
+        //laddar in uppgifterna när man går in på sidan
+        txfName.setText(iMatDataHandler.getCustomer().getFirstName());
+        txfLastName.setText(iMatDataHandler.getCustomer().getLastName());
+        txfPhoneNumber.setText(iMatDataHandler.getCustomer().getPhoneNumber());
+        txfMailAddress.setText(iMatDataHandler.getCustomer().getEmail());
+        txfAdress.setText(iMatDataHandler.getCustomer().getAddress());
+        txfPostCode.setText(iMatDataHandler.getCustomer().getPostCode());
+        txfPostAdress.setText(iMatDataHandler.getCustomer().getPostAddress());
+
+    }
+
+    public void savePersonal(){
+        //sparar uppgifterna som finns på sidan
+        iMatDataHandler.getCustomer().setFirstName(txfName.getText());
+        iMatDataHandler.getCustomer().setLastName(txfLastName.getText());
+        iMatDataHandler.getCustomer().setPhoneNumber(txfPhoneNumber.getText());
+        iMatDataHandler.getCustomer().setEmail(txfMailAddress.getText());
+        iMatDataHandler.getCustomer().setAddress(txfAdress.getText());
+        iMatDataHandler.getCustomer().setPostCode(txfPostCode.getText());
+        iMatDataHandler.getCustomer().setPostAddress(txfPostAdress.getText());
+    }
+
+    public void emptyPersonal(){
+        //Tömmer alla uppgifter från användaren
+        txfName.setText("");
+        txfLastName.setText("");
+        txfPhoneNumber.setText("");
+        txfMailAddress.setText("");
+        txfAdress.setText("");
+        txfPostCode.setText("");
+        txfPostAdress.setText("");
+        iMatDataHandler.getCustomer().setFirstName("");
+        iMatDataHandler.getCustomer().setLastName("");
+        iMatDataHandler.getCustomer().setPhoneNumber("");
+        iMatDataHandler.getCustomer().setEmail("");
+        iMatDataHandler.getCustomer().setAddress("");
+        iMatDataHandler.getCustomer().setPostCode("");
+        iMatDataHandler.getCustomer().setPostAddress("");
+
+    }
+
+
+
 
 
 }

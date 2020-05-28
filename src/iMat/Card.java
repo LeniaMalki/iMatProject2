@@ -90,7 +90,7 @@ public class Card extends Pane implements ShoppingCartListener {
     }
 
     @FXML
-    public void detailViewOressed(){ parentController.detailViewOressed();}
+    public void detailViewPressed(){ parentController.detailViewPressed();}
 
     @FXML
     public void setCardAmount(){
