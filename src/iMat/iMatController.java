@@ -317,6 +317,12 @@ public class iMatController implements Initializable {
     public void accountContinue(){
         wizard5.toFront();
     }
+
+    @FXML
+    public void summaryContinue(){
+        wizard5.toFront();
+    }
+
     @FXML
     public void contactReturn(){
         wizard1.toFront();
@@ -382,7 +388,7 @@ public class iMatController implements Initializable {
         lightBox.toBack();
     }
     @FXML
-    public void detailViewOressed(){
+    public void detailViewPressed(){
         lightBox.toFront();
     }
 
