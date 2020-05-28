@@ -32,6 +32,7 @@ public class iMatController implements Initializable {
 
     //----------------Checkout------------------------
 
+
     //Framework
     @FXML private ImageView Logo;
     @FXML private Pane dealsCategory;
@@ -128,9 +129,14 @@ public class iMatController implements Initializable {
     @FXML private StackPane mainStackpane;
 
     @FXML private ScrollPane historyPane;
-    @FXML private AnchorPane manePane2;
-    @FXML private AnchorPane manePane3;
+    @FXML private AnchorPane mainPane2;
+    @FXML private AnchorPane mainPane3;
     @FXML private AnchorPane wizard1;
+    @FXML private AnchorPane wizard2;
+    @FXML private AnchorPane wizard3;
+    @FXML private AnchorPane wizard4;
+    @FXML private AnchorPane wizard5;
+    @FXML private AnchorPane wizard6;
     @FXML private AnchorPane helpPane;
 
     @FXML private Label  erbjudandenLabel;
@@ -149,6 +155,9 @@ public class iMatController implements Initializable {
     private Parent checkoutView;
     private Parent helpView;
     private Parent searchView;
+
+    //------------------------------
+    @FXML private AnchorPane lightBox;
 
 
     List<Product> productList;
@@ -287,17 +296,42 @@ public class iMatController implements Initializable {
     @FXML
     public void personalButtonPressed(){
         profilePane.toFront();
-        manePane2.toFront();
+        mainPane2.toFront();
     }
+    @FXML
+    public void cartContinue(){
+        wizard2.toFront();
+    }
+    @FXML
+    public void contactContinue(){
+        wizard3.toFront();
+    }
+    @FXML
+    public void deliveryContinue(){
+        wizard4.toFront();
+    }
+    @FXML
+    public void accountContinue(){
+        wizard5.toFront();
+    }
+    @FXML
+    public void summaryContinue(){
+        wizard6.toFront();
+    }
+
     @FXML
     public void historyButtonPressed(){
         historyPane.toFront();
-        manePane2.toFront();
+        mainPane2.toFront();
     }
     @FXML
     public void logoPressed(){
-        manePane3.toFront();
-        manePane2.toFront();
+
+        mainPane3.toFront();
+        mainPane2.toFront();
+        cartIconPane.setVisible(true);
+        erbjudandenLabel.setText("Erbjudanden");
+        erbjudandenImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("images/procent.PNG")));
     }
 
     @FXML
@@ -307,6 +341,20 @@ public class iMatController implements Initializable {
         erbjudandenLabel.setText("Fortsätt handla");
         erbjudandenImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("images/arrow.PNG")));
 
+    }
+
+    @FXML
+    public void Pressed(){
+        wizard1.toFront();
+        cartIconPane.setVisible(false);
+        erbjudandenLabel.setText("Fortsätt handla");
+        erbjudandenImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("images/arrow.PNG")));
+
+    }
+
+    @FXML
+    public void lightboxPressed(){
+        lightBox.toBack();
     }
 
     @FXML
@@ -351,6 +399,12 @@ public class iMatController implements Initializable {
         if (remove) {
             iMatDataHandler.getShoppingCart().removeItem(shoppingItem);
         }
+
+    }
+
+    public void loadCart(){
+
+
 
     }
 
@@ -430,7 +484,7 @@ public class iMatController implements Initializable {
     }
 
     public void updateShoppingCart(){
-        updatrTotalPrice();
+        updateTotalPrice();
 
         if(iMatDataHandler.getShoppingCart().getTotal() == 0){
             cartEmptyLabel.setVisible(true);
@@ -438,6 +492,7 @@ public class iMatController implements Initializable {
         else cartEmptyLabel.setVisible(false);
 
         cartFlowPane.getChildren().clear();
+
         for(ShoppingItem si: iMatDataHandler.getShoppingCart().getItems()){
             shoppingCartItemClass temp = new shoppingCartItemClass(si,this);
             iMatDataHandler.getShoppingCart().addShoppingCartListener(temp);
@@ -446,11 +501,16 @@ public class iMatController implements Initializable {
         }
     }
 
-   public void updatrTotalPrice(){
+   public void updateTotalPrice(){
        totalPriceLabel.setText("Totalt: " + Double.toString(iMatDataHandler.getShoppingCart().getTotal()));
    }
 
 
+
+    public void populateHistoryOrders(){
+
+
+    }
 
     @FXML
     public void incrementProductTest(){

@@ -37,12 +37,17 @@ public class shoppingCartItemClass extends AnchorPane implements ShoppingCartLis
             throw new RuntimeException(exception);
         }
 
+        DecimalFormat value = new DecimalFormat("#.#");
         Double amount = shoppingItem.getAmount();
         this.shoppingItem = shoppingItem;
         this.nameLabel.setText(shoppingItem.getProduct().getName());
         this.productPriceLabel.setText(String.valueOf(shoppingItem.getTotal()) + "kr");
         this.productImageView.setImage(iMatDataHandler.getFXImage(shoppingItem.getProduct()));
         this.txfAmount.setText(String.valueOf(amount));
+        this.productPriceLabel.setText(String.valueOf(value.format(shoppingItem.getTotal())) + "kr");
+        this.productImageView.setImage(iMatDataHandler.getFXImage(shoppingItem.getProduct()));
+        //this.txfAmount.setText(String.valueOf(amount));
+        //updateText();
 
         this.parentController = parentController;
     }
@@ -62,7 +67,7 @@ public class shoppingCartItemClass extends AnchorPane implements ShoppingCartLis
         if(cartEvent.getShoppingItem() == shoppingItem) {
             productPriceLabel.setText(String.valueOf(shoppingItem.getTotal()) + "kr");
             txfAmount.setText(String.valueOf(shoppingItem.getAmount()));
-            parentController.updatrTotalPrice();
+            parentController.updateTotalPrice();
         }
     }
 
