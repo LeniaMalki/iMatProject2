@@ -424,69 +424,6 @@
                               </Pane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="wizard5" prefHeight="200.0" prefWidth="200.0" styleClass="white-color">
-                           <children>
-                              <Label layoutX="160.0" layoutY="130.0" styleClass="text-larger2" text="Summering av order" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="110.0" />
-                              <Button fx:id="summaryBackButton" layoutX="49.0" layoutY="466.0" mnemonicParsing="false" onMouseClicked="#summaryReturn" prefHeight="36.0" prefWidth="130.0" styleClass="wizard-back-button" text="Tillbaka" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="40.0">
-                                 <graphic>
-                                    <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../images/greyarrow.PNG" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                              <Button fx:id="completePurchaseButton" layoutX="860.0" layoutY="466.0" mnemonicParsing="false" onMouseClicked="#summaryContinue" prefHeight="36.0" prefWidth="113.0" text="Slutför köp " AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="40.0">
-                                 <styleClass>
-                                    <String fx:value="text-larger-bold" />
-                                    <String fx:value="roundedbuttonon" />
-                                 </styleClass>
-                              </Button>
-                              <Label layoutX="160.0" layoutY="193.0" styleClass="text-larger-bold" text="Totalbelopp:" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="150.0" />
-                              <Label layoutX="202.0" layoutY="191.0" styleClass="text-larger-bold" text="Leveranstid:" AnchorPane.leftAnchor="202.0" />
-                              <Label fx:id="deliveryDateLabel" layoutX="350.0" layoutY="191.0" styleClass="text-larger-bold" text="Måndag 10 Maj" AnchorPane.leftAnchor="350.0" />
-                              <Label fx:id="totalPriceAmountLabel" layoutX="308.0" layoutY="193.0" styleClass="text-larger-bold" text="360 kr" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="150.0" />
-                              <Pane layoutX="268.0" layoutY="15.0" prefHeight="100.0" prefWidth="489.0">
-                                 <children>
-                                    <Line endX="567.0" layoutX="-91.0" layoutY="50.0" startX="103.0" stroke="#a19393" />
-                                    <Circle fill="#f79b31" layoutX="36.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
-                                    <Circle fill="DODGERBLUE" layoutX="244.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
-                                    <Circle fill="DODGERBLUE" layoutX="140.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
-                                    <Circle fill="ORANGERED" layoutX="452.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
-                                    <Circle fill="DODGERBLUE" layoutX="348.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
-                                    <ImageView fitHeight="42.0" fitWidth="41.0" layoutX="120.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../images/Wizard/Account_grey.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="42.0" fitWidth="41.0" layoutX="224.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../images/Wizard/Shipping_grey.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="42.0" fitWidth="41.0" layoutX="328.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../images/Wizard/Payment_grey.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="35.0" fitWidth="31.0" layoutX="437.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../images/Wizard/Done_white.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="36.0" fitWidth="46.0" layoutX="13.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../images/Wizard/Cart_grey.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Polyline fill="#ffffff00" layoutX="84.0" layoutY="63.0" points="0.0, -24.0, 12.0, -12.0, 0.0, 0.0, 0.0, 0.0" stroke="#b5b2b2" strokeType="INSIDE" />
-                                    <Polyline fill="#ffffff00" layoutX="184.0" layoutY="63.0" points="0.0, -24.0, 12.0, -12.0, 0.0, 0.0, 0.0, 0.0" stroke="#b5b2b2" strokeType="INSIDE" />
-                                    <Polyline fill="#ffffff00" layoutX="288.0" layoutY="62.0" points="0.0, -24.0, 12.0, -12.0, 0.0, 0.0, 0.0, 0.0" stroke="#b5b2b2" strokeType="INSIDE" />
-                                    <Polyline fill="#ffffff00" layoutX="391.0" layoutY="63.0" points="0.0, -24.0, 12.0, -12.0, 0.0, 0.0, 0.0, 0.0" stroke="#b5b2b2" strokeType="INSIDE" />
-                                 </children>
-                              </Pane>
-                           </children>
-                        </AnchorPane>
                         <AnchorPane fx:id="wizard6" prefHeight="200.0" prefWidth="200.0" styleClass="white-color">
                            <children>
                               <Button fx:id="backToStoreButton" layoutX="786.0" layoutY="617.0" mnemonicParsing="false" onMouseClicked="#backToStore" prefHeight="36.0" prefWidth="182.0" text="Tillbaka till startsidan" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="40.0">
@@ -615,6 +552,69 @@
                               </Pane>
                            </children>
                         </AnchorPane>
+                        <AnchorPane fx:id="wizard5" prefHeight="200.0" prefWidth="200.0" styleClass="white-color">
+                           <children>
+                              <Label layoutX="160.0" layoutY="130.0" styleClass="text-larger2" text="Summering av order" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="110.0" />
+                              <Button fx:id="summaryBackButton" layoutX="49.0" layoutY="466.0" mnemonicParsing="false" onMouseClicked="#summaryReturn" prefHeight="36.0" prefWidth="130.0" styleClass="wizard-back-button" text="Tillbaka" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="40.0">
+                                 <graphic>
+                                    <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/greyarrow.PNG" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="completePurchaseButton" layoutX="860.0" layoutY="466.0" mnemonicParsing="false" onMouseClicked="#summaryContinue" prefHeight="36.0" prefWidth="113.0" text="Slutför köp " AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="40.0">
+                                 <styleClass>
+                                    <String fx:value="text-larger-bold" />
+                                    <String fx:value="roundedbuttonon" />
+                                 </styleClass>
+                              </Button>
+                              <Label layoutX="160.0" layoutY="193.0" styleClass="text-larger-bold" text="Totalbelopp:" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="150.0" />
+                              <Label layoutX="202.0" layoutY="191.0" styleClass="text-larger-bold" text="Leveranstid:" AnchorPane.leftAnchor="202.0" />
+                              <Label fx:id="deliveryDateLabel" layoutX="350.0" layoutY="191.0" styleClass="text-larger-bold" text="Måndag 10 Maj" AnchorPane.leftAnchor="350.0" />
+                              <Label fx:id="totalPriceAmountLabel" layoutX="308.0" layoutY="193.0" styleClass="text-larger-bold" text="360 kr" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="150.0" />
+                              <Pane layoutX="268.0" layoutY="15.0" prefHeight="100.0" prefWidth="489.0">
+                                 <children>
+                                    <Line endX="567.0" layoutX="-91.0" layoutY="50.0" startX="103.0" stroke="#a19393" />
+                                    <Circle fill="#f79b31" layoutX="36.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
+                                    <Circle fill="DODGERBLUE" layoutX="244.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
+                                    <Circle fill="DODGERBLUE" layoutX="140.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
+                                    <Circle fill="ORANGERED" layoutX="452.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+                                    <Circle fill="DODGERBLUE" layoutX="348.0" layoutY="50.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" styleClass="fill-grey" />
+                                    <ImageView fitHeight="42.0" fitWidth="41.0" layoutX="120.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/Wizard/Account_grey.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="42.0" fitWidth="41.0" layoutX="224.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/Wizard/Shipping_grey.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="42.0" fitWidth="41.0" layoutX="328.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/Wizard/Payment_grey.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="35.0" fitWidth="31.0" layoutX="437.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/Wizard/Done_white.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="36.0" fitWidth="46.0" layoutX="13.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/Wizard/Cart_grey.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Polyline fill="#ffffff00" layoutX="84.0" layoutY="63.0" points="0.0, -24.0, 12.0, -12.0, 0.0, 0.0, 0.0, 0.0" stroke="#b5b2b2" strokeType="INSIDE" />
+                                    <Polyline fill="#ffffff00" layoutX="184.0" layoutY="63.0" points="0.0, -24.0, 12.0, -12.0, 0.0, 0.0, 0.0, 0.0" stroke="#b5b2b2" strokeType="INSIDE" />
+                                    <Polyline fill="#ffffff00" layoutX="288.0" layoutY="62.0" points="0.0, -24.0, 12.0, -12.0, 0.0, 0.0, 0.0, 0.0" stroke="#b5b2b2" strokeType="INSIDE" />
+                                    <Polyline fill="#ffffff00" layoutX="391.0" layoutY="63.0" points="0.0, -24.0, 12.0, -12.0, 0.0, 0.0, 0.0, 0.0" stroke="#b5b2b2" strokeType="INSIDE" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </AnchorPane>
                         <AnchorPane fx:id="mainPane2" prefHeight="530.0" prefWidth="1024.0" styleClass="white-color">
                            <children>
                               <StackPane fx:id="mainStackpane3" prefHeight="530.0" prefWidth="815.0">
@@ -699,6 +699,41 @@
                                                       <String fx:value="text-larger-bold" />
                                                    </styleClass>
                                                 </Button>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </ScrollPane>
+                                    <ScrollPane fx:id="historyPane" prefHeight="531.0" prefWidth="817.0">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="530.0" prefWidth="815.0">
+                                             <children>
+                                                <Button fx:id="addOrderButton" layoutX="607.0" layoutY="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="173.0" styleClass="roundedbuttonoff" text="Lägg till hela ordern       ">
+                                                   <font>
+                                                      <Font size="13.0" />
+                                                   </font>
+                                                </Button>
+                                                <ScrollPane fx:id="scrollOrders" hbarPolicy="NEVER" layoutX="24.0" layoutY="72.0" prefHeight="415.0" prefWidth="358.0">
+                                                   <content>
+                                                      <FlowPane fx:id="historyOrderFlow" prefHeight="412.0" prefWidth="358.0" />
+                                                   </content>
+                                                </ScrollPane>
+                                                <ScrollPane fx:id="scrollOrderDetails" hbarPolicy="NEVER" layoutX="423.0" layoutY="72.0" prefHeight="415.0" prefWidth="358.0">
+                                                   <content>
+                                                      <FlowPane fx:id="historyOrderItemFlow" prefHeight="411.0" prefWidth="357.0">
+                                                         <children>
+                                                            <Label fx:id="emptyLabel" prefHeight="300.0" prefWidth="356.0" style="-fx-text-alignment: center;" styleClass="title-text" text="Välj en order i listan till vänster! " wrapText="true" />
+                                                         </children>
+                                                      </FlowPane>
+                                                   </content>
+                                                </ScrollPane>
+                                                <Label layoutX="31.0" layoutY="42.0" styleClass="text-larger-bold" text="Datum" />
+                                                <Label layoutX="175.0" layoutY="42.0" styleClass="text-larger-bold" text="Order" />
+                                                <Label layoutX="423.0" layoutY="42.0" styleClass="text-larger-bold" text="Orderdetaljer" />
+                                                <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="746.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/grey_pluss.png" />
+                                                   </image>
+                                                </ImageView>
                                              </children>
                                           </AnchorPane>
                                        </content>
@@ -853,41 +888,6 @@
                                     <Label fx:id="cartEmptyLabel" alignment="CENTER" prefHeight="386.0" prefWidth="209.0" style="-fx-text-alignment: center;" styleClass="text-larger-bold" text="Din varukorg är tom!" wrapText="true" />
                                  </children>
                               </AnchorPane>
-                              <ScrollPane fx:id="historyPane" prefHeight="531.0" prefWidth="817.0">
-                                 <content>
-                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="530.0" prefWidth="815.0">
-                                       <children>
-                                          <Button fx:id="addOrderButton" layoutX="607.0" layoutY="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="173.0" styleClass="roundedbuttonoff" text="Lägg till hela ordern       ">
-                                             <font>
-                                                <Font size="13.0" />
-                                             </font>
-                                          </Button>
-                                          <ScrollPane fx:id="scrollOrders" hbarPolicy="NEVER" layoutX="24.0" layoutY="72.0" prefHeight="415.0" prefWidth="358.0">
-                                             <content>
-                                                <FlowPane fx:id="historyOrderFlow" prefHeight="412.0" prefWidth="358.0" />
-                                             </content>
-                                          </ScrollPane>
-                                          <ScrollPane fx:id="scrollOrderDetails" hbarPolicy="NEVER" layoutX="423.0" layoutY="72.0" prefHeight="415.0" prefWidth="358.0">
-                                             <content>
-                                                <FlowPane fx:id="historyOrderItemFlow" prefHeight="411.0" prefWidth="357.0">
-                                                   <children>
-                                                      <Label fx:id="emptyLabel" prefHeight="300.0" prefWidth="356.0" style="-fx-text-alignment: center;" styleClass="title-text" text="Välj en order i listan till vänster! " wrapText="true" />
-                                                   </children>
-                                                </FlowPane>
-                                             </content>
-                                          </ScrollPane>
-                                          <Label layoutX="31.0" layoutY="42.0" styleClass="text-larger-bold" text="Datum" />
-                                          <Label layoutX="175.0" layoutY="42.0" styleClass="text-larger-bold" text="Order" />
-                                          <Label layoutX="423.0" layoutY="42.0" styleClass="text-larger-bold" text="Orderdetaljer" />
-                                          <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="746.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../images/grey_pluss.png" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </AnchorPane>
-                                 </content>
-                              </ScrollPane>
                            </children>
                         </AnchorPane>
                      </children>

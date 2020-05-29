@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" pickOnBounds="false" prefHeight="680.0" prefWidth="1024.0" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" pickOnBounds="false" prefHeight="680.0" prefWidth="1024.0" stylesheets="@../iMat/iMat.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <StackPane prefHeight="680.0" prefWidth="1024.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -89,7 +89,7 @@
                   </AnchorPane>
                   <ScrollPane fx:id="scrollMain" layoutY="150.0" prefHeight="531.0" prefWidth="817.0">
                      <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="768.0" prefWidth="818.0" styleClass="white-color" stylesheets="@iMat.css">
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="768.0" prefWidth="818.0" styleClass="white-color" stylesheets="@../iMat/iMat.css">
                            <children>
                               <Label layoutX="299.0" layoutY="40.0" styleClass="title-text" text="Mina uppgifter" AnchorPane.leftAnchor="299.0" />
                               <ImageView fitHeight="63.0" fitWidth="63.0" layoutX="213.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
@@ -156,7 +156,7 @@
                         </AnchorPane>
                      </content>
                   </ScrollPane>
-                  <AnchorPane layoutX="814.0" layoutY="152.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="531.0" prefWidth="209.0" stylesheets="@iMat.css">
+                  <AnchorPane layoutX="814.0" layoutY="152.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="531.0" prefWidth="209.0" stylesheets="@../iMat/iMat.css">
                      <children>
                         <ScrollPane fx:id="scrollCart" layoutX="1.0" prefHeight="400.0" prefWidth="209.0">
                            <content>

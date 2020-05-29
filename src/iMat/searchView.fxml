@@ -14,7 +14,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" pickOnBounds="false" prefHeight="680.0" prefWidth="1024.0" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" pickOnBounds="false" prefHeight="680.0" prefWidth="1024.0" stylesheets="@../iMat/iMat.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <StackPane prefHeight="680.0" prefWidth="1025.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -164,7 +164,7 @@
                         </AnchorPane>
                      </content>
                   </ScrollPane>
-                  <AnchorPane layoutX="814.0" layoutY="152.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="531.0" prefWidth="209.0" stylesheets="@iMat.css">
+                  <AnchorPane layoutX="814.0" layoutY="152.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="531.0" prefWidth="209.0" stylesheets="@../iMat/iMat.css">
                      <children>
                         <ScrollPane fx:id="scrollCart" layoutX="1.0" prefHeight="400.0" prefWidth="209.0">
                            <content>

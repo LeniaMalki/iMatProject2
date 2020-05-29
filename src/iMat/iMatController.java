@@ -177,7 +177,6 @@ public class iMatController implements Initializable {
         cardFlow.setVgap(10);
         cardFlow.setHgap(25);
         cardFlow.setPrefWrapLength(400); // preferred width = 400
-
         updateShoppingCart();
     }
 
@@ -334,10 +333,16 @@ public class iMatController implements Initializable {
     }
     @FXML
     public void cartContinue(){
+        nameTextField.setText(iMatDataHandler.getCustomer().getFirstName());
+        surnameTextField.setText(iMatDataHandler.getCustomer().getLastName());
+        phoneNumberTextField.setText(iMatDataHandler.getCustomer().getPhoneNumber());
         wizard2.toFront();
     }
     @FXML
     public void contactContinue(){
+        addressTextField.setText(iMatDataHandler.getCustomer().getAddress());
+        postCodeTextField.setText(iMatDataHandler.getCustomer().getPostCode());
+        cityTextField.setText(iMatDataHandler.getCustomer().getPostAddress());
         wizard3.toFront();
     }
     @FXML
