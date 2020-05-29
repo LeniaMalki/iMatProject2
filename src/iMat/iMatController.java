@@ -15,10 +15,7 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Circle;
-import se.chalmers.cse.dat216.project.IMatDataHandler;
-import se.chalmers.cse.dat216.project.Product;
-import se.chalmers.cse.dat216.project.ProductCategory;
-import se.chalmers.cse.dat216.project.ShoppingItem;
+import se.chalmers.cse.dat216.project.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -131,6 +128,8 @@ public class iMatController implements Initializable {
 
     //Main stage
     @FXML private ScrollPane scrollOrder;
+    @FXML private FlowPane historyOrderFlow;
+    @FXML private FlowPane historyOrderItemFlow;
     @FXML private ScrollPane scrollOrderDetails;
     @FXML private Label emptyLabel;
     @FXML private Button addOrderButton;
@@ -301,6 +300,31 @@ public class iMatController implements Initializable {
 
 
     }
+    @FXML
+    private void populateHistoryOrders(){
+        historyOrderFlow.getChildren().clear();
+        for (Order o: iMatDataHandler.getOrders()) {
+            historyOrderFlow.getChildren().add(0, new historyOrder(this, o));
+
+        }
+    }
+
+    @FXML
+    private void populateHistoryOrderItems(historyOrder ho){
+        historyOrderItemFlow.getChildren().clear();
+        for(ShoppingItem si: ho.getOrder().getItems()){
+            historyOrderFlow.getChildren().add(new historyOrderItem(this,si));
+        }
+
+    }
+
+    @FXML
+    private void orderAddAll(historyOrder ho){
+        for (ShoppingItem si: ho.getOrder().getItems()){
+            addShoppingCartItem(si);
+        }
+
+    }
 
     @FXML
     public void personalButtonPressed(){
@@ -349,6 +373,7 @@ public class iMatController implements Initializable {
 
     @FXML
     public void historyButtonPressed(){
+        populateHistoryOrders();
         historyPane.toFront();
         mainPane2.toFront();
     }
@@ -440,12 +465,6 @@ public class iMatController implements Initializable {
 
     }
 
-    public void loadCart(){
-
-
-
-    }
-
     public void setCardAmount(Product product, double amount) {
         ShoppingItem shoppingItem = null;
         for (ShoppingItem s : iMatDataHandler.getShoppingCart().getItems()) {
@@ -465,10 +484,6 @@ public class iMatController implements Initializable {
             addShoppingCartItem(shoppingItem);
         }
     }
-
-
-
-
 
     public void addShoppingCartItem(ShoppingItem shoppingItem) {
         iMatDataHandler.getShoppingCart().addItem(shoppingItem);
@@ -556,12 +571,6 @@ public class iMatController implements Initializable {
         categoryTitle.setText(categoryText);
         updateCards(productList);
     }
-
-    public void populateHistoryOrders(){
-
-    }
-
-
 
     @FXML
     public void mouseTrap(Event event){
