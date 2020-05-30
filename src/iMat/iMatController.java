@@ -1,6 +1,7 @@
 package iMat;
 
 import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -10,6 +11,7 @@ import javafx.scene.control.*;
 import javafx.scene.Parent;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
@@ -17,6 +19,8 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Circle;
 import se.chalmers.cse.dat216.project.*;
 
+import java.awt.event.KeyEvent;
+import java.text.DecimalFormat;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -183,9 +187,9 @@ public class iMatController implements Initializable {
         cardFlow.setVgap(10);
         cardFlow.setHgap(25);
         cardFlow.setPrefWrapLength(400); // preferred width = 400
+        checkoutButton.setDisable(true);
         updateShoppingCart();
     }
-
 
     public void favoritesCategoryPressed(){
         categoryTitle.setText("Favoriter");
@@ -341,6 +345,8 @@ public class iMatController implements Initializable {
         loadPersonal();
         profilePane.toFront();
         mainPane2.toFront();
+        categoryTitle.setVisible(false);
+
     }
     @FXML
     public void cartContinue(){
@@ -367,8 +373,8 @@ public class iMatController implements Initializable {
 
     @FXML
     public void summaryContinue(){
-        iMatDataHandler.placeOrder();
         wizard6.toFront();
+        iMatDataHandler.placeOrder();
     }
 
     @FXML
@@ -391,6 +397,7 @@ public class iMatController implements Initializable {
     @FXML
     public void historyButtonPressed(){
         populateHistoryOrders();
+        categoryTitle.setVisible(false);
         historyPane.toFront();
         mainPane2.toFront();
     }
@@ -399,6 +406,7 @@ public class iMatController implements Initializable {
 
         mainPane3.toFront();
         mainPane2.toFront();
+        categoryTitle.setVisible(true);
         cartIconPane.setVisible(true);
         erbjudandenLabel.setText("Erbjudanden");
         erbjudandenImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("images/procent.PNG")));
@@ -409,15 +417,6 @@ public class iMatController implements Initializable {
         wizard1.toFront();
         cartIconPane.setVisible(false);
         addCheckoutCartItem();
-        erbjudandenLabel.setText("Fortsätt handla");
-        erbjudandenImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("images/arrow.PNG")));
-
-    }
-
-    @FXML
-    public void Pressed(){
-        wizard1.toFront();
-        cartIconPane.setVisible(false);
         erbjudandenLabel.setText("Fortsätt handla");
         erbjudandenImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("images/arrow.PNG")));
 
@@ -659,8 +658,6 @@ public class iMatController implements Initializable {
         categoryTitle.setText(categoryText);
         updateCards(productList);
     }
-
-
 
     @FXML
     public void mouseTrap(Event event){

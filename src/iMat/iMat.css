@@ -225,11 +225,39 @@
 
 .white-square-button{
     -fx-background-color:  -fx-background;
-    -fx-border-color: FF4500;
+    -fx-border-color: #FF4500;
     -fx-border-width: 0;
     -fx-background-radius: 0;
     -fx-font-family:"Avenir Book", Helvetica, Arial, sans-serif;
     -fx-text-fill: FF4500;
+}
+
+.wizard-label-selected{
+
+    -fx-text-fill: #FF4500;
+    -fx-font-weight: bold;
+
+}
+
+.wizard-label-unselected{
+
+    -fx-text-fill: #757575;
+    -fx-font-weight: bold;
+
+}
+
+.checkoutButtonOff{
+
+    -fx-background-color: rgba(255, 69, 0, 0.5);
+    -fx-cursor: not-allowed;
+
+}
+
+.checkoutButtonOn{
+
+    -fx-background-color: rgba(255, 69, 0, 1);
+    -fx-cursor: pointer;
+
 }
 
 .border-line{
