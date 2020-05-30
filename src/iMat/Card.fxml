@@ -32,6 +32,6 @@
             </ImageView>
          </graphic>
       </Button>
-      <TextField fx:id="txfCardAmount" alignment="CENTER" layoutX="57.0" layoutY="161.0" prefHeight="30.0" prefWidth="46.0" text="0 st" />
+      <TextField fx:id="txfCardAmount" alignment="CENTER" layoutX="57.0" layoutY="161.0" onAction="#setCardAmount" prefHeight="30.0" prefWidth="46.0" text="0" />
    </children>
 </fx:root>

@@ -8,26 +8,26 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root prefHeight="78.0" prefWidth="210.0" stylesheets="@iMat.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root prefHeight="78.0" prefWidth="210.0" styleClass="border-line" stylesheets="@iMat.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fx:id="productImageView" fitHeight="64.0" fitWidth="61.0" layoutX="5.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/menuIcons/Hjälp.png" />
          </image>
       </ImageView>
-      <Label fx:id="nameLabel" layoutX="88.0" layoutY="12.0" styleClass="text-larger" text="Bregott" />
-      <Label fx:id="productPriceLabel" layoutX="170.0" layoutY="47.0" text="12 kr" />
-      <TextField fx:id="txfAmount" alignment="CENTER" layoutX="86.0" layoutY="41.0" prefHeight="17.0" prefWidth="51.0" text="1 st" />
-      <Button fx:id="closeButton" layoutX="170.0" layoutY="11.0" mnemonicParsing="false" onAction="#removeItem" prefHeight="9.0" prefWidth="15.0" styleClass="orange-square-button" text="X" textFill="WHITE">
+      <Label fx:id="nameLabel" layoutX="79.0" layoutY="13.0" styleClass="text-larger" text="Bregott" />
+      <Label fx:id="productPriceLabel" layoutX="145.0" layoutY="47.0" text="12 kr" />
+      <TextField fx:id="txfAmount" alignment="CENTER" layoutX="77.0" layoutY="43.0" onAction="#setAmount" prefHeight="17.0" prefWidth="51.0" text="1 st" />
+      <Button fx:id="closeButton" layoutX="158.0" layoutY="8.0" mnemonicParsing="false" onAction="#removeItem" prefHeight="9.0" prefWidth="15.0" styleClass="orange-square-button" text="X" textFill="WHITE">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button fx:id="addItemButton" layoutX="137.0" layoutY="42.0" mnemonicParsing="false" onAction="#incrementProduct" prefHeight="23.0" prefWidth="21.0" styleClass="orange-square-button" text="+">
+      <Button fx:id="addItemButton" layoutX="118.0" layoutY="43.0" mnemonicParsing="false" onAction="#incrementProduct" prefHeight="25.0" prefWidth="21.0" styleClass="orange-square-button" text="+">
          <font>
             <Font size="10.0" />
          </font>
       </Button>
-      <Button fx:id="removeItemButton" layoutX="66.0" layoutY="42.0" mnemonicParsing="false" onAction="#decrementProduct" prefHeight="23.0" prefWidth="21.0" styleClass="orange-square-button" text="-" />
+      <Button fx:id="removeItemButton" layoutX="67.0" layoutY="43.0" mnemonicParsing="false" onAction="#decrementProduct" prefHeight="23.0" prefWidth="21.0" styleClass="orange-square-button" text="-" />
    </children>
 </fx:root>

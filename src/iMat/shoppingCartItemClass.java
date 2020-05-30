@@ -44,8 +44,6 @@ public class shoppingCartItemClass extends AnchorPane implements ShoppingCartLis
         this.productPriceLabel.setText(String.valueOf(shoppingItem.getTotal()) + "kr");
         this.productImageView.setImage(iMatDataHandler.getFXImage(shoppingItem.getProduct()));
         this.txfAmount.setText(String.valueOf(amount));
-        this.productPriceLabel.setText(String.valueOf(value.format(shoppingItem.getTotal())) + "kr");
-        this.productImageView.setImage(iMatDataHandler.getFXImage(shoppingItem.getProduct()));
         //this.txfAmount.setText(String.valueOf(amount));
         //updateText();
 
@@ -56,6 +54,19 @@ public class shoppingCartItemClass extends AnchorPane implements ShoppingCartLis
     @FXML
     public void removeItem(){
         parentController.removeCartItem(this);
+    }
+
+    @FXML
+    public void setAmount(){
+        String input = txfAmount.getText();
+        //hämta siffran som finns i rutan
+        double amount = Double.parseDouble(input);
+        //är det inte kg så kan man runda av
+        if(!shoppingItem.getProduct().getUnitSuffix().equals("kg.")){
+            amount = (int) amount;
+        }
+        parentController.setCardAmount(shoppingItem.getProduct(), amount);
+
     }
 
 

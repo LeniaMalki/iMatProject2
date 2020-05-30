@@ -6,18 +6,18 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="historyOrderItemPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="56.0" prefWidth="358.0" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root fx:id="historyOrderItemPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="56.0" prefWidth="358.0" styleClass="border-line" stylesheets="@iMat.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fx:id="productImageView" fitHeight="46.0" fitWidth="47.0" layoutX="7.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="productImageView" fitHeight="46.0" fitWidth="47.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/menuIcons/Hjälp.png" />
          </image>
       </ImageView>
-      <Label fx:id="nameLabel" layoutX="65.0" layoutY="18.0" styleClass="text-larger-bold" text="Äpple" AnchorPane.bottomAnchor="17.0" AnchorPane.topAnchor="19.0" />
-      <Label fx:id="priceLabel" layoutX="124.0" layoutY="19.0" styleClass="text-larger" text="5 kr / st" AnchorPane.bottomAnchor="17.0" AnchorPane.topAnchor="19.0" />
-      <Label fx:id="amountLabel" layoutX="191.0" layoutY="19.0" styleClass="text-larger" text="60 st" AnchorPane.bottomAnchor="17.0" AnchorPane.topAnchor="19.0" />
-      <Label fx:id="totalPriceLabel" layoutX="245.0" layoutY="17.0" styleClass="text-larger" text="300 kr" AnchorPane.bottomAnchor="17.0" AnchorPane.topAnchor="19.0" />
-      <Button fx:id="addItemButton" layoutX="308.0" layoutY="10.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="18.0" styleClass="round-button-orange">
+      <Label fx:id="nameLabel" layoutX="52.0" layoutY="16.0" prefHeight="27.0" prefWidth="80.0" styleClass="text-larger-bold" text="Äpple" AnchorPane.topAnchor="16.0" />
+      <Label fx:id="priceLabel" layoutX="138.0" layoutY="20.0" styleClass="text-larger" text="5 kr / st" AnchorPane.topAnchor="20.0" />
+      <Label fx:id="amountLabel" layoutX="211.0" layoutY="21.0" prefHeight="20.0" prefWidth="30.0" styleClass="text-larger" text="60 st" AnchorPane.bottomAnchor="16.0" AnchorPane.topAnchor="21.0" />
+      <Label fx:id="totalPriceLabel" layoutX="251.0" layoutY="21.0" styleClass="text-larger" text="300 kr" AnchorPane.bottomAnchor="17.0" AnchorPane.topAnchor="21.0" />
+      <Button fx:id="addItemButton" layoutX="308.0" layoutY="10.0" mnemonicParsing="false" onAction="#addOneProduct" prefHeight="34.0" prefWidth="18.0" styleClass="round-button-orange">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" styleClass="round-button-orange">
                <image>
@@ -27,4 +27,4 @@
          </graphic>
       </Button>
    </children>
-</AnchorPane>
+</fx:root>

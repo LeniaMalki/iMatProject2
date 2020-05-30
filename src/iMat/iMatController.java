@@ -17,6 +17,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Circle;
 import se.chalmers.cse.dat216.project.*;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -49,13 +50,16 @@ public class iMatController implements Initializable {
     @FXML private Label detailViewNameLabel;
     @FXML private Label detailViewPriceLabel;
     @FXML private ImageView detailViewImage;
+    @FXML private TextField detailViewTF;
     //Main stage
 
     //Step 1 - Din varukorg
     @FXML private Button cartContinueButton;
     @FXML private ScrollPane varukorgScrollPane;
     @FXML private Label totalPriceLabel;
-    @FXML private Button emptyButtom;
+    @FXML private Button emptyButton;
+    @FXML private FlowPane CheckoutCartFlowPane;
+    @FXML private Label totalPriceLabel1;
 
     //Step 2 - Kontaktuppgifter
     @FXML private TextField nameTextField;
@@ -169,6 +173,8 @@ public class iMatController implements Initializable {
     //------------------------------
     @FXML private AnchorPane lightBox;
 
+    Product pressedProduct;
+    historyOrder currentHistoryOrder;
 
     List<Product> productList;
     List<Product> tempList;
@@ -293,12 +299,14 @@ public class iMatController implements Initializable {
 
         for (Product p : productList){
 
-            cardFlow.getChildren().add(new Card(p, this));
+            Card c = new Card(p, this);
+            cardFlow.getChildren().add(c);
+            iMatDataHandler.getShoppingCart().addShoppingCartListener(c);
 
         }
-
-
     }
+
+
     @FXML
     private void populateHistoryOrders(){
         historyOrderFlow.getChildren().clear();
@@ -309,21 +317,24 @@ public class iMatController implements Initializable {
     }
 
     @FXML
-    private void populateHistoryOrderItems(historyOrder ho){
+    public void populateHistoryOrderItems(historyOrder ho){
         historyOrderItemFlow.getChildren().clear();
         for(ShoppingItem si: ho.getOrder().getItems()){
-            historyOrderFlow.getChildren().add(new historyOrderItem(this,si));
+            historyOrderItemFlow.getChildren().add(new historyOrderItem(this,si));
         }
+        currentHistoryOrder = ho;
 
     }
 
     @FXML
-    private void orderAddAll(historyOrder ho){
-        for (ShoppingItem si: ho.getOrder().getItems()){
-            addShoppingCartItem(si);
+    private void orderAddAll(){
+        for (ShoppingItem si: currentHistoryOrder.getOrder().getItems()){
+            for(int i = 0; i < si.getAmount(); i++){
+                incrementProduct(si.getProduct());
+            }
         }
-
     }
+
 
     @FXML
     public void personalButtonPressed(){
@@ -356,6 +367,7 @@ public class iMatController implements Initializable {
 
     @FXML
     public void summaryContinue(){
+        iMatDataHandler.placeOrder();
         wizard6.toFront();
     }
 
@@ -396,6 +408,7 @@ public class iMatController implements Initializable {
     public void checkoutPressed(){
         wizard1.toFront();
         cartIconPane.setVisible(false);
+        addCheckoutCartItem();
         erbjudandenLabel.setText("Fortsätt handla");
         erbjudandenImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream("images/arrow.PNG")));
 
@@ -424,13 +437,66 @@ public class iMatController implements Initializable {
         helpPane.toBack();
         lightBox.toBack();
     }
+
+    @FXML
+    public void emptyButtonPressed(){
+        iMatDataHandler.getShoppingCart().clear();
+        updateShoppingCart();
+        addCheckoutCartItem();
+    }
+
     @FXML
     public void detailViewPressed(Product product){
         detailViewNameLabel.setText(product.getName());
         detailViewImage.setImage(iMatDataHandler.getFXImage(product));
         detailViewPriceLabel.setText(product.getPrice() + " " + product.getUnit());
 
+        pressedProduct = product;
+        updateDetailViewAmount();
+
         lightBox.toFront();
+
+    }
+    @FXML
+    public void detailViewAdd(){
+        incrementProduct(pressedProduct);
+        updateDetailViewAmount();
+    }
+    @FXML
+    public void detailViewRemove(){
+        decrementProduct(pressedProduct);
+        updateDetailViewAmount();
+    }
+    public void updateDetailViewAmount(){
+        boolean instance = false;
+        for (ShoppingItem si : iMatDataHandler.getShoppingCart().getItems()) {
+            if (si.getProduct() == pressedProduct) {
+                if (si.getAmount() % 1 == 0) {
+                    detailViewTF.setText(String.valueOf((int) si.getAmount()));
+                } else {
+                    detailViewTF.setText(String.valueOf(si.getAmount()));
+                }
+                instance = true;
+            }
+            if (!instance) {
+                detailViewTF.setText("0");
+            }
+        }
+        if(iMatDataHandler.getShoppingCart().getItems().isEmpty()){
+            detailViewTF.setText("0");
+        }
+    }
+
+    @FXML
+    public void detailViewChangeAmount(){
+        String input = detailViewTF.getText();
+        //hämta siffran som finns i rutan
+        double amount = Double.parseDouble(input);
+        //är det inte kg så kan man runda av
+        if(!pressedProduct.getUnitSuffix().equals("kg.")){
+            amount = (int) amount;
+        }
+        setCardAmount(pressedProduct, amount);
     }
 
 
@@ -480,15 +546,29 @@ public class iMatController implements Initializable {
         if (amount <= 0 && shoppingItem != null) {
             iMatDataHandler.getShoppingCart().removeItem(shoppingItem);
             shoppingItem.setAmount(amount);
-            iMatDataHandler.getShoppingCart().fireShoppingCartChanged(shoppingItem,false);
+            incrementProduct(product);
+            decrementProduct(product);
         } else if (amount > 0 && shoppingItem != null) {
             shoppingItem.setAmount(amount);
             iMatDataHandler.getShoppingCart().fireShoppingCartChanged(shoppingItem,false);
         }else if (amount > 0){
             shoppingItem = new ShoppingItem(product,amount);
             addShoppingCartItem(shoppingItem);
+            cartEmptyLabel.setVisible(false);
         }
     }
+
+
+
+    public void addCheckoutCartItem() {
+        CheckoutCartFlowPane.getChildren().clear();
+        for (ShoppingItem s : iMatDataHandler.getShoppingCart().getItems()) {
+            CheckoutCartItemClass itemTemp = new CheckoutCartItemClass(s, this);
+            CheckoutCartFlowPane.getChildren().add(itemTemp);
+        }
+        totalPriceLabel1.setText("Totalt: " + Double.toString(iMatDataHandler.getShoppingCart().getTotal()) + " kr");
+    }
+
 
     public void addShoppingCartItem(ShoppingItem shoppingItem) {
         iMatDataHandler.getShoppingCart().addItem(shoppingItem);
@@ -496,11 +576,12 @@ public class iMatController implements Initializable {
         cartFlowPane.getChildren().add(itemTemp);
 
         iMatDataHandler.getShoppingCart().addShoppingCartListener(itemTemp);
+
     }
     public void removeCartItem(shoppingCartItemClass shoppingCartItem){
         iMatDataHandler.getShoppingCart().removeItem(shoppingCartItem.getShoppingItem());
         updateShoppingCart();
-        //updateSummaryCart();
+
     }
 
 
@@ -560,7 +641,9 @@ public class iMatController implements Initializable {
     }
 
    public void updateTotalPrice(){
-       totalPriceLabel.setText("Totalt: " + Double.toString(iMatDataHandler.getShoppingCart().getTotal()));
+       DecimalFormat deci = new DecimalFormat("#.##");
+
+       totalPriceLabel.setText("Totalt: " + deci.format(iMatDataHandler.getShoppingCart().getTotal()) + " kr");
    }
 
     @FXML
@@ -576,6 +659,8 @@ public class iMatController implements Initializable {
         categoryTitle.setText(categoryText);
         updateCards(productList);
     }
+
+
 
     @FXML
     public void mouseTrap(Event event){

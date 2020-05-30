@@ -1,17 +1,14 @@
 package iMat;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.Pane;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.Pane;
 import se.chalmers.cse.dat216.project.*;
 import javafx.scene.image.ImageView;
-import java.awt.*;
+
 import java.io.IOException;
 
 public class Card extends Pane implements ShoppingCartListener {
@@ -66,13 +63,21 @@ public class Card extends Pane implements ShoppingCartListener {
         });
 
  */
-        updateAmount();
+        updateCardAmount();
 
     }
 
     @FXML
     public void incrementProduct(){
         parentController.incrementProduct(product);
+
+//        if(txfCardAmount.getText().chars().allMatch( Character::isDigit )) {
+//            int value = Integer.valueOf(txfCardAmount.getText());
+//            for (int i = 0; i < value; i++) {
+//                parentController.incrementProduct(product);
+//            }
+//        }
+
     }
     @FXML
     public void decrementProduct(){
@@ -105,9 +110,9 @@ public class Card extends Pane implements ShoppingCartListener {
 
     }
 
-    public void updateAmount() {
+    @FXML
+    public void updateCardAmount() {
         boolean instance = false;
-        String suffix;
         //för alla shoppingitems i shoppingcart:en:
         for (ShoppingItem si : iMatDataHandler.getShoppingCart().getItems()) {
             if (si.getProduct() == product) {
@@ -117,34 +122,19 @@ public class Card extends Pane implements ShoppingCartListener {
                 } else {
                     txfCardAmount.setText(String.valueOf(si.getAmount()));
                 }
-                suffix = product.getUnitSuffix();
-                if (suffix.equals("förp.")) {
-                    suffix = "st.";
-                }
-                txfCardAmount.setText(txfCardAmount.getText() + " " + suffix);
                 instance = true;
-                removeItemButton.setDisable(false);
-
             }
             if (!instance) {
                 txfCardAmount.setText("0");
-                removeItemButton.setDisable(false);
             }
+        }
+        if(iMatDataHandler.getShoppingCart().getItems().isEmpty()){
+            txfCardAmount.setText("0");
         }
     }
 
     public void shoppingCartChanged(CartEvent cartEvent) {
-        if (cartEvent != null) {
-            if(cartEvent.getShoppingItem() != null) {
-                if(cartEvent.getShoppingItem().getProduct() == product){
-                    updateAmount();
-                }
-            }else if (iMatDataHandler.getShoppingCart().getItems().isEmpty()){
-                updateAmount();
-            }
-
-        }
-
+        updateCardAmount();
     }
 
 }

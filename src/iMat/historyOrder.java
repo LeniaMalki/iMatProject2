@@ -46,7 +46,7 @@ public class historyOrder extends AnchorPane{
         this.parentController = parentController;
 
         DecimalFormat deci = new DecimalFormat("#.##");
-        DateFormat date = new SimpleDateFormat("yyyy/MM/dd/HH/mm");
+        DateFormat date = new SimpleDateFormat("yyyy/MM/dd - HH:mm");
 
         this.orderDateLabel.setText(date.format(order.getDate()));
         this.orderNumberLabel.setText("Order " + order.getOrderNumber());
@@ -55,6 +55,11 @@ public class historyOrder extends AnchorPane{
 
     public Order getOrder(){
     return order;
+    }
+
+    @FXML
+    public void populateHistoryOrderItems(){
+        parentController.populateHistoryOrderItems(this);
     }
 
 }
