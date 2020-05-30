@@ -232,6 +232,26 @@
     -fx-text-fill: FF4500;
 }
 
+.clickable:pressed{
+    -fx-border-color: #CCCCCC;
+    -fx-border-width: 2px;
+
+}
+
+.clickable:hover{
+    -fx-border-color: #757575;
+    -fx-border-width: 1px;
+}
+/*
+.recipe-list-item:hover{
+     -fx-background-color: #FCFCFC;
+ }
+
+.recipe-list-item:pressed{
+    -fx-background-color: #D0D0D0;
+}
+*/
+
 .wizard-label-selected{
 
     -fx-text-fill: #FF4500;

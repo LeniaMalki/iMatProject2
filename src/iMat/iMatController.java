@@ -187,7 +187,7 @@ public class iMatController implements Initializable {
         cardFlow.setVgap(10);
         cardFlow.setHgap(25);
         cardFlow.setPrefWrapLength(400); // preferred width = 400
-        checkoutButton.setDisable(true);
+        //checkoutButton.setDisable(true);
         updateShoppingCart();
     }
 
@@ -338,7 +338,6 @@ public class iMatController implements Initializable {
             }
         }
     }
-
 
     @FXML
     public void personalButtonPressed(){
@@ -626,8 +625,13 @@ public class iMatController implements Initializable {
 
         if(iMatDataHandler.getShoppingCart().getTotal() == 0){
             cartEmptyLabel.setVisible(true);
+            checkoutButton.setDisable(true);
         }
-        else cartEmptyLabel.setVisible(false);
+        else{
+
+            cartEmptyLabel.setVisible(false);
+            checkoutButton.setDisable(false);
+        }
 
         cartFlowPane.getChildren().clear();
 
