@@ -1,5 +1,9 @@
 package iMat;
 
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.PauseTransition;
+import javafx.animation.Timeline;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -7,6 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.Parent;
 import javafx.scene.image.Image;
@@ -17,6 +22,9 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
+import javafx.util.Duration;
 import se.chalmers.cse.dat216.project.*;
 
 import java.awt.event.KeyEvent;
@@ -131,6 +139,10 @@ public class iMatController implements Initializable {
     @FXML private TextField txfAdress;
     @FXML private TextField txfPostCode;
     @FXML private TextField txfPostAdress;
+    @FXML private Button savePersonalButton;
+    @FXML private Button emptyPersonalButton;
+    @FXML private Pane saveStatusPane;
+    @FXML private Label saveStatusLabel;
 
     //-------------History-------------------
 
@@ -345,6 +357,8 @@ public class iMatController implements Initializable {
         profilePane.toFront();
         mainPane2.toFront();
         categoryTitle.setVisible(false);
+        saveStatusPane.setVisible(false);
+        saveStatusLabel.setVisible(false);
 
     }
     @FXML
@@ -625,7 +639,7 @@ public class iMatController implements Initializable {
 
         if(iMatDataHandler.getShoppingCart().getTotal() == 0){
             cartEmptyLabel.setVisible(true);
-            checkoutButton.setDisable(true);
+            //checkoutButton.setDisable(true);
         }
         else{
 
@@ -727,6 +741,10 @@ public class iMatController implements Initializable {
         iMatDataHandler.getCustomer().setAddress(txfAdress.getText());
         iMatDataHandler.getCustomer().setPostCode(txfPostCode.getText());
         iMatDataHandler.getCustomer().setPostAddress(txfPostAdress.getText());
+        saveStatusPane.setVisible(true);
+        saveStatusLabel.setText("Dina uppgifter har sparats!");
+        saveStatusLabel.setVisible(true);
+
     }
 
     public void emptyPersonal(){
@@ -745,6 +763,9 @@ public class iMatController implements Initializable {
         iMatDataHandler.getCustomer().setAddress("");
         iMatDataHandler.getCustomer().setPostCode("");
         iMatDataHandler.getCustomer().setPostAddress("");
+        saveStatusPane.setVisible(true);
+        saveStatusLabel.setText("Dina uppgifter har tagits bort!");
+        saveStatusLabel.setVisible(true);
 
     }
 
@@ -783,6 +804,16 @@ public class iMatController implements Initializable {
                     "images/menuIcons/MinaUppgifter.png")));
     }
 
+    @FXML
+    public void dealsCategoryPressed(){
+
+        categoryTitle.setText("Erbjudanden");
+        productList = iMatDataHandler.getProducts(ProductCategory.BREAD);
+        updateCards(productList);
+        backToStore();
+
+
+    }
 
 }
 

@@ -25,6 +25,7 @@ public class shoppingCartItemClass extends AnchorPane implements ShoppingCartLis
     @FXML private Label productPriceLabel;
     @FXML private TextField txfAmount;
 
+    int counter = 0;
 
     shoppingCartItemClass(ShoppingItem shoppingItem, iMatController parentController){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("shoppingCartItem.fxml"));
@@ -46,6 +47,17 @@ public class shoppingCartItemClass extends AnchorPane implements ShoppingCartLis
         this.txfAmount.setText(String.valueOf(amount));
         //this.txfAmount.setText(String.valueOf(amount));
         //updateText();
+
+        if(counter%2 != 0){
+
+            this.setStyle("-fx-background-color: grey");
+
+        }else{
+
+            this.setStyle("-fx-background-color: white");
+        }
+
+        counter++;
 
         this.parentController = parentController;
     }

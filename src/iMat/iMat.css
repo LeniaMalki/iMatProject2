@@ -143,6 +143,24 @@
     -fx-background-radius: 30;
     -fx-text-fill: #FFFFFF;
     -fx-font-weight: bolder;
+}
+
+.roundedbuttonon:hover{
+    -fx-background-color: #ff5314;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bolder;
+
+}
+
+.roundedbuttonon:pressed{
+     -fx-background-color: #DB3A00;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bolder;
+
 
 }
 
@@ -232,25 +250,22 @@
     -fx-text-fill: FF4500;
 }
 
-.clickable:pressed{
+.checkoutButton:hover{
     -fx-border-color: #CCCCCC;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
     -fx-border-width: 2px;
 
 }
 
-.clickable:hover{
+.checkoutButton:pressed{
     -fx-border-color: #757575;
-    -fx-border-width: 1px;
+    -fx-border-radius: 10px;
+    -fx-background-radius:10px;
+    -fx-border-width: 2px;
 }
-/*
-.recipe-list-item:hover{
-     -fx-background-color: #FCFCFC;
- }
 
-.recipe-list-item:pressed{
-    -fx-background-color: #D0D0D0;
-}
-*/
+
 
 .wizard-label-selected{
 
@@ -263,20 +278,6 @@
 
     -fx-text-fill: #757575;
     -fx-font-weight: bold;
-
-}
-
-.checkoutButtonOff{
-
-    -fx-background-color: rgba(255, 69, 0, 0.5);
-    -fx-cursor: not-allowed;
-
-}
-
-.checkoutButtonOn{
-
-    -fx-background-color: rgba(255, 69, 0, 1);
-    -fx-cursor: pointer;
 
 }
 
