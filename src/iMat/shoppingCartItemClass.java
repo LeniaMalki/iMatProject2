@@ -19,11 +19,13 @@ public class shoppingCartItemClass extends AnchorPane implements ShoppingCartLis
     private ShoppingItem shoppingItem;
     private iMatController parentController;
     private IMatDataHandler iMatDataHandler = IMatDataHandler.getInstance();
+    DecimalFormat deci = new DecimalFormat("#.##");
 
     @FXML private ImageView productImageView;
     @FXML private Label nameLabel;
     @FXML private Label productPriceLabel;
     @FXML private TextField txfAmount;
+
 
 
     shoppingCartItemClass(ShoppingItem shoppingItem, iMatController parentController){
@@ -37,15 +39,12 @@ public class shoppingCartItemClass extends AnchorPane implements ShoppingCartLis
             throw new RuntimeException(exception);
         }
 
-        DecimalFormat value = new DecimalFormat("#.#");
-        Double amount = shoppingItem.getAmount();
+        int amount = (int)shoppingItem.getAmount();
         this.shoppingItem = shoppingItem;
         this.nameLabel.setText(shoppingItem.getProduct().getName());
-        this.productPriceLabel.setText(String.valueOf(shoppingItem.getTotal()) + "kr");
+        this.productPriceLabel.setText(deci.format(shoppingItem.getTotal()) + " kr");
         this.productImageView.setImage(iMatDataHandler.getFXImage(shoppingItem.getProduct()));
         this.txfAmount.setText(String.valueOf(amount));
-        this.productPriceLabel.setText(String.valueOf(value.format(shoppingItem.getTotal())) + "kr");
-        this.productImageView.setImage(iMatDataHandler.getFXImage(shoppingItem.getProduct()));
         //this.txfAmount.setText(String.valueOf(amount));
         //updateText();
 
@@ -58,6 +57,19 @@ public class shoppingCartItemClass extends AnchorPane implements ShoppingCartLis
         parentController.removeCartItem(this);
     }
 
+    @FXML
+    public void setAmount(){
+        String input = txfAmount.getText();
+        //hämta siffran som finns i rutan
+        double amount = Double.parseDouble(input);
+        //är det inte kg så kan man runda av
+        if(!shoppingItem.getProduct().getUnitSuffix().equals("kg.")){
+            amount = (int) amount;
+        }
+        parentController.setCardAmount(shoppingItem.getProduct(), amount);
+
+    }
+
 
     @Override
     public void shoppingCartChanged(CartEvent cartEvent) {
@@ -65,8 +77,8 @@ public class shoppingCartItemClass extends AnchorPane implements ShoppingCartLis
             //removeItem();
         }
         if(cartEvent.getShoppingItem() == shoppingItem) {
-            productPriceLabel.setText(String.valueOf(shoppingItem.getTotal()) + "kr");
-            txfAmount.setText(String.valueOf(shoppingItem.getAmount()));
+            productPriceLabel.setText(deci.format(shoppingItem.getTotal()) + " kr");
+            txfAmount.setText(String.valueOf((int)shoppingItem.getAmount()));
             parentController.updateTotalPrice();
         }
     }

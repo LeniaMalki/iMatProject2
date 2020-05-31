@@ -225,9 +225,62 @@
 
 .white-square-button{
     -fx-background-color:  -fx-background;
-    -fx-border-color: FF4500;
+    -fx-border-color: #FF4500;
     -fx-border-width: 0;
     -fx-background-radius: 0;
     -fx-font-family:"Avenir Book", Helvetica, Arial, sans-serif;
     -fx-text-fill: FF4500;
+}
+
+.clickable:pressed{
+    -fx-border-color: #CCCCCC;
+    -fx-border-width: 2px;
+
+}
+
+.clickable:hover{
+    -fx-border-color: #757575;
+    -fx-border-width: 1px;
+}
+/*
+.recipe-list-item:hover{
+     -fx-background-color: #FCFCFC;
+ }
+
+.recipe-list-item:pressed{
+    -fx-background-color: #D0D0D0;
+}
+*/
+
+.wizard-label-selected{
+
+    -fx-text-fill: #FF4500;
+    -fx-font-weight: bold;
+
+}
+
+.wizard-label-unselected{
+
+    -fx-text-fill: #757575;
+    -fx-font-weight: bold;
+
+}
+
+.checkoutButtonOff{
+
+    -fx-background-color: rgba(255, 69, 0, 0.5);
+    -fx-cursor: not-allowed;
+
+}
+
+.checkoutButtonOn{
+
+    -fx-background-color: rgba(255, 69, 0, 1);
+    -fx-cursor: pointer;
+
+}
+
+.border-line{
+    -fx-border-width:  0 0 1 0;
+    -fx-border-color:  #CCCCCC
 }

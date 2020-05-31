@@ -42,16 +42,22 @@ public class historyOrderItem extends AnchorPane{
         DecimalFormat deci = new DecimalFormat("#.##");
         this.productImageView.setImage(iMatDataHandler.getFXImage(shoppingItem.getProduct()));
         this.nameLabel.setText(shoppingItem.getProduct().getName());
-        this.priceLabel.setText(String.valueOf(shoppingItem.getProduct().getPrice() + "kr/" + shoppingItem.getProduct().getUnit()));
+        this.priceLabel.setText(deci.format((shoppingItem.getProduct().getPrice())) + shoppingItem.getProduct().getUnit());
         this.amountLabel.setText(deci.format(shoppingItem.getAmount() )+ " " + shoppingItem.getProduct().getUnitSuffix());
-        this.totalPriceLabel.setText(deci.format(shoppingItem.getTotal()));
-
+        this.totalPriceLabel.setText(deci.format(shoppingItem.getTotal()) + " kr");
+// + "kr/" + shoppingItem.getProduct().getUnit())
     }
 
     @FXML
     private void addProduct(){
         parentController.setCardAmount(shoppingItem.getProduct(),shoppingItem.getAmount());
-
     }
+    @FXML
+    private void addOneProduct(){
+        for(int i = 0; i < shoppingItem.getAmount(); i++) {
+            parentController.incrementProduct(shoppingItem.getProduct());
+        }
+    }
+
 
 }
