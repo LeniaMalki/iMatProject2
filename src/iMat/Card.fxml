@@ -12,8 +12,8 @@
    <children>
       <Line endX="80.0" layoutX="80.0" layoutY="154.0" startX="-80.0" stroke="#999999" />
       <ImageView fx:id="cardImageView" fitHeight="105.0" fitWidth="105.0" layoutX="28.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="cardNameLabel" layoutX="59.0" layoutY="3.0" styleClass="text-larger-bold" text="Äpple" />
-      <Label fx:id="cardPriceLabel" layoutX="62.0" layoutY="133.0" styleClass="text-larger-bold" text="10 kr" />
+      <Label fx:id="cardNameLabel" layoutX="1.0" layoutY="4.0" prefWidth="160.0" style="-fx-alignment: center;" styleClass="text-larger-bold" text="Äpple" />
+      <Label fx:id="cardPriceLabel" layoutX="1.0" layoutY="132.0" prefWidth="160.0" style="-fx-alignment: center;" styleClass="text-larger-bold" text="10 kr" />
       <Button fx:id="addItemButton" layoutX="113.0" layoutY="158.0" mnemonicParsing="false" onAction="#incrementProduct" prefHeight="36.0" prefWidth="36.0" styleClass="round-button-orange">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" styleClass="round-button-orange">

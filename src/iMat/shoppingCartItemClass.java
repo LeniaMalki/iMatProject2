@@ -19,6 +19,7 @@ public class shoppingCartItemClass extends AnchorPane implements ShoppingCartLis
     private ShoppingItem shoppingItem;
     private iMatController parentController;
     private IMatDataHandler iMatDataHandler = IMatDataHandler.getInstance();
+    DecimalFormat deci = new DecimalFormat("#.##");
 
     @FXML private ImageView productImageView;
     @FXML private Label nameLabel;
@@ -26,6 +27,7 @@ public class shoppingCartItemClass extends AnchorPane implements ShoppingCartLis
     @FXML private TextField txfAmount;
 
     int counter = 0;
+
 
     shoppingCartItemClass(ShoppingItem shoppingItem, iMatController parentController){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("shoppingCartItem.fxml"));
@@ -38,11 +40,10 @@ public class shoppingCartItemClass extends AnchorPane implements ShoppingCartLis
             throw new RuntimeException(exception);
         }
 
-        DecimalFormat value = new DecimalFormat("#.#");
-        Double amount = shoppingItem.getAmount();
+        int amount = (int)shoppingItem.getAmount();
         this.shoppingItem = shoppingItem;
         this.nameLabel.setText(shoppingItem.getProduct().getName());
-        this.productPriceLabel.setText(String.valueOf(shoppingItem.getTotal()) + "kr");
+        this.productPriceLabel.setText(deci.format(shoppingItem.getTotal()) + " kr");
         this.productImageView.setImage(iMatDataHandler.getFXImage(shoppingItem.getProduct()));
         this.txfAmount.setText(String.valueOf(amount));
         //this.txfAmount.setText(String.valueOf(amount));
@@ -88,8 +89,8 @@ public class shoppingCartItemClass extends AnchorPane implements ShoppingCartLis
             //removeItem();
         }
         if(cartEvent.getShoppingItem() == shoppingItem) {
-            productPriceLabel.setText(String.valueOf(shoppingItem.getTotal()) + "kr");
-            txfAmount.setText(String.valueOf(shoppingItem.getAmount()));
+            productPriceLabel.setText(deci.format(shoppingItem.getTotal()) + " kr");
+            txfAmount.setText(String.valueOf((int)shoppingItem.getAmount()));
             parentController.updateTotalPrice();
         }
     }

@@ -34,6 +34,7 @@ public class checkOutButton implements ShoppingCartListener {
 
     public void shoppingCartChanged(CartEvent cartEvent) {
         if (cartEvent != null) {
+            checkoutButton.setText("AAAAAAAAAAAAAA");
             controlCheckoutButton();
         }
     }

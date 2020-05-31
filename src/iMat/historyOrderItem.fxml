@@ -16,7 +16,7 @@
       <Label fx:id="nameLabel" layoutX="52.0" layoutY="16.0" prefHeight="27.0" prefWidth="80.0" styleClass="text-larger-bold" text="Äpple" AnchorPane.topAnchor="16.0" />
       <Label fx:id="priceLabel" layoutX="138.0" layoutY="20.0" styleClass="text-larger" text="5 kr / st" AnchorPane.topAnchor="20.0" />
       <Label fx:id="amountLabel" layoutX="211.0" layoutY="21.0" prefHeight="20.0" prefWidth="30.0" styleClass="text-larger" text="60 st" AnchorPane.bottomAnchor="16.0" AnchorPane.topAnchor="21.0" />
-      <Label fx:id="totalPriceLabel" layoutX="251.0" layoutY="21.0" styleClass="text-larger" text="300 kr" AnchorPane.bottomAnchor="17.0" AnchorPane.topAnchor="21.0" />
+      <Label fx:id="totalPriceLabel" layoutX="251.0" layoutY="21.0" styleClass="text-larger" text="300 kr" AnchorPane.bottomAnchor="19.0" AnchorPane.topAnchor="21.0" />
       <Button fx:id="addItemButton" layoutX="308.0" layoutY="10.0" mnemonicParsing="false" onAction="#addOneProduct" prefHeight="34.0" prefWidth="18.0" styleClass="round-button-orange">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" styleClass="round-button-orange">

@@ -10,12 +10,14 @@ import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 
 public class CheckoutCartItemClass extends AnchorPane {
 
     private ShoppingItem shoppingItem;
     private iMatController parentController;
     private IMatDataHandler iMatDataHandler = IMatDataHandler.getInstance();
+    DecimalFormat deci = new DecimalFormat("#.##");
 
     @FXML private ImageView productImageView;
     @FXML private Label nameLabel;
@@ -43,7 +45,7 @@ public class CheckoutCartItemClass extends AnchorPane {
         this.productPriceLabel.setText(String.valueOf(shoppingItem.getProduct().getPrice() + " " + shoppingItem.getProduct().getUnit()));
         this.productImageView.setImage(iMatDataHandler.getFXImage(shoppingItem.getProduct()));
         this.amountLabel.setText(String.valueOf(amount) + " " + shoppingItem.getProduct().getUnitSuffix());
-        this.totalPriceLabel.setText(String.valueOf("Totalt: " + shoppingItem.getTotal()) + " kr");
+        this.totalPriceLabel.setText(String.valueOf("Totalt: " + deci.format(shoppingItem.getTotal())) + " kr");
 
     }
 

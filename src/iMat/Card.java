@@ -10,6 +10,7 @@ import se.chalmers.cse.dat216.project.*;
 import javafx.scene.image.ImageView;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 
 public class Card extends Pane implements ShoppingCartListener {
 
@@ -30,6 +31,7 @@ public class Card extends Pane implements ShoppingCartListener {
 
     private iMatController parentController;
     private IMatDataHandler iMatDataHandler = IMatDataHandler.getInstance();
+    DecimalFormat deci = new DecimalFormat("#.##");
 
     public Card(Product product, iMatController parentController){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Card.fxml"));
@@ -46,7 +48,7 @@ public class Card extends Pane implements ShoppingCartListener {
         this.product = product;
         this.cardImageView.setImage(iMatDataHandler.getFXImage(product));
         this.cardNameLabel.setText(product.getName());
-        this.cardPriceLabel.setText(product.getPrice() + product.getUnit());
+        this.cardPriceLabel.setText(product.getPrice() +" " + product.getUnit());
 /*
         productAmount.focusedProperty().addListener(new ChangeListener<Boolean>() {
 
